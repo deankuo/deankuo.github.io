@@ -27,6 +27,31 @@
 
 		gtag('config', 'G-4963P2NTCT');
 		</script>
+
+		<style>
+			/* 你的其他 CSS 代碼 */
+			@keyframes typing {
+				from { width: 0; }
+				to { width: 100%; }
+			}
+	
+			@keyframes blink {
+				from { border-right-color: rgba(255,255,255,.75); }
+				to { border-right-color: transparent; }
+			}
+	
+			.typing-effect {
+				font-family: "Fira Code";
+				font-size: 48px;
+				display: inline-block;
+				overflow: hidden;
+				border-right: .15em solid rgba(255,255,255,.75);
+				white-space: nowrap;
+				margin: 0 auto;
+				letter-spacing: .10em;
+				animation: typing 3.5s steps(30, end), blink .75s step-end infinite;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -54,8 +79,7 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1>Dean Peng-Ting Kuo</h1>
-											<p>A graduate student passionate about deep learning and political science</p>
+											<h1 id="dynamicText" class="typing-effect"></h1>
 										</header>
 										<p>Peng-Ting's name in Chinese is "郭芃廷." He is an M.A. candidate in Political Science at National Taiwan University, specializing in international relations and comparative politics. 
 											He currently serves as a research assistant at the Strategic and International Relations Laboratory (SIR), Academia Sinica.
@@ -66,9 +90,43 @@
 										</ul>
 									</div>
 									<span class="image object">
-										<img src="images/郭芃廷.jpg" alt="照片"  />
+										<img src="images/郭芃廷.jpg" alt="照片" />
 									</span>
 								</section>
+
+								<script>
+									const textArray = [
+										"Dean",
+										"Peng-Ting Kuo",
+										"Political Scientist",
+										"LLM & AI Researcher",
+									];
+									let currentIndex = 0;
+									const typingElement = document.getElementById('dynamicText');
+							
+									function typeWriter(text, i, fnCallback) {
+										if (i < text.length) {
+											typingElement.innerHTML = text.substring(0, i + 1);
+											setTimeout(() => {
+												typeWriter(text, i + 1, fnCallback);
+											}, 100);
+										} else if (typeof fnCallback === 'function') {
+											setTimeout(fnCallback, 1000);
+										}
+									}
+							
+									function startTextAnimation() {
+										typeWriter(textArray[currentIndex], 0, function() {
+											currentIndex = (currentIndex + 1) % textArray.length;
+											setTimeout(() => {
+												startTextAnimation();
+											}, 2000);
+										});
+									}
+							
+									document.addEventListener('DOMContentLoaded', startTextAnimation);
+								</script>
+
 
 							<!-- Section -->
 								<section>
