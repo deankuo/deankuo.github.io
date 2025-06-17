@@ -4,16 +4,28 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="zh-TW">
 	<head>
-		<title>Project</title>
+		<title>Project - Dean Kuo's Personal Website</title>
 		<meta charset="utf-8" />
+		
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="Projects by Peng-Ting (Dean) Kuo - Machine Learning projects including manifesto classification, interpellation analysis, and automation tools.">
+		<meta name="keywords" content="Dean Kuo Projects, Machine Learning, Political Science, Manifesto Classification, Automation, Taiwan">
+		<meta name="author" content="Peng-Ting Kuo">
+		<meta name="robots" content="index, follow">
+		
+		<!-- Responsive Design Meta Tags -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-		<link rel="manifest" href="favicon/site.webmanifest">
+		
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="./favicon/favicon-16x16.png" type="image/x-icon">
+		<link rel="manifest" href="./favicon/site.webmanifest">
 
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4963P2NTCT"></script>
@@ -21,127 +33,534 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-
 		gtag('config', 'G-4963P2NTCT');
 		</script>
+
+		<style>
+			/* Fixed Top Navigation Bar */
+			.top-nav {
+				position: fixed;
+				top: 15px;
+				right: 30px;
+				z-index: 1000;
+			}
+
+			.top-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				gap: 30px;
+				align-items: center;
+			}
+
+			.top-nav ul li {
+				margin: 0;
+				position: relative;
+			}
+
+			.top-nav ul li a {
+				text-decoration: none;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				border: none;
+			}
+
+			.top-nav ul li a:hover {
+				color: #f56565;
+			}
+
+			/* Publication dropdown styling */
+			.publication-dropdown {
+				position: relative;
+			}
+
+			.publication-dropdown .opener {
+				cursor: pointer;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+
+			.publication-dropdown .opener:hover {
+				color: #f56565;
+			}
+
+			/* Dropdown arrow */
+			.publication-dropdown .opener::after {
+				content: "▼";
+				font-size: 10px;
+				transition: transform 0.3s ease;
+			}
+
+			.publication-dropdown .opener[aria-expanded="true"]::after {
+				transform: rotate(180deg);
+			}
+
+			.publication-dropdown ul {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: white;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+				border-radius: 5px;
+				min-width: 120px;
+				padding: 10px 0;
+				margin-top: 5px;
+				flex-direction: column;
+				gap: 0;
+			}
+
+			.publication-dropdown ul li {
+				margin: 0;
+			}
+
+			.publication-dropdown ul li a {
+				display: block;
+				padding: 8px 15px;
+				color: #333;
+				transition: background-color 0.3s ease;
+			}
+
+			.publication-dropdown ul li a:hover {
+				background-color: #f8f9fa;
+				color: #f56565;
+			}
+
+			/* Adjust main content to account for fixed navigation */
+			body {
+				padding-top: 70px;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#wrapper {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#main {
+				flex: 1;
+				padding-top: 20px;
+			}
+
+			#main .inner {
+				padding-top: 20px;
+			}
+
+			body {
+				font-family: "Roboto Slab", serif;
+			}
+
+			/* Header Layout - Align with Navigation */
+			#header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(10px);
+				z-index: 999;
+				padding: 15px 30px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			#header .logo {
+				order: 1;
+				text-decoration: none;
+				border: none !important;
+			}
+
+			#header .logo strong {
+				color: #333;
+				font-weight: 600;
+			}
+
+			/* Project Content - 70% width centered */
+			.project-content {
+				max-width: 70%;
+				margin: 0 auto;
+				text-align: left;
+				padding: 3em 0 2em 0;
+			}
+
+			.project-content h1 {
+				font-size: 32px;
+				margin-bottom: 1.5em;
+				text-align: left;
+			}
+
+			/* Original Posts Layout */
+			.posts {
+				margin-top: 2em;
+			}
+
+			.posts article {
+				margin-bottom: 3em;
+				overflow: hidden;
+			}
+
+			.posts article .image {
+				float: left;
+				margin: 0 2em 1em 0;
+				width: 200px;
+			}
+
+			.posts article .image img {
+				width: 100%;
+				height: auto;
+				border-radius: 5px;
+			}
+
+			.posts article h3 {
+				font-size: 20px;
+				margin-bottom: 0.5em;
+				color: #333;
+				line-height: 1.4;
+			}
+
+			.posts article p {
+				font-size: 16px;
+				line-height: 1.6;
+				margin-bottom: 1em;
+				color: #666;
+				text-align: justify;
+			}
+
+			.posts article .actions {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				clear: both;
+			}
+
+			.posts article .actions li {
+				margin: 0;
+			}
+
+			.posts article .actions .button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				background: white;
+				color: #333;
+				border: 2px solid #e9ecef;
+				padding: 10px 20px;
+				text-decoration: none;
+				border-radius: 5px;
+				font-size: 14px;
+				font-weight: 500;
+				transition: all 0.3s ease;
+				min-height: 40px;
+			}
+
+			.posts article .actions .button:hover {
+				background: #f56565;
+				color: white !important;
+				border-color: #f56565;
+				text-decoration: none;
+			}
+
+			/* Clear floats after each article */
+			.posts article::after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+			/* Single Footer with Social Icons */
+			.bottom-footer {
+				background: #f8f9fa;
+				padding: 20px;
+				text-align: center;
+				border-top: 1px solid #e9ecef;
+				margin-top: auto;
+			}
+
+			.bottom-footer .social-icons {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 15px;
+				background: none !important;
+				padding: 0 !important;
+				border: none !important;
+				margin-top: 0 !important;
+			}
+
+			.bottom-footer .social-icons a {
+				color: #666;
+				font-size: 18px;
+				transition: color 0.3s ease;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons a:hover {
+				color: #f56565;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons .icon {
+				border: none !important;
+			}
+
+			.bottom-footer p {
+				margin: 0;
+				color: #666;
+				font-size: 14px;
+			}
+
+			.bottom-footer a {
+				color: #f56565;
+				text-decoration: none;
+			}
+
+			.bottom-footer a:hover {
+				text-decoration: underline;
+			}
+
+			/* Enhanced Responsive Design */
+			@media screen and (max-width: 768px) {
+				#header {
+					padding: 10px 15px;
+				}
+
+				.top-nav {
+					position: fixed;
+					top: 10px;
+					right: 15px;
+				}
+
+				.top-nav ul {
+					gap: 15px;
+					flex-wrap: wrap;
+				}
+
+				.project-content {
+					max-width: 90%;
+					padding: 2em 0 1em 0;
+				}
+
+				.project-content h1 {
+					font-size: 28px;
+				}
+
+				.posts {
+					grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+					gap: 1.5em;
+				}
+
+				.posts article h3 {
+					font-size: 18px;
+					min-height: auto;
+				}
+
+				.posts article p {
+					font-size: 15px;
+					min-height: auto;
+				}
+
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
+					gap: 15px;
+				}
+			}
+
+			@media screen and (max-width: 480px) {
+				#header {
+					padding: 8px 10px;
+				}
+
+				.top-nav {
+					top: 8px;
+					right: 10px;
+				}
+
+				.top-nav ul {
+					gap: 10px;
+					font-size: 14px;
+				}
+
+				.project-content {
+					max-width: 95%;
+					padding: 1.5em 0 1em 0;
+				}
+
+				.project-content h1 {
+					font-size: 24px;
+				}
+
+				.posts {
+					grid-template-columns: 1fr;
+					gap: 1em;
+				}
+
+				.posts article h3 {
+					font-size: 16px;
+					margin: 1em 1em 0.8em 1em;
+					min-height: auto;
+				}
+
+				.posts article p {
+					font-size: 14px;
+					margin: 0 1em 1em 1em;
+					min-height: auto;
+				}
+
+				.posts article .actions {
+					margin: 0 1em 1em 1em;
+				}
+
+				.posts article .actions .button {
+					font-size: 13px;
+					padding: 8px 16px;
+				}
+
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
+					gap: 10px;
+					margin-bottom: 10px;
+				}
+			}
+
+			/* Image Optimization */
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			/* Accessibility Improvements */
+			.sr-only {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0,0,0,0);
+				white-space: nowrap;
+				border: 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
+				<!-- Fixed Top Navigation -->
+				<nav class="top-nav" role="navigation" aria-label="Main Navigation">
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="work_experience.html">Work Experience</a></li>
+						<li><a href="education.html">Education</a></li>
+						<li class="publication-dropdown">
+							<span class="opener" onclick="toggleSubmenu()" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
+							<ul id="publication-submenu" style="display: none;" aria-hidden="true">
+								<li><a href="publication.html#Journal_Articles">Journal</a></li>
+								<li><a href="publication.html#Conference_Papers">Conference</a></li>
+								<li><a href="publication.html#Thesis">Thesis</a></li>
+							</ul>
+						</li>
+						<li><a href="teaching.html">Teaching</a></li>
+						<li><a href="project.html" aria-current="page">Project</a></li>
+					</ul>
+				</nav>
+
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
 
-							<!-- Header -->
-							<header id="header">
-								<a href="index.html" class="logo"><strong>Homepage</strong></a>
-								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/deankuo/" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/deankuo" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									<li><a href="https://www.facebook.com/peng.ting.kuo.0609" class="icon brands fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" class="icon fa-graduation-cap"><span class="label">Google</span></a></li>
-									<li><a href="https://www.instagram.com/dean_0609_/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://medium.com/@deankuo_15628" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-								</ul>
-							</header>
+							<!-- Header with Logo aligned with Navigation -->
+								<header id="header" role="banner">
+									<a href="index.html" class="logo"><strong>Dean Peng-Ting Kuo (郭芃廷)</strong></a>
+								</header>
 
-							<!-- Section -->
-                            <section>
-                                <header class="main">
-                                    <h1>Project Demo</h1>
-                                </header>
-                                <div class="posts">
-                                    <article >
-                                        <a href="projects/legislator_manifesto_classification.html" class="image">
-                                            <img src="images/manifesto_demo.png" alt="" />
-                                        </a>
-                                        <h3>Legislator Manifesto Classification</h3>
-                                        <p>Classified Taiwan Manifestos to clarify the relationship between the electoral system and candidates’ strategies.</p>
-                                        <ul class="actions">
-                                            <li><a href="https://github.com/deankuo/Taiwan-Manifesto-Analysis-A-ML-Approach" class="button">Demo</a></li>
-                                        </ul>
-                                    </article>
-                                    <article >
-										<a href="projects/legislator_interpellation_classification.html" class="image">
-											<img src="images/interpellation_demo.png" alt="" />
-										</a>
-										<h3>Legislator interpellation Classification</h3>
-										<p>Provided a pre‐trained model for legislators’ questioning classification automation tasks.</p>
-										<ul class="actions">
-											<li><a href="https://huggingface.co/spaces/dean22029/multi-lable_classification" class="button">Demo</a></li>
-										</ul>
-									</article>
-                                    <article>
-                                        <a href="projects/automation.html" class="image">
-                                            <img src="images/automation_demo1.png" alt=""/>
-                                        </a>
-                                        <h3>Automatic Sports Center Court Reservation</h3>
-                                        <p>A program that streamlines the resolution of court sparsity problems faced by the department team.</p>
-                                        <ul class="actions">
-                                            <li><a href="https://drive.google.com/file/d/1ttAJtpe2mXWPyoEwV1sXI9lbkvQjNWEG/view?usp=drive_link" class="button">Demo</a></li>
-                                        </ul>
-                                    </article>
-                                    
-                                </div>
-                            </section>
-
-						</div>
-					</div>
-
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
+							<!-- Project Content -->
+								<section class="project-content">
+									<header class="main">
+										<h1>Project Demo</h1>
+									</header>
+									
+									<div class="posts">
+										<article>
+											<a href="projects/legislator_manifesto_classification.html" class="image">
+												<img src="images/manifesto_demo.png" alt="Legislator Manifesto Classification Demo" />
+											</a>
+											<h3>Legislator Manifesto Classification</h3>
+											<p>Classified Taiwan Manifestos to clarify the relationship between the electoral system and candidates' strategies.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/deankuo/Taiwan-Manifesto-Analysis-A-ML-Approach" class="button">Demo</a></li>
+											</ul>
+										</article>
+										
+										<article>
+											<a href="projects/legislator_interpellation_classification.html" class="image">
+												<img src="images/interpellation_demo.png" alt="Legislator Interpellation Classification Demo" />
+											</a>
+											<h3>Legislator Interpellation Classification</h3>
+											<p>Provided a pre‐trained model for legislators' questioning classification automation tasks.</p>
+											<ul class="actions">
+												<li><a href="https://huggingface.co/spaces/dean22029/multi-lable_classification" class="button">Demo</a></li>
+											</ul>
+										</article>
+										
+										<article>
+											<a href="projects/automation.html" class="image">
+												<img src="images/automation_demo1.png" alt="Automatic Sports Center Court Reservation Demo"/>
+											</a>
+											<h3>Automatic Sports Center Court Reservation</h3>
+											<p>A program that streamlines the resolution of court sparsity problems faced by the department team.</p>
+											<ul class="actions">
+												<li><a href="https://drive.google.com/file/d/1ttAJtpe2mXWPyoEwV1sXI9lbkvQjNWEG/view?usp=drive_link" class="button">Demo</a></li>
+											</ul>
+										</article>
+									</div>
 								</section>
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="about.html">About</a></li>
-										<li><a href="work_experience.html">Work Experience</a></li>
-										<li><a href="education.html">Education</a></li>
-										
-										<li>
-											<span class="opener" onclick="toggleSubmenu('publication.html')">Publication</span>
-											<ul>
-												<li><a href="publication.html#Journal_Articles">Journal</a></li>
-												<li><a href="publication.html#Conference_Papers">Conference</a></li>
-												<li><a href="publication.html#Thesis">Thesis</a></li>
-											</ul>
-										</li>
-										<li><a href="project.html">Project</a></li>
-										<li><a href="teaching.html">Teaching</a></li>
-									</ul>
-								</nav>
-
-							<section>
-								<header class="major">
-									<h2>Get in touch</h2>
-								</header>
-								<p>Feel free to contact me via email. You can also find more information about me on LinkedIn.</p>
-								<ul class="contact">
-									<li class="icon solid fa-envelope"><a href="#">r10322029 at ntu dot edu.tw</a></li>
-								</ul>
-							</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Dean Kuo. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
 						</div>
 					</div>
+
+				<!-- Footer with Social Icons -->
+				<footer class="bottom-footer" role="contentinfo">
+					<!-- Social Media Icons -->
+					<div class="social-icons">
+						<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn">
+							<span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
+						</a>
+						<a href="https://github.com/deankuo" title="GitHub">
+							<span class="icon brands fa-github" aria-hidden="true"></span>
+						</a>
+						<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook">
+							<span class="icon brands fa-facebook" aria-hidden="true"></span>
+						</a>
+						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar">
+							<span class="icon solid fa-graduation-cap" aria-hidden="true"></span>
+						</a>
+						<a href="https://www.instagram.com/dean_0609_/" title="Instagram">
+							<span class="icon brands fa-instagram" aria-hidden="true"></span>
+						</a>
+						<a href="https://medium.com/@deankuo_15628" title="Medium">
+							<span class="icon brands fa-medium-m" aria-hidden="true"></span>
+						</a>
+					</div>
+					<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
+				</footer>
 
 			</div>
 
@@ -151,6 +570,46 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Enhanced Submenu Toggle Function -->
+			<script>
+				function toggleSubmenu() {
+					const submenu = document.getElementById('publication-submenu');
+					const opener = document.querySelector('.opener');
+					
+					if (submenu.style.display === 'none' || submenu.style.display === '') {
+						submenu.style.display = 'block';
+						submenu.setAttribute('aria-hidden', 'false');
+						opener.setAttribute('aria-expanded', 'true');
+					} else {
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				}
+				
+				// Keyboard accessibility for submenu
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Enter' || e.key === ' ') {
+						if (e.target.classList.contains('opener')) {
+							e.preventDefault();
+							toggleSubmenu();
+						}
+					}
+				});
+
+				// Close submenu when clicking outside
+				document.addEventListener('click', function(e) {
+					const publicationDropdown = document.querySelector('.publication-dropdown');
+					if (!publicationDropdown.contains(e.target)) {
+						const submenu = document.getElementById('publication-submenu');
+						const opener = document.querySelector('.opener');
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				});
+			</script>
 
 	</body>
 </html>
