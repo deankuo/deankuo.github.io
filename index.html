@@ -282,10 +282,10 @@
 				padding: 12px 24px;
 				text-decoration: none;
 				border-radius: 5px;
-				font-size: 14px;
+				font-size: 18px; /* 基本按鈕字體大小 */
 				font-weight: 500;
 				transition: all 0.3s ease;
-				min-height: 40px;
+				min-height: 44px;
 			}
 
 			.actions .button:hover {
@@ -299,7 +299,7 @@
 
 			.actions .button.big {
 				padding: 14px 28px;
-				font-size: 14px;
+				font-size: 14px; /* 大按鈕字體大小 */
 				min-height: 40px;
 			}
 
@@ -592,6 +592,7 @@
 										tempElement.style.fontSize = window.getComputedStyle(typingElement).fontSize;
 										tempElement.style.fontFamily = window.getComputedStyle(typingElement).fontFamily;
 										tempElement.style.letterSpacing = window.getComputedStyle(typingElement).letterSpacing;
+										tempElement.style.fontWeight = window.getComputedStyle(typingElement).fontWeight;
 										document.body.appendChild(tempElement);
 										
 										let maxWidth = 0;
@@ -604,7 +605,8 @@
 										
 										// 取得容器的可用寬度
 										const containerWidth = typingElement.parentElement.offsetWidth;
-										const calculatedWidth = Math.min(maxWidth + 10, containerWidth * 0.9); // 限制在容器的90%
+										// 增加更多的寬度緩衝，確保文字不會被截斷
+										const calculatedWidth = Math.min(maxWidth + 30, containerWidth * 0.95);
 										
 										return calculatedWidth;
 									}
@@ -612,7 +614,7 @@
 									function setOptimalWidth() {
 										const optimalWidth = calculateOptimalWidth();
 										typingElement.style.width = optimalWidth + 'px';
-										typingElement.style.maxWidth = '90%'; // 確保不超出容器
+										typingElement.style.maxWidth = '95%'; // 增加最大寬度限制
 									}
 									
 									function typeWriter(text, i, fnCallback) {
