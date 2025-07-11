@@ -110,41 +110,12 @@
 				max-width: 90%;
 			}
 
-			/* Base Layout Settings */
-			* {
-				box-sizing: border-box;
-			}
-
-			body {
-				font-family: "Roboto Slab", serif;
-				margin: 0;
-				padding: 0;
-				min-height: 100vh;
-				display: flex;
-				flex-direction: column;
-				overflow-x: hidden; /* Prevent horizontal scroll */
-			}
-
-			#wrapper {
-				flex: 1;
-				display: flex;
-				flex-direction: column;
-				width: 100%;
-				max-width: 100vw; /* Prevent overflow */
-			}
-
-			#main {
-				flex: 1;
-				width: 100%;
-			}
-
-			/* Mobile-First Navigation */
+			/* Fixed Top Navigation Bar */
 			.top-nav {
 				position: fixed;
-				top: 10px;
-				right: 10px;
+				top: 15px;
+				right: 30px;
 				z-index: 1000;
-				max-width: calc(100vw - 20px); /* Prevent overflow */
 			}
 
 			.top-nav ul {
@@ -152,10 +123,8 @@
 				margin: 0;
 				padding: 0;
 				display: flex;
-				gap: 8px;
+				gap: 30px;
 				align-items: center;
-				flex-wrap: wrap;
-				justify-content: flex-end;
 			}
 
 			.top-nav ul li {
@@ -167,16 +136,30 @@
 				text-decoration: none;
 				color: #333;
 				font-weight: 500;
-				padding: 6px 8px;
+				padding: 8px 0;
 				transition: color 0.3s ease;
 				border: none;
-				font-size: 12px;
-				white-space: nowrap;
 			}
 
 			.top-nav ul li a:hover {
 				color: #f56565;
 			}
+            
+            
+            #mobile-menu-button {
+                display: none;
+                cursor: pointer;
+                padding: 10px;
+                z-index: 1001;
+            }
+
+            #mobile-menu-button div {
+                width: 25px;
+                height: 3px;
+                background-color: #333;
+                margin: 5px 0;
+                transition: 0.4s;
+            }
 
 			/* Publication dropdown styling */
 			.publication-dropdown {
@@ -187,13 +170,11 @@
 				cursor: pointer;
 				color: #333;
 				font-weight: 500;
-				padding: 6px 8px;
+				padding: 8px 0;
 				transition: color 0.3s ease;
 				display: flex;
 				align-items: center;
-				gap: 3px;
-				font-size: 12px;
-				white-space: nowrap;
+				gap: 5px;
 			}
 
 			.publication-dropdown .opener:hover {
@@ -203,7 +184,7 @@
 			/* Dropdown arrow */
 			.publication-dropdown .opener::after {
 				content: "▼";
-				font-size: 8px;
+				font-size: 10px;
 				transition: transform 0.3s ease;
 			}
 
@@ -214,16 +195,15 @@
 			.publication-dropdown ul {
 				position: absolute;
 				top: 100%;
-				right: 0; /* Align to right to prevent overflow */
+				left: 0;
 				background: white;
 				box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 				border-radius: 5px;
-				min-width: 100px;
-				padding: 8px 0;
-				margin-top: 3px;
+				min-width: 120px;
+				padding: 10px 0;
+				margin-top: 5px;
 				flex-direction: column;
 				gap: 0;
-				z-index: 1001;
 			}
 
 			.publication-dropdown ul li {
@@ -232,10 +212,9 @@
 
 			.publication-dropdown ul li a {
 				display: block;
-				padding: 6px 12px;
+				padding: 8px 15px;
 				color: #333;
 				transition: background-color 0.3s ease;
-				font-size: 11px;
 			}
 
 			.publication-dropdown ul li a:hover {
@@ -243,7 +222,26 @@
 				color: #f56565;
 			}
 
-			/* Header Layout */
+			/* Adjust main content to account for fixed navigation */
+			body {
+				font-family: "Roboto Slab", serif;
+				padding-top: 70px;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#wrapper {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#main {
+				flex: 1;
+			}
+
+			/* Header Layout - Align with Navigation */
 			#header {
 				position: fixed;
 				top: 0;
@@ -252,76 +250,44 @@
 				background: rgba(255, 255, 255, 0.95);
 				backdrop-filter: blur(10px);
 				z-index: 999;
-				padding: 8px 15px;
+				padding: 15px 30px;
 				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 				display: flex;
-				justify-content: flex-start;
+				justify-content: space-between;
 				align-items: center;
-				min-height: 50px;
 			}
 
 			#header .logo {
+				order: 1;
 				text-decoration: none;
 				border: none !important;
-				flex-shrink: 1;
-				min-width: 0; /* Allow shrinking */
 			}
 
 			#header .logo strong {
 				color: #333;
 				font-weight: 600;
-				font-size: clamp(14px, 3vw, 18px);
-				display: block;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
 			}
 
-			/* Main Content Spacing */
-			.inner {
-				padding-top: 60px; /* Space for fixed header */
-				padding-left: 15px;
-				padding-right: 15px;
-				max-width: 100%;
-			}
-
-			/* Banner Content - Mobile First */
+			/* Banner Content - 70% width centered with left-aligned text */
 			#banner {
-				max-width: 100%;
+				max-width: 70%;
 				margin: 0 auto;
-				padding: 20px 0;
 			}
 
 			#banner .content {
-				text-align: center;
-				margin-bottom: 20px;
+				text-align: left;
 			}
 
 			#banner .content header {
-				text-align: center;
-				margin-bottom: 20px;
-			}
-
-			#banner .content p {
 				text-align: left;
-				line-height: 1.6;
-				margin-bottom: 20px;
 			}
 
 			#banner .image.object {
-				margin: 20px auto 0;
-				max-width: 250px;
-				text-align: center;
+				margin: 2em auto 0;
+				max-width: 300px;
 			}
 
-			#banner .image.object img {
-				width: 100%;
-				height: auto;
-				max-width: 250px;
-				border-radius: 8px;
-			}
-
-			/* Button Styling - Mobile Friendly */
+			/* Learn More Button Styling */
 			.actions .button {
 				display: inline-flex;
 				align-items: center;
@@ -329,14 +295,13 @@
 				background: white;
 				color: #333;
 				border: 2px solid #e9ecef;
-				padding: 12px 20px;
+				padding: 12px 24px;
 				text-decoration: none;
 				border-radius: 5px;
-				font-size: 14px;
+				font-size: 18px;
 				font-weight: 500;
 				transition: all 0.3s ease;
 				min-height: 44px;
-				width: auto;
 			}
 
 			.actions .button:hover {
@@ -349,91 +314,39 @@
 			}
 
 			.actions .button.big {
-				padding: 14px 24px;
-				font-size: 16px;
-				min-height: 48px;
-			}
-
-			/* Features Section - Mobile Stack */
-			.features {
-				display: grid;
-				grid-template-columns: 1fr;
-				gap: 20px;
-				margin-top: 30px;
-			}
-
-			.features article {
-				display: flex;
-				align-items: flex-start;
-				gap: 15px;
-				padding: 15px;
-				background: #f8f9fa;
-				border-radius: 8px;
-			}
-
-			.features article .icon {
-				flex-shrink: 0;
-				width: 40px;
-				height: 40px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				background: #f56565;
-				color: white;
-				border-radius: 50%;
-				font-size: 16px;
-			}
-
-			.features article .content h3 {
-				margin: 0 0 8px 0;
-				font-size: 16px;
-				color: #333;
-			}
-
-			.features article .content p {
-				margin: 0;
+				padding: 14px 28px;
 				font-size: 14px;
-				line-height: 1.4;
-				color: #666;
+				min-height: 40px;
 			}
 
-			.features article .content a {
-				color: #f56565;
-				text-decoration: none;
-				font-weight: 500;
-			}
-
-			/* Footer - Mobile Friendly */
+			/* Single Footer with Social Icons - NO EXTRA BOX */
 			.bottom-footer {
 				background: #f8f9fa;
-				padding: 20px 15px;
+				padding: 20px;
 				text-align: center;
 				border-top: 1px solid #e9ecef;
-				margin-top: 30px;
+				margin-top: auto;
 			}
 
 			.bottom-footer .social-icons {
 				display: flex;
-				gap: 15px;
+				gap: 20px;
 				justify-content: center;
 				align-items: center;
 				margin-bottom: 15px;
-				flex-wrap: wrap;
+				/* Remove all styling that creates extra boxes */
 				background: none !important;
 				padding: 0 !important;
 				border: none !important;
+				margin-top: 0 !important;
 			}
 
 			.bottom-footer .social-icons a {
 				color: #666;
-				font-size: 20px;
+				font-size: 18px;
 				transition: color 0.3s ease;
 				text-decoration: none !important;
 				border: none !important;
-				padding: 8px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
 			}
 
 			.bottom-footer .social-icons a:hover {
@@ -442,11 +355,14 @@
 				border: none !important;
 			}
 
+			.bottom-footer .social-icons .icon {
+				border: none !important;
+			}
+
 			.bottom-footer p {
 				margin: 0;
 				color: #666;
-				font-size: 12px;
-				line-height: 1.4;
+				font-size: 14px;
 			}
 
 			.bottom-footer a {
@@ -454,166 +370,184 @@
 				text-decoration: none;
 			}
 
-			/* Tablet Responsive Design */
-			@media screen and (min-width: 600px) {
-				.top-nav {
-					top: 15px;
-					right: 20px;
+			.bottom-footer a:hover {
+				text-decoration: underline;
+			}
+
+			/* Enhanced Responsive Design */
+			@media screen and (max-width: 768px) {
+				#header {
+					padding: 10px 15px;
 				}
 
-				.top-nav ul {
+				.top-nav {
+					position: static; 
+					order: 2; 
+				}
+
+				#header {
+					justify-content: space-between;
+				}
+
+                #mobile-menu-button {
+                    display: block; 
+                }
+
+				.top-nav ul#main-nav-menu {
+					display: none; 
+                    flex-direction: column;
+                    position: absolute;
+                    top: 60px; 
+                    right: 15px;
+                    width: 200px;
+                    background: white;
+                    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                    border-radius: 5px;
+                    padding: 10px 0;
+                    gap: 0;
+				}
+
+                .top-nav ul#main-nav-menu.show {
+                    display: flex;
+                }
+
+                .top-nav ul#main-nav-menu li {
+                    width: 100%;
+                    text-align: center;
+                }
+                
+                .top-nav ul#main-nav-menu li a {
+                    padding: 12px 20px;
+                    display: block;
+                    width: 100%;
+                }
+
+                .publication-dropdown ul {
+                    position: static;
+                    box-shadow: none;
+                    background: #f8f9fa;
+                    border-radius: 0;
+                    width: 100%;
+                }
+
+				#banner {
+					max-width: 90%;
+				}
+
+				.typing-effect {
+					font-size: clamp(16px, 5vw, 24px);
+					max-width: 95%;
+				}
+				
+				#banner .content {
+					text-align: center;
+				}
+				
+				#banner .image.object {
+					margin: 2em auto 0;
+					max-width: 250px;
+				}
+				
+				#banner .image.object img {
+					max-width: 250px;
+				}
+				
+				.features article {
+					margin-bottom: 2em;
+				}
+
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
 					gap: 15px;
 				}
 
-				.top-nav ul li a,
-				.publication-dropdown .opener {
-					font-size: 14px;
-					padding: 8px 12px;
-				}
-
-				#header {
-					padding: 12px 20px;
-					min-height: 60px;
-				}
-
-				#header .logo strong {
-					font-size: clamp(16px, 3vw, 20px);
-				}
-
-				.inner {
-					padding-top: 80px;
-					padding-left: 20px;
-					padding-right: 20px;
-				}
-
-				#banner {
-					max-width: 85%;
-				}
-
-				.features {
-					grid-template-columns: repeat(2, 1fr);
-					gap: 25px;
-				}
-
 				.actions .button {
+					font-size: 14px;
+					padding: 10px 20px;
+					min-height: 40px;
+				}
+
+				.actions .button.big {
 					font-size: 16px;
 					padding: 12px 24px;
+					min-height: 44px;
 				}
 			}
 
-			/* Desktop Responsive Design */
-			@media screen and (min-width: 900px) {
-				body {
-					padding-top: 70px;
-				}
-
-				.top-nav {
-					top: 15px;
-					right: 30px;
-				}
-
-				.top-nav ul {
-					gap: 30px;
-				}
-
-				.top-nav ul li a,
-				.publication-dropdown .opener {
-					font-size: 15px;
-					padding: 8px 0;
-				}
-
-				.publication-dropdown ul {
-					right: auto;
-					left: 0;
-					min-width: 120px;
-				}
-
+			@media screen and (max-width: 480px) {
 				#header {
-					padding: 15px 30px;
-					min-height: 70px;
+					padding: 8px 10px;
 				}
 
-				#header .logo strong {
-					font-size: 18px;
-				}
-
-				.inner {
-					padding-top: 40px;
-					max-width: 1200px;
-					margin: 0 auto;
-					padding-left: 30px;
-					padding-right: 30px;
+				.top-nav ul#main-nav-menu {
+					top: 55px;
+					right: 10px;
 				}
 
 				#banner {
-					max-width: 70%;
-					display: flex;
-					align-items: center;
-					gap: 40px;
-					margin: 40px auto;
+					max-width: 95%;
 				}
 
-				#banner .content {
-					flex: 1;
-					text-align: left;
-					margin-bottom: 0;
+				.typing-effect {
+					font-size: clamp(14px, 6vw, 20px);
+					max-width: 100%;
+					letter-spacing: .05em;
 				}
-
-				#banner .content header {
-					text-align: left;
-				}
-
+				
 				#banner .image.object {
-					flex-shrink: 0;
-					margin: 0;
-					max-width: 300px;
+					max-width: 200px;
 				}
-
+				
 				#banner .image.object img {
-					max-width: 300px;
+					max-width: 200px;
 				}
-
-				.features {
-					grid-template-columns: repeat(2, 1fr);
-					gap: 30px;
-					margin-top: 50px;
+				
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
+					gap: 10px;
+					margin-bottom: 10px;
 				}
 
 				.actions .button {
-					font-size: 18px;
-					padding: 12px 24px;
+					font-size: 13px;
+					padding: 8px 16px;
+					min-height: 36px;
 				}
 
 				.actions .button.big {
 					font-size: 14px;
-					padding: 14px 28px;
+					padding: 10px 20px;
+					min-height: 40px;
 				}
 			}
 
-			/* Very Large Screen */
-			@media screen and (min-width: 1400px) {
-				.features {
-					grid-template-columns: repeat(4, 1fr);
-				}
-			}
-
-			/* Cross-browser Compatibility */
+			/* Cross-browser Compatibility Enhancements */
 			.typing-effect {
 				-webkit-animation: blink .75s step-end infinite;
 				-moz-animation: blink .75s step-end infinite;
 				-o-animation: blink .75s step-end infinite;
 				animation: blink .75s step-end infinite;
-				will-change: contents;
-				transform: translateZ(0);
 			}
 
 			/* Image Optimization */
 			img {
 				max-width: 100%;
 				height: auto;
+				loading: lazy;
 			}
 
-			/* Accessibility */
+			/* Profile Image Responsive Sizing */
+			#banner .image.object {
+				max-width: 300px;
+			}
+			
+			#banner .image.object img {
+				width: 100%;
+				height: auto;
+				max-width: 300px;
+			}
+
+			/* Accessibility Improvements */
 			.sr-only {
 				position: absolute;
 				width: 1px;
@@ -626,9 +560,10 @@
 				border: 0;
 			}
 
-			/* Prevent horizontal scroll */
-			html, body {
-				overflow-x: hidden;
+			/* Performance: Reduce repaints */
+			.typing-effect {
+				will-change: contents;
+				transform: translateZ(0);
 			}
 		</style>
 	</head>
@@ -637,33 +572,39 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Fixed Top Navigation -->
-				<nav class="top-nav" role="navigation" aria-label="Main Navigation">
-					<ul>
-						<li><a href="index.html" aria-current="page">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="work_experience.html">Work</a></li>
-						<li><a href="education.html">Education</a></li>
-						<li class="publication-dropdown">
-							<span class="opener" onclick="toggleSubmenu()" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
-							<ul id="publication-submenu" style="display: none;" aria-hidden="true">
-								<li><a href="publication.html#Journal_Articles">Journal</a></li>
-								<li><a href="publication.html#Conference_Papers">Conference</a></li>
-								<li><a href="publication.html#Thesis">Thesis</a></li>
-							</ul>
-						</li>
-						<li><a href="teaching.html">Teaching</a></li>
-						<li><a href="project.html">Project</a></li>
-					</ul>
-				</nav>
-
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
 
-							<!-- Header with Logo aligned with Navigation -->
+							<!-- Header with Logo and Navigation -->
 								<header id="header" role="banner">
 									<a href="index.html" class="logo"><strong>Dean Peng-Ting Kuo (郭芃廷)</strong></a>
+									<!-- Fixed Top Navigation -->
+									<nav class="top-nav" role="navigation" aria-label="Main Navigation">
+										
+										<div id="mobile-menu-button" role="button" aria-label="Open Menu" aria-expanded="false" aria-controls="main-nav-menu">
+											<div></div>
+											<div></div>
+											<div></div>
+										</div>
+										
+										<ul id="main-nav-menu">
+											<li><a href="index.html" aria-current="page">Homepage</a></li>
+											<li><a href="about.html">About</a></li>
+											<li><a href="work_experience.html">Work Experience</a></li>
+											<li><a href="education.html">Education</a></li>
+											<li class="publication-dropdown">
+												<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
+												<ul id="publication-submenu" style="display: none;" aria-hidden="true">
+													<li><a href="publication.html#Journal_Articles">Journal</a></li>
+													<li><a href="publication.html#Conference_Papers">Conference</a></li>
+													<li><a href="publication.html#Thesis">Thesis</a></li>
+												</ul>
+											</li>
+											<li><a href="teaching.html">Teaching</a></li>
+											<li><a href="project.html">Project</a></li>
+										</ul>
+									</nav>
 								</header>
 
 								<!-- Banner -->
@@ -690,6 +631,7 @@
 									// Enhanced typing animation with consistent display
 									const textArray = [
 										"Dean Kuo",
+										// "Peng-Ting Kuo",
 										"Political Scientist",
 										"LLM & AI Researcher",
 									];
@@ -698,7 +640,7 @@
 									const typingElement = document.getElementById('dynamicText');
 									let isAnimating = false;
 									
-									// Calculate optimal width based on longest text
+									// Calculate optimal width based on longest text (with smaller margins)
 									function calculateOptimalWidth() {
 										const tempElement = document.createElement('span');
 										tempElement.style.visibility = 'hidden';
@@ -717,8 +659,8 @@
 										
 										document.body.removeChild(tempElement);
 										
-										// Get container available width
 										const containerWidth = typingElement.parentElement.offsetWidth;
+		
 										const calculatedWidth = Math.min(maxWidth + 30, containerWidth * 0.95);
 										
 										return calculatedWidth;
@@ -727,7 +669,7 @@
 									function setOptimalWidth() {
 										const optimalWidth = calculateOptimalWidth();
 										typingElement.style.width = optimalWidth + 'px';
-										typingElement.style.maxWidth = '95%';
+										typingElement.style.maxWidth = '95%'; 
 									}
 									
 									function typeWriter(text, i, fnCallback) {
@@ -737,7 +679,7 @@
 												typeWriter(text, i + 1, fnCallback);
 											}, 100);
 										} else if (typeof fnCallback === 'function' && isAnimating) {
-											setTimeout(fnCallback, 1500);
+											setTimeout(fnCallback, 1500); // Increased pause time
 										}
 									}
 									
@@ -766,7 +708,7 @@
 													currentIndex = (currentIndex + 1) % textArray.length;
 													startTextAnimation();
 												});
-											}, 2000);
+											}, 2000); // Display time
 										});
 									}
 									
@@ -782,7 +724,7 @@
 										});
 									});
 									
-									// Pause animation when page is not visible
+									// Pause animation when page is not visible (performance optimization)
 									document.addEventListener('visibilitychange', function() {
 										isAnimating = !document.hidden;
 										if (isAnimating && typingElement.innerHTML === '') {
@@ -833,7 +775,7 @@
 						</div>
 					</div>
 
-				<!-- Footer with Social Icons -->
+				<!-- Footer with Social Icons - SINGLE BOX -->
 				<footer class="bottom-footer" role="contentinfo">
 					<!-- Social Media Icons -->
 					<div class="social-icons">
@@ -870,11 +812,14 @@
 
 			<!-- Enhanced Submenu Toggle Function -->
 			<script>
-				function toggleSubmenu() {
+				function toggleSubmenu(event) {
+					event.stopPropagation(); 
 					const submenu = document.getElementById('publication-submenu');
-					const opener = document.querySelector('.opener');
+					const opener = event.currentTarget;
 					
-					if (submenu.style.display === 'none' || submenu.style.display === '') {
+					const isExpanded = opener.getAttribute('aria-expanded') === 'true';
+
+					if (!isExpanded) {
 						submenu.style.display = 'block';
 						submenu.setAttribute('aria-hidden', 'false');
 						opener.setAttribute('aria-expanded', 'true');
@@ -888,11 +833,50 @@
 				// Keyboard accessibility for submenu
 				document.addEventListener('keydown', function(e) {
 					if (e.key === 'Enter' || e.key === ' ') {
-						if (e.target.classList.contains('opener') && !e.target.closest('a')) {
+						if (e.target.classList.contains('opener')) {
 							e.preventDefault();
-							toggleSubmenu();
+							toggleSubmenu(e);
 						}
 					}
 				});
 
 				// Close submenu when clicking outside
+				document.addEventListener('click', function(e) {
+					const publicationDropdown = document.querySelector('.publication-dropdown');
+					if (!publicationDropdown.contains(e.target)) {
+						const submenu = document.getElementById('publication-submenu');
+						const opener = document.querySelector('.opener');
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				});
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    const menuButton = document.getElementById('mobile-menu-button');
+                    const navMenu = document.getElementById('main-nav-menu');
+
+                    if (menuButton && navMenu) {
+                        menuButton.addEventListener('click', function(event) {
+							// 阻止事件冒泡
+							event.stopPropagation();
+                            navMenu.classList.toggle('show');
+                            const isExpanded = navMenu.classList.contains('show');
+                            menuButton.setAttribute('aria-expanded', isExpanded);
+                        });
+
+						document.addEventListener('click', function(e) {
+							if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+								if (navMenu.classList.contains('show')) {
+									navMenu.classList.remove('show');
+									menuButton.setAttribute('aria-expanded', 'false');
+								}
+							}
+						});
+                    }
+                });
+
+			</script>
+
+	</body>
+</html>
