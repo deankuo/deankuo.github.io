@@ -91,7 +91,7 @@
                 display: none;
                 cursor: pointer;
                 padding: 10px;
-                z-index: 1001; 
+                z-index: 1001;
             }
             #mobile-menu-button div {
                 width: 25px;
@@ -275,6 +275,37 @@
 				border: none;
 				border-top: 1px solid #e9ecef;
 			}
+
+			/* New CSS for improved structure */
+			.university-section {
+				margin-bottom: 3em;
+			}
+
+			.university-section h2 {
+				color: #2c3e50;
+				font-size: 28px;
+				border-bottom: 2px solid #e9ecef;
+				padding-bottom: 0.5em;
+				margin-bottom: 1.5em;
+				text-align: left;
+			}
+
+			.course-container {
+				padding-left: 20px;
+				border-left: 2px solid #f56565;
+			}
+
+			.course-entry {
+				margin-bottom: 2em;
+			}
+
+			.course-entry h3 {
+				font-size: 20px;
+				color: #555;
+				margin-top: 0;
+				margin-bottom: 10px;
+			}
+
 			@media screen and (max-width: 768px) {
 				#header {
 					padding: 0 15px;
@@ -302,9 +333,9 @@
 					display: flex !important;
                     flex-direction: column;
                     position: absolute;
-                    top: 100%; 
-					margin-top: 15px; 
-                    left: -15px; 
+                    top: 100%;
+					margin-top: 15px;
+                    left: -15px;
                     width: 200px;
                     background: white;
                     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -325,7 +356,7 @@
 					justify-content: center;
 				}
                 .publication-dropdown ul {
-                    position: static; 
+                    position: static;
                     box-shadow: none;
                     background: #f8f9fa;
                     border-radius: 0;
@@ -407,94 +438,140 @@
 						<header class="main">
 							<h1>Teaching Assistant Courses</h1>
 						</header>
-						
-						<h2>Applied Deep Learning (CSIE5431)</h2>
-						<div class="work-experience">
-							<div class="position">
-								<span>Instructor: Yun-Nung "Vivian" Chen</span>
-								<span class="date">Sep 2024 - Dec 2024</span>
+
+						<div class="university-section">
+							<h2>University of Texas at Austin</h2>
+							<div class="course-container">
+								<div class="course-entry">
+									<h3>World War I In Real Time (GOV 355N)</h3>
+									<div class="work-experience">
+										<div class="position">
+											<span>Instructor: Scott Wolford</span>
+											<span class="date">Aug 2025 - Dec 2025</span>
+										</div>
+										<ul class="description">
+											<li>Served as a course teaching assistant, providing weekly office hours for student inquiries</li>
+										</ul>
+									</div>
+								</div>
 							</div>
-							<ul class="description">
-								<li>Served as a course teaching assistant, providing weekly office hours for student coding or model-tuning inquiries</li>
-								<li>Graded natural language generation assignment for a graduate-level class of 170+ students</li>
-							</ul>
-							<ul class="actions">
-								<li><a href="https://www.csie.ntu.edu.tw/~miulab/f113-adl/" class="button">Course Website</a></li>
-							</ul>
 						</div>
 
-						<hr />
-
-						<h2>Computational Social Science (PS5697)</h2>
-						<div class="work-experience">
-							<div class="position">
-								<span>Instructor: Hsuan-Wei "Wayne" Lee</span>
-								<span class="date">Feb 2024 - May 2024</span>
+						<div class="university-section">
+							<h2>Academia Sinica</h2>
+							<div class="course-container">
+								<div class="course-entry">
+									<h3>Institution of Social Science Methodology (ISSM)</h3>
+									<div class="work-experience">
+										<div class="position">
+											<span>Institution of Political Science, Academia Sinica</span>
+											<span class="date">Jul 2025 - Jul 2025</span>
+										</div>
+										<ul class="description">
+											<li>Served as a teaching assistant, providing methodologicalguidance for student inquiries</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="https://www.issm.com.tw" class="button">Website</a></li>
+										</ul>
+									</div>
+								</div>
 							</div>
-							<ul class="description">
-								<li>Served as a course teaching assistant, providing weekly office hours for student inquiries</li>
-								<li>Instructed students in fundamental Netlogo programming syntax and library utilization, you can access the code from my TA sessions through the link below</li>
-							</ul>
-							<ul class="actions">
-								<li><a href="https://drive.google.com/file/d/1LsCA5yQiOu3XqbypxrJTw_si-MFNk-Oo/view?usp=sharing" class="button">Netlogo</a></li>
-							</ul>
 						</div>
 
-						<hr />
+						<div class="university-section">
+							<h2>National Taiwan University</h2>
+							<div class="course-container">
+								<div class="course-entry">
+									<h3>Applied Deep Learning (CSIE5431)</h3>
+									<div class="work-experience">
+										<div class="position">
+											<span>Instructor: Yun-Nung "Vivian" Chen</span>
+											<span class="date">Sep 2024 - Dec 2024</span>
+										</div>
+										<ul class="description">
+											<li>Served as a course teaching assistant, providing weekly office hours for student coding or model-tuning inquiries</li>
+											<li>Graded natural language generation assignment for a graduate-level class of 170+ students</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="https://www.csie.ntu.edu.tw/~miulab/f113-adl/" class="button">Course Website</a></li>
+										</ul>
+									</div>
+								</div>
 
-						<h2>International Law (PS3316, PS3317)</h2>
-						<div class="work-experience">
-							<div class="position">
-								<span>Instructor: Chi-Ting Tsai</span>
-								<span class="date">Sep 2021 - May 2024</span>
+								<div class="course-entry">
+									<h3>Computational Social Science (PS5697)</h3>
+									<div class="work-experience">
+										<div class="position">
+											<span>Instructor: Hsuan-Wei "Wayne" Lee</span>
+											<span class="date">Feb 2024 - May 2024</span>
+										</div>
+										<ul class="description">
+											<li>Served as a course teaching assistant, providing weekly office hours for student inquiries</li>
+											<li>Instructed students in fundamental Netlogo programming syntax and library utilization, you can access the code from my TA sessions through the link below</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="https://drive.google.com/file/d/1LsCA5yQiOu3XqbypxrJTw_si-MFNk-Oo/view?usp=sharing" class="button">Netlogo</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="course-entry">
+									<h3>International Law (PS3316, PS3317)</h3>
+									<div class="work-experience">
+										<div class="position">
+											<span>Instructor: Chi-Ting Tsai</span>
+											<span class="date">Sep 2021 - May 2024</span>
+										</div>
+										<ul class="description">
+											<li>Served as a course teaching assistant</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="course-entry">
+									<h3>Basic Mathematics for Social Science (PS5710)</h3>
+									<div class="work-experience">
+										<div class="position">
+											<span>Instructor: Hsuan-Wei "Wayne" Lee</span>
+											<span class="date">Sep 2023 - Dec 2023</span>
+										</div>
+										<ul class="description">
+											<li>Served as a course teaching assistant, providing weekly office hours for student inquiries</li>
+											<li>Facilitated in-depth learning of fundamental calculus and linear algebra principles for graduate-level courses</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="course-entry">
+									<h3>Social Network and Group Behavior (PS5705)</h3>
+									<div class="work-experience">
+										<div class="position">
+											<span>Instructor: Hsuan-Wei "Wayne" Lee</span>
+											<span class="date">Feb 2023 - Jun 2023</span>
+										</div>
+										<ul class="description">
+											<li>Served as a course teaching assistant, providing weekly office hours for student inquiries</li>
+											<li>Instructed students in fundamental R programming syntax and package utilization, you can access the R code from my TA sessions through the link below</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="https://rpubs.com/Dean_0609/1034067" class="button">Rpubs</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="course-entry">
+									<h3>Seminar on Game Theory (PS5019)</h3>
+									<div class="work-experience">
+										<div class="position">
+											<span>Instructor: Hsuan-Wei "Wayne" Lee</span>
+											<span class="date">Sep 2022 - Dec 2022</span>
+										</div>
+										<ul class="description">
+											<li>Served as a course teaching assistant, providing weekly office hours for student inquiries</li>
+										</ul>
+									</div>
+								</div>
 							</div>
-							<ul class="description">
-								<li>Served as a course teaching assistant</li>
-							</ul>
-						</div>
-
-						<hr />
-
-						<h2>Basic Mathematics for Social Science (PS5710)</h2>
-						<div class="work-experience">
-							<div class="position">
-								<span>Instructor: Hsuan-Wei "Wayne" Lee</span>
-								<span class="date">Sep 2023 - Dec 2023</span>
-							</div>
-							<ul class="description">
-								<li>Served as a course teaching assistant, providing weekly office hours for student inquiries</li>
-								<li>Facilitated in-depth learning of fundamental calculus and linear algebra principles for graduate-level courses</li>
-							</ul>
-						</div>
-
-						<hr />
-
-						<h2>Social Network and Group Behavior (PS5705)</h2>
-						<div class="work-experience">
-							<div class="position">
-								<span>Instructor: Hsuan-Wei "Wayne" Lee</span>
-								<span class="date">Feb 2023 - Jun 2023</span>
-							</div>
-							<ul class="description">
-								<li>Served as a course teaching assistant, providing weekly office hours for student inquiries</li>
-								<li>Instructed students in fundamental R programming syntax and package utilization, you can access the R code from my TA sessions through the link below</li>
-							</ul>
-							<ul class="actions">
-								<li><a href="https://rpubs.com/Dean_0609/1034067" class="button">Rpubs</a></li>
-							</ul>
-						</div>
-
-						<hr />
-
-						<h2>Seminar on Game Theory (PS5019)</h2>
-						<div class="work-experience">
-							<div class="position">
-								<span>Instructor: Hsuan-Wei "Wayne" Lee</span>
-								<span class="date">Sep 2022 - Dec 2022</span>
-							</div>
-							<ul class="description">
-								<li>Served as a course teaching assistant, providing weekly office hours for student inquiries</li>
-							</ul>
 						</div>
 					</section>
 				</div>
@@ -518,7 +595,7 @@
 		<script src="assets/js/main.js"></script>
 		<script>
 			function toggleSubmenu(event) {
-				event.stopPropagation(); 
+				event.stopPropagation();
 				const submenu = document.getElementById('publication-submenu');
 				const opener = event.currentTarget;
 				const isExpanded = opener.getAttribute('aria-expanded') === 'true';
