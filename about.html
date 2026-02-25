@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="zh-TW">
+	<head>
+		<title>About | Dean Kuo's Personal Website</title>
+		<meta charset="utf-8" />
+		
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="About Peng-Ting (Dean) Kuo - Political Scientist specializing in international relations and large language models research.">
+		<meta name="keywords" content="About Dean Kuo, Peng-Ting Kuo Biography, Political Science Researcher, Taiwan">
+		<meta name="author" content="Peng-Ting Kuo">
+		<meta name="robots" content="index, follow">
+		
+		<!-- Responsive Design Meta Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="./favicon/favicon-16x16.png" type="image/x-icon">
+		<link rel="manifest" href="./favicon/site.webmanifest">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4963P2NTCT"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-4963P2NTCT');
+		</script>
+
+		<style>
+			/* --- 全局樣式 --- */
+			body {
+				font-family: "Roboto Slab", serif;
+				padding-top: 70px; /* 為固定 Header 預留空間 */
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#wrapper {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#main {
+				flex: 1;
+			}
+
+			/* --- Header 佈局 --- */
+			#header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(10px);
+				z-index: 999;
+				padding: 0 30px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				display: flex;
+				align-items: center; /* 垂直置中 */
+				height: 70px;
+			}
+
+			#header .logo {
+				text-decoration: none;
+				border: none !important;
+			}
+
+			#header .logo strong {
+				color: #333;
+				font-weight: 600;
+			}
+
+			/* --- 導覽列 --- */
+			.top-nav {
+				position: relative;
+				margin-left: auto; /* 修改：將導覽列推到最右邊 */
+			}
+
+			.top-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				gap: 30px;
+				align-items: center;
+			}
+
+			.top-nav ul li {
+				margin: 0;
+				position: relative;
+			}
+
+			.top-nav ul li a {
+				text-decoration: none;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				border: none;
+			}
+
+			.top-nav ul li a:hover {
+				color: #f56565;
+			}
+            
+            #mobile-menu-button {
+                display: none;
+                cursor: pointer;
+                padding: 10px;
+                z-index: 1001; 
+            }
+
+            #mobile-menu-button div {
+                width: 25px;
+                height: 3px;
+                background-color: #333;
+                margin: 5px 0;
+                transition: 0.4s;
+            }
+
+			/* --- 下拉選單 --- */
+			.publication-dropdown {
+				position: relative;
+			}
+
+			.publication-dropdown .opener {
+				cursor: pointer;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+
+			.publication-dropdown .opener:hover {
+				color: #f56565;
+			}
+
+			.publication-dropdown .opener::after {
+				content: "▼";
+				font-size: 10px;
+				transition: transform 0.3s ease;
+			}
+
+			.publication-dropdown .opener[aria-expanded="true"]::after {
+				transform: rotate(180deg);
+			}
+
+			.publication-dropdown ul {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: white;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+				border-radius: 5px;
+				min-width: 120px;
+				padding: 10px 0;
+				margin-top: 5px;
+				flex-direction: column;
+				gap: 0;
+			}
+
+			.publication-dropdown ul li {
+				margin: 0;
+			}
+
+			.publication-dropdown ul li a {
+				display: block;
+				padding: 8px 15px;
+				color: #333;
+				transition: background-color 0.3s ease;
+			}
+
+			.publication-dropdown ul li a:hover {
+				background-color: #f8f9fa;
+				color: #f56565;
+			}
+
+			/* --- Footer --- */
+			.bottom-footer {
+				background: #f8f9fa;
+				padding: 20px;
+				text-align: center;
+				border-top: 1px solid #e9ecef;
+				margin-top: auto;
+			}
+
+			.bottom-footer .social-icons {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 15px;
+				background: none !important;
+				padding: 0 !important;
+				border: none !important;
+				margin-top: 0 !important;
+			}
+
+			.bottom-footer .social-icons a {
+				color: #666;
+				font-size: 18px;
+				transition: color 0.3s ease;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons a:hover {
+				color: #f56565;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons .icon {
+				border: none !important;
+			}
+
+			.bottom-footer p {
+				margin: 0;
+				color: #666;
+				font-size: 14px;
+			}
+
+			.bottom-footer a {
+				color: #f56565;
+				text-decoration: none;
+			}
+
+			.bottom-footer a:hover {
+				text-decoration: underline;
+			}
+
+			/* --- 響應式設計 --- */
+			@media screen and (max-width: 768px) {
+				#header {
+					padding: 0 15px;
+					height: 60px;
+				}
+				body {
+					padding-top: 60px;
+				}
+
+				/* 手機版佈局對調 */
+				#header .logo {
+					order: 2;
+					flex-grow: 1; /* 新增：讓 logo 區塊填滿空間 */
+					text-align: right; /* 新增：讓文字靠右 */
+				}
+				#header .top-nav {
+					order: 1;
+					margin-left: 0; /* 重設 margin */
+				}
+
+                #mobile-menu-button {
+                    display: block;
+                }
+				
+				/* 隱藏桌面版選單 */
+				.top-nav > ul#main-nav-menu {
+					display: none !important;
+				}
+
+				/* 顯示手機版展開選單 */
+                .top-nav ul#main-nav-menu.show {
+					display: flex !important;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%; 
+					margin-top: 15px; 
+                    left: -15px; 
+                    width: 200px;
+                    background: white;
+                    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                    border-radius: 5px;
+                    padding: 10px 0;
+                    gap: 0;
+				}
+
+                .top-nav ul#main-nav-menu li {
+                    width: 100%;
+                    text-align: center;
+                }
+                
+                .top-nav ul#main-nav-menu li a {
+                    padding: 12px 20px;
+                    display: block;
+                    width: 100%;
+                }
+
+				.publication-dropdown .opener {
+					justify-content: center;
+				}
+
+                .publication-dropdown ul {
+                    position: static; 
+                    box-shadow: none;
+                    background: #f8f9fa;
+                    border-radius: 0;
+                    width: 100%;
+                }
+
+				/* 手機版內容靠左對齊 */
+				#main .inner > * { 
+					text-align: left;
+				}
+				#main .inner p {
+					text-align: left;
+				}
+			}
+
+			@media screen and (max-width: 480px) {
+				#header {
+					padding: 0 10px;
+				}
+
+				.top-nav ul#main-nav-menu.show {
+					left: -10px;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header" role="banner">
+									<a href="index.html" class="logo"><strong>Dean Peng-Ting Kuo</strong></a>
+									<nav class="top-nav" role="navigation" aria-label="Main Navigation">
+										<div id="mobile-menu-button" role="button" aria-label="Open Menu" aria-expanded="false" aria-controls="main-nav-menu">
+											<div></div>
+											<div></div>
+											<div></div>
+										</div>
+										<ul id="main-nav-menu">
+											<li><a href="index.html">Homepage</a></li>
+											<li><a href="about.html" aria-current="page">About</a></li>
+											<li><a href="education.html">Education</a></li>
+											<li class="publication-dropdown">
+												<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
+												<ul id="publication-submenu" style="display: none;" aria-hidden="true">
+													<li><a href="publication.html#Journal_Articles">Journal</a></li>
+													<li><a href="publication.html#Conference_Papers">Conference</a></li>
+													<li><a href="publication.html#Thesis">Thesis</a></li>
+												</ul>
+											</li>
+											<li><a href="teaching.html">Teaching</a></li>
+											<li><a href="project.html">Project</a></li>
+											<li><a href="Peng-Ting_Kuo_CV.pdf">CV</a></li>
+										</ul>
+									</nav>
+								</header>
+
+							<!-- About Content -->
+								<section class="about-content">
+									<header class="major">
+										<h1>About Me</h1>
+									</header>
+
+									<span class="image left"><img src="images/Me.jpeg" alt="Peng-Ting (Dean) Kuo" /></span>
+
+									<p>Kuo's Chinese name is 郭芃廷. He graduated from the Department of Political Science at National Taiwan University with M.A. & B.A.. He also serves as a research assistant to Professor Ronan Tse-min Fu at the Institute of Political Science at Academia Sinica; Professor Vivian Yun-Nung Chen at the Department of Computer Science & Information Engineering at NTU; and also Professor Wayne Hsuan-Wei Lee at the Department of Community and Population Health at Lehigh University. Kuo's research interests encompass deep learning, large language model applications, electoral systems, power transition and threat perception theory. As a research assistant, he constructed a database of significant events in Britain and Germany from 1860 to 1914, providing case study data for Anglo-German power transition explanations. Beyond qualitative research, Kuo is responsible for processing cross-national survey data for the Asian Barometer Survey (ABS), utilizing R for statistical analysis and testing. Their research output, "Democracy or Prosperity? A Cross-National Analysis of East Asian Countries," was presented at the 2023 Asian Barometer Conference, demonstrating Kuo's profound understanding of cross-national data analysis.</p>
+
+									<p>During his graduate studies, Kuo developed an interest in deep learning and natural language processing, leading him to extensively study courses in deep learning, data science, natural language processing, linear algebra, and probability. He maintained a strong academic focus, achieving a GPA above 4.0 each semester, ranking fourth in his class with a 4.17 GPA in his first year, and receiving a scholarship from the Ministry of Foreign Affairs. Kuo's master's thesis, "Exploring the Impact of Electoral Reform on Legislative Candidates' Campaign Strategies Using Machine Learning," was presented at the 2023 Taiwan Political Science Association Conference. He also presented "Decoding Campaigning Strategies: A Machine Learning Approach to Understanding the Impact of Election Systems on Legislative Candidates" at the 2024 Midwest Political Science Association Annual Conference. Currently, Kuo is collaborating with Professor Hong-wung Wang's team to develop a classification model for legislative interpellations, aiming to demonstrate the application of artificial intelligence in political science and the interaction between these disciplines. This work was presented at the 16th International Conference on Parliamentary Studies in June 2024.</p>
+
+									<p>Kuo is currently co-authoring a paper on the effects of electoral reforms in Taiwan and Japan with Ronan Tse-min Fu, Nick Lin, and Akitaka Matsuo. He is also developing classification models with Yu-Hung Sun and Hong-wung Wang, and collaborating with Wayne Hsuan-wei Lee to construct a social network model using WTO data, combining law, political science, and computational social science applications. Additionally, Kuo is working with Yun-nung Chen to study the problems of self-preference of LLMs in retrieval augmentation generation (RAG) framework. Furthermore, he is collaborating a computational study with Ronan Tse-min Fu on simulating foreign policy decision making process via multi-agent models utilizing LLMs and historical documents.</p>
+
+									<p>In the future, Kuo plans to pursue a doctoral degree in Political Science especially focus on methodology field in the United States, aiming to enhance his professional knowledge and skills in leveraging computational skills to answer political questions.</p>
+
+									<p>In addition, Kuo enjoys playing badminton, he was the leader of the department team during 2019-2020.</p>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer class="bottom-footer" role="contentinfo">
+					<div class="social-icons">
+						<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn"><span class="icon brands fa-linkedin-in" aria-hidden="true"></span></a>
+						<a href="https://github.com/deankuo" title="GitHub"><span class="icon brands fa-github" aria-hidden="true"></span></a>
+						<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook"><span class="icon brands fa-facebook" aria-hidden="true"></span></a>
+						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar"><span class="icon solid fa-graduation-cap" aria-hidden="true"></span></a>
+						<a href="https://www.instagram.com/dean_0609_/" title="Instagram"><span class="icon brands fa-instagram" aria-hidden="true"></span></a>
+						<a href="https://medium.com/@deankuo_15628" title="Medium"><span class="icon brands fa-medium-m" aria-hidden="true"></span></a>
+					</div>
+					<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				function toggleSubmenu(event) {
+					event.stopPropagation(); 
+					const submenu = document.getElementById('publication-submenu');
+					const opener = event.currentTarget;
+					const isExpanded = opener.getAttribute('aria-expanded') === 'true';
+					if (!isExpanded) {
+						submenu.style.display = 'block';
+						submenu.setAttribute('aria-hidden', 'false');
+						opener.setAttribute('aria-expanded', 'true');
+					} else {
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				}
+				
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Enter' || e.key === ' ') {
+						if (e.target.classList.contains('opener')) {
+							e.preventDefault();
+							toggleSubmenu(e);
+						}
+					}
+				});
+
+				document.addEventListener('click', function(e) {
+					const publicationDropdown = document.querySelector('.publication-dropdown');
+					if (publicationDropdown && !publicationDropdown.contains(e.target)) {
+						const submenu = document.getElementById('publication-submenu');
+						const opener = document.querySelector('.opener');
+						if(submenu) submenu.style.display = 'none';
+						if(opener) {
+							submenu.setAttribute('aria-hidden', 'true');
+							opener.setAttribute('aria-expanded', 'false');
+						}
+					}
+				});
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    const menuButton = document.getElementById('mobile-menu-button');
+                    const navMenu = document.getElementById('main-nav-menu');
+
+                    if (menuButton && navMenu) {
+                        menuButton.addEventListener('click', function(event) {
+							event.stopPropagation();
+                            navMenu.classList.toggle('show');
+                            const isExpanded = navMenu.classList.contains('show');
+                            menuButton.setAttribute('aria-expanded', isExpanded);
+                        });
+
+						document.addEventListener('click', function(e) {
+							if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+								if (navMenu.classList.contains('show')) {
+									navMenu.classList.remove('show');
+									menuButton.setAttribute('aria-expanded', 'false');
+								}
+							}
+						});
+                    }
+                });
+			</script>
+
+	</body>
+</html>

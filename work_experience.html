@@ -1,0 +1,615 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="zh-TW">
+	<head>
+		<title>Work Experience - Dean Kuo's Personal Website</title>
+		<meta charset="utf-8" />
+		
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="Work Experience of Peng-Ting (Dean) Kuo - Research Assistant positions at Academia Sinica, NTU, and industry internships.">
+		<meta name="keywords" content="Dean Kuo Work Experience, Research Assistant, Academia Sinica, NTU, Political Science Research">
+		<meta name="author" content="Peng-Ting Kuo">
+		<meta name="robots" content="index, follow">
+		
+		<!-- Responsive Design Meta Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="./favicon/favicon-16x16.png" type="image/x-icon">
+		<link rel="manifest" href="./favicon/site.webmanifest">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4963P2NTCT"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-4963P2NTCT');
+		</script>
+
+		<style>
+			/* Fixed Top Navigation Bar */
+			.top-nav {
+				position: fixed;
+				top: 15px;
+				right: 30px;
+				z-index: 1000;
+			}
+
+			.top-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				gap: 30px;
+				align-items: center;
+			}
+
+			.top-nav ul li {
+				margin: 0;
+				position: relative;
+			}
+
+			.top-nav ul li a {
+				text-decoration: none;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				border: none;
+			}
+
+			.top-nav ul li a:hover {
+				color: #f56565;
+			}
+
+			/* Publication dropdown styling */
+			.publication-dropdown {
+				position: relative;
+			}
+
+			.publication-dropdown .opener {
+				cursor: pointer;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+
+			.publication-dropdown .opener:hover {
+				color: #f56565;
+			}
+
+			/* Dropdown arrow */
+			.publication-dropdown .opener::after {
+				content: "▼";
+				font-size: 10px;
+				transition: transform 0.3s ease;
+			}
+
+			.publication-dropdown .opener[aria-expanded="true"]::after {
+				transform: rotate(180deg);
+			}
+
+			.publication-dropdown ul {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: white;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+				border-radius: 5px;
+				min-width: 120px;
+				padding: 10px 0;
+				margin-top: 5px;
+				flex-direction: column;
+				gap: 0;
+			}
+
+			.publication-dropdown ul li {
+				margin: 0;
+			}
+
+			.publication-dropdown ul li a {
+				display: block;
+				padding: 8px 15px;
+				color: #333;
+				transition: background-color 0.3s ease;
+			}
+
+			.publication-dropdown ul li a:hover {
+				background-color: #f8f9fa;
+				color: #f56565;
+			}
+
+			/* Adjust main content to account for fixed navigation */
+			body {
+				padding-top: 70px;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				font-family: "Roboto Slab", serif;
+			}
+
+			#wrapper {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#main {
+				flex: 1;
+			}
+
+			/* Header Layout - Align with Navigation */
+			#header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(10px);
+				z-index: 999;
+				padding: 15px 30px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			#header .logo {
+				order: 1;
+				text-decoration: none;
+				border: none !important;
+			}
+
+			#header .logo strong {
+				color: #333;
+				font-weight: 600;
+			}
+
+			/* Work Experience Content - 70% width centered */
+			.work-content {
+				max-width: 70%;
+				margin: 0 auto;
+				text-align: left;
+				padding: 2em 0;
+			}
+
+			.work-content h1 {
+				margin-bottom: 1.5em;
+				text-align: left;
+			}
+
+			/* Work Experience Styling */
+			.work-experience {
+				margin-bottom: 20px;
+			}
+
+			.position {
+				font-weight: bold;
+				font-size: 18px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.date {
+				font-style: italic;
+				color: #666;
+				font-size: 16px;
+			}
+
+			.work-experience .content {
+				margin-left: 20px;
+				font-size: 16px;
+				line-height: 1.6;
+				margin-top: 15px;
+			}
+
+			.work-experience .content li {
+				margin-bottom: 12px;
+				text-align: justify;
+			}
+
+			.skill {
+				display: block;
+				margin-top: 15px;
+				font-style: italic;
+				color: #666;
+				font-size: 16px;
+			}
+
+			.work-content hr {
+				margin: 40px 0;
+				border: none;
+				border-top: 1px solid #e9ecef;
+			}
+
+			.work-content h2 {
+				color: #333;
+				margin-bottom: 1.2em;
+				margin-top: 2.5em;
+				font-size: 24px;
+			}
+
+			.work-content h2:first-of-type {
+				margin-top: 0;
+			}
+
+			.work-content h1 {
+				font-size: 32px;
+				margin-bottom: 1.5em;
+				text-align: left;
+			}
+
+			/* Single Footer with Social Icons */
+			.bottom-footer {
+				background: #f8f9fa;
+				padding: 20px;
+				text-align: center;
+				border-top: 1px solid #e9ecef;
+				margin-top: auto;
+			}
+
+			.bottom-footer .social-icons {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 15px;
+				background: none !important;
+				padding: 0 !important;
+				border: none !important;
+				margin-top: 0 !important;
+			}
+
+			.bottom-footer .social-icons a {
+				color: #666;
+				font-size: 18px;
+				transition: color 0.3s ease;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons a:hover {
+				color: #f56565;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons .icon {
+				border: none !important;
+			}
+
+			.bottom-footer p {
+				margin: 0;
+				color: #666;
+				font-size: 14px;
+			}
+
+			.bottom-footer a {
+				color: #f56565;
+				text-decoration: none;
+			}
+
+			.bottom-footer a:hover {
+				text-decoration: underline;
+			}
+
+			/* Enhanced Responsive Design */
+			@media screen and (max-width: 768px) {
+				#header {
+					padding: 10px 15px;
+				}
+
+				.top-nav {
+					position: fixed;
+					top: 10px;
+					right: 15px;
+				}
+
+				.top-nav ul {
+					gap: 15px;
+					flex-wrap: wrap;
+				}
+
+				.work-content {
+					max-width: 90%;
+					padding: 1em 0;
+				}
+
+				.position {
+					flex-direction: column;
+					align-items: flex-start;
+					font-size: 16px;
+				}
+
+				.date {
+					margin-top: 5px;
+					font-size: 14px;
+				}
+
+				.work-experience .content {
+					margin-left: 0;
+					font-size: 15px;
+				}
+
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
+					gap: 15px;
+				}
+			}
+
+			@media screen and (max-width: 480px) {
+				#header {
+					padding: 8px 10px;
+				}
+
+				.top-nav {
+					top: 8px;
+					right: 10px;
+				}
+
+				.top-nav ul {
+					gap: 10px;
+					font-size: 14px;
+				}
+
+				.work-content {
+					max-width: 95%;
+				}
+
+				.work-experience .content {
+					font-size: 14px;
+				}
+
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
+					gap: 10px;
+					margin-bottom: 10px;
+				}
+			}
+
+			/* Image Optimization */
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			/* Accessibility Improvements */
+			.sr-only {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0,0,0,0);
+				white-space: nowrap;
+				border: 0;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Fixed Top Navigation -->
+				<nav class="top-nav" role="navigation" aria-label="Main Navigation">
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="work_experience.html" aria-current="page">Work Experience</a></li>
+						<li><a href="education.html">Education</a></li>
+						<li class="publication-dropdown">
+							<span class="opener" onclick="toggleSubmenu()" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
+							<ul id="publication-submenu" style="display: none;" aria-hidden="true">
+								<li><a href="publication.html#Journal_Articles">Journal</a></li>
+								<li><a href="publication.html#Conference_Papers">Conference</a></li>
+								<li><a href="publication.html#Thesis">Thesis</a></li>
+							</ul>
+						</li>
+						<li><a href="teaching.html">Teaching</a></li>
+						<li><a href="project.html">Project</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header with Logo aligned with Navigation -->
+								<header id="header" role="banner">
+									<a href="index.html" class="logo"><strong>Dean Peng-Ting Kuo (郭芃廷)</strong></a>
+								</header>
+
+							<!-- Work Experience Content -->
+								<section class="work-content">
+									<header class="main">
+										<h1>Work Experience</h1>
+									</header>
+									
+									<h2>Institution of Political Science, Academia Sinica</h2>
+									<div class="work-experience">
+										<div class="position">
+											<span>Research Assistant</span>
+											<span class="date">Mar 2022 - Present</span>
+										</div>
+										<ul class="content">
+											<li>Engineered datasets and conducted statistical analysis on cross‐national data from twelve East Asian countries using Python and R, contributed to a publication at the Asian Barometer Survey Conference 2023</li>
+											<li>Developed and curated a 2-million-entry news database from China's People's Daily. Trained classification models using PyTorch and RoBERTa framework, achieving 96% accuracy in identifying international news</li>
+											<li>Developed and maintained an events database on UK-Germany relations, consolidating a comprehensive resource and literature reviews for the book project and regularly reporting progress to the team</li>
+										</ul>
+										<span class="skill">Skill: Python, R, Data Analysis, International Relations</span>
+									</div>
+
+									<hr />
+
+									<h2>Department of Computer Science & Information Engineering, National Taiwan University</h2>
+									<div class="work-experience">
+										<div class="position">
+											<span>Research Assistant</span>
+											<span class="date">Aug 2024 - Present</span>
+										</div>
+										<ul class="content">
+											<li>Optimized research design and evaluated bias in LLMs (GPT, LLaMA) using the Retrieval-Augmented Generation (RAG) framework, incorporating social science experimental methodology </li>
+											<li>Curated and analyzed 1000+ paired human-AI annotated datasets, developed visualization tools for bias assessment, contributing to a paper accepted by The 63rd Annual Meeting of the Association for Computational Linguistics (ACL) </li>
+										</ul>
+										<span class="skill">Skill: Python, Deep Learning, LLM, RAG</span>
+									</div>
+
+									<hr />
+
+									<h2>Institution of Sociology, Academia Sinica</h2>
+									<div class="work-experience">
+										<div class="position">
+											<span>Research Assistant</span>
+											<span class="date">Apr 2024 - Present</span>
+										</div>
+										<ul class="content">
+											<li>Analyzed 600+ WTO Dispute Settlement Body cases and 8000+ documents using social network analysis uncovering key patterns and relationships between countries</li>
+											<li>Designed data pipeline from scratch, including web scrapping, text pre-processing, and data analytics, improving data accessibility for further research</li>
+										</ul>
+										<span class="skill">Skill: Python, Data Analysis, Web Scrapping</span>
+									</div>
+
+									<hr />
+
+									<h2>Operation Planning & Admin. Division, First Bank</h2>
+									<div class="work-experience">
+										<div class="position">
+											<span>Intern</span>
+											<span class="date">Jul 2020 - Aug 2020</span>
+										</div>
+										<ul class="content">
+											<li>Conducted qualitative data collection and developed strategic recommendations to enhance digital bank user experience, earning recognition from management</li>
+											<li>Managed survey data collection and conducted literature reviews to optimize ATM user experience</li>
+											<li>Initiated and organized an experience-sharing session on project management for 50+ interns, fostering strong relationships between the interns and the company</li>
+										</ul>
+										<span class="skill">Skill: Business Analysis, Data Analytics</span>
+									</div>
+
+									<hr />
+
+									<h2>Bonny Worldwide</h2>
+									<div class="work-experience">
+										<div class="position">
+											<span>School Ambassador</span>
+											<span class="date">Feb 2020 - May 2020</span>
+										</div>
+										<ul class="content">
+											<li>Orchestrated targeted outreach efforts to drive registrations and product trials for Bonny's app</li>
+											<li>Presented and articulated Bonny's brand value and products to the NTU PoliSci department team</li>
+										</ul>
+										<span class="skill">Skill: Presentation skill</span>
+									</div>
+
+									<hr />
+
+									<h2>National Audit Office R.O.C (Taiwan)</h2>
+									<div class="work-experience">
+										<div class="position">
+											<span>Intern</span>
+											<span class="date">Oct 2019 - Nov 2019</span>
+										</div>
+										<ul class="content">
+											<li>Translated complex international manifestos from INTOSAI and EUROSAI, as well as two news articles from the National Audit Office, R.O.C.(Taiwan), facilitating specific projects or initiatives</li>
+											<li>Provided proposal development and logistical arrangements for a successful seminar and Provided comprehensive administrative support, optimizing office operations with a keen eye for detail</li>
+										</ul>
+										<span class="skill">Skill: English Translation</span>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Footer with Social Icons -->
+				<footer class="bottom-footer" role="contentinfo">
+					<!-- Social Media Icons -->
+					<div class="social-icons">
+						<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn">
+							<span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
+						</a>
+						<a href="https://github.com/deankuo" title="GitHub">
+							<span class="icon brands fa-github" aria-hidden="true"></span>
+						</a>
+						<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook">
+							<span class="icon brands fa-facebook" aria-hidden="true"></span>
+						</a>
+						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar">
+							<span class="icon solid fa-graduation-cap" aria-hidden="true"></span>
+						</a>
+						<a href="https://www.instagram.com/dean_0609_/" title="Instagram">
+							<span class="icon brands fa-instagram" aria-hidden="true"></span>
+						</a>
+						<a href="https://medium.com/@deankuo_15628" title="Medium">
+							<span class="icon brands fa-medium-m" aria-hidden="true"></span>
+						</a>
+					</div>
+					<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- Enhanced Submenu Toggle Function -->
+			<script>
+				function toggleSubmenu() {
+					const submenu = document.getElementById('publication-submenu');
+					const opener = document.querySelector('.opener');
+					
+					if (submenu.style.display === 'none' || submenu.style.display === '') {
+						submenu.style.display = 'block';
+						submenu.setAttribute('aria-hidden', 'false');
+						opener.setAttribute('aria-expanded', 'true');
+					} else {
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				}
+				
+				// Keyboard accessibility for submenu
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Enter' || e.key === ' ') {
+						if (e.target.classList.contains('opener')) {
+							e.preventDefault();
+							toggleSubmenu();
+						}
+					}
+				});
+
+				// Close submenu when clicking outside
+				document.addEventListener('click', function(e) {
+					const publicationDropdown = document.querySelector('.publication-dropdown');
+					if (!publicationDropdown.contains(e.target)) {
+						const submenu = document.getElementById('publication-submenu');
+						const opener = document.querySelector('.opener');
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				});
+			</script>
+
+	</body>
+</html>

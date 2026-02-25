@@ -1,0 +1,562 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+	<head>
+		<title>Publication - Dean Kuo's Personal Website</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Publications by Peng-Ting (Dean) Kuo - Peer reviewed papers, conference presentations, and academic work in political science and AI.">
+		<meta name="keywords" content="Dean Kuo Publications, Political Science Research, Machine Learning, Conference Papers, Academic Papers">
+		<meta name="author" content="Peng-Ting Kuo">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="./favicon/favicon-16x16.png" type="image/x-icon">
+		<link rel="manifest" href="./favicon/site.webmanifest">
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4963P2NTCT"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-4963P2NTCT');
+		</script>
+
+		<style>
+			body {
+				font-family: "Roboto Slab", serif;
+				padding-top: 70px;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+			#wrapper {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+			#main {
+				flex: 1;
+			}
+			#header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(10px);
+				z-index: 999;
+				padding: 0 30px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				display: flex;
+				align-items: center;
+				height: 70px;
+			}
+			#header .logo {
+				text-decoration: none;
+				border: none !important;
+			}
+			#header .logo strong {
+				color: #333;
+				font-weight: 600;
+			}
+			.top-nav {
+				position: relative;
+				margin-left: auto;
+			}
+			.top-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				gap: 30px;
+				align-items: center;
+			}
+			.top-nav ul li {
+				margin: 0;
+				position: relative;
+			}
+			.top-nav ul li a {
+				text-decoration: none;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				border: none;
+			}
+			.top-nav ul li a:hover {
+				color: #f56565;
+			}
+            #mobile-menu-button {
+                display: none;
+                cursor: pointer;
+                padding: 10px;
+                z-index: 1001; 
+            }
+            #mobile-menu-button div {
+                width: 25px;
+                height: 3px;
+                background-color: #333;
+                margin: 5px 0;
+                transition: 0.4s;
+            }
+			.publication-dropdown {
+				position: relative;
+			}
+			.publication-dropdown .opener {
+				cursor: pointer;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+			.publication-dropdown .opener:hover {
+				color: #f56565;
+			}
+			.publication-dropdown .opener::after {
+				content: "▼";
+				font-size: 10px;
+				transition: transform 0.3s ease;
+			}
+			.publication-dropdown .opener[aria-expanded="true"]::after {
+				transform: rotate(180deg);
+			}
+			.publication-dropdown ul {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: white;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+				border-radius: 5px;
+				min-width: 120px;
+				padding: 10px 0;
+				margin-top: 5px;
+				flex-direction: column;
+				gap: 0;
+			}
+			.publication-dropdown ul li {
+				margin: 0;
+			}
+			.publication-dropdown ul li a {
+				display: block;
+				padding: 8px 15px;
+				color: #333;
+				transition: background-color 0.3s ease;
+			}
+			.publication-dropdown ul li a:hover {
+				background-color: #f8f9fa;
+				color: #f56565;
+			}
+			.bottom-footer {
+				background: #f8f9fa;
+				padding: 20px;
+				text-align: center;
+				border-top: 1px solid #e9ecef;
+				margin-top: auto;
+			}
+			.bottom-footer .social-icons {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 15px;
+				background: none !important;
+				padding: 0 !important;
+				border: none !important;
+				margin-top: 0 !important;
+			}
+			.bottom-footer .social-icons a {
+				color: #666;
+				font-size: 18px;
+				transition: color 0.3s ease;
+				text-decoration: none !important;
+				border: none !important;
+			}
+			.bottom-footer .social-icons a:hover {
+				color: #f56565;
+				text-decoration: none !important;
+				border: none !important;
+			}
+			.bottom-footer .social-icons .icon {
+				border: none !important;
+			}
+			.bottom-footer p {
+				margin: 0;
+				color: #666;
+				font-size: 14px;
+			}
+			.bottom-footer a {
+				color: #f56565;
+				text-decoration: none;
+			}
+			.bottom-footer a:hover {
+				text-decoration: underline;
+			}
+			.publication-content {
+				max-width: 70%;
+				margin: 0 auto;
+				text-align: left;
+				padding: 2em 0;
+			}
+			.publication-content h1 {
+				font-size: 32px;
+				margin-bottom: 1.5em;
+				text-align: left;
+			}
+			.publication-content h2 {
+				font-size: 24px;
+				margin-bottom: 1em;
+				margin-top: 2em;
+				color: #333;
+			}
+			.publication-content h2:first-of-type {
+				margin-top: 0;
+			}
+			.publication-content p {
+				font-size: 16px;
+				line-height: 1.6;
+				margin-bottom: 1.5em;
+				text-align: justify;
+			}
+			.publication-content u {
+				text-decoration: underline;
+				font-weight: 500;
+			}
+			.publication-content font[color="#2E86C1"] {
+				color: #2E86C1 !important;
+				font-weight: 500;
+			}
+			.publication-content i {
+				font-style: italic;
+			}
+			.publication-content a {
+				color: #2E86C1;
+				text-decoration: none;
+				transition: color 0.3s ease;
+			}
+			.publication-content a:hover {
+				color: #1B5A96;
+				text-decoration: underline;
+			}
+			.table-wrapper {
+				overflow-x: auto;
+				margin: 2em 0;
+			}
+			.publication-content table {
+				width: 100%;
+				border-collapse: collapse;
+				font-size: 16px;
+			}
+			.publication-content table td {
+				padding: 12px 15px;
+				border: 1px solid #e9ecef;
+				vertical-align: top;
+				line-height: 1.5;
+			}
+			.publication-content table tr:nth-child(even) {
+				background-color: #f8f9fa;
+			}
+			.publication-content table tr:hover {
+				background-color: #e9ecef;
+			}
+			.publication-content tfoot td {
+				font-style: italic;
+				color: #666;
+				font-size: 14px;
+				text-align: center;
+				border-top: 2px solid #333;
+			}
+			.publication-content section {
+				margin-bottom: 3em;
+			}
+			@media screen and (max-width: 768px) {
+				#header {
+					padding: 0 15px;
+					height: 60px;
+				}
+				body {
+					padding-top: 60px;
+				}
+				#header .logo {
+					order: 2;
+					flex-grow: 1;
+					text-align: right;
+				}
+				#header .top-nav {
+					order: 1;
+					margin-left: 0;
+				}
+                #mobile-menu-button {
+                    display: block;
+                }
+				.top-nav > ul#main-nav-menu {
+					display: none !important;
+				}
+                .top-nav ul#main-nav-menu.show {
+					display: flex !important;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%; 
+					margin-top: 15px; 
+                    left: -15px; 
+                    width: 200px;
+                    background: white;
+                    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                    border-radius: 5px;
+                    padding: 10px 0;
+                    gap: 0;
+				}
+                .top-nav ul#main-nav-menu li {
+                    width: 100%;
+                    text-align: center;
+                }
+                .top-nav ul#main-nav-menu li a {
+                    padding: 12px 20px;
+                    display: block;
+                    width: 100%;
+                }
+				.publication-dropdown .opener {
+					justify-content: center;
+				}
+                .publication-dropdown ul {
+                    position: static; 
+                    box-shadow: none;
+                    background: #f8f9fa;
+                    border-radius: 0;
+                    width: 100%;
+                }
+				.publication-content {
+					max-width: 90%;
+					padding: 1em 0;
+				}
+				.publication-content h1 {
+					font-size: 28px;
+					text-align: left;
+				}
+				.publication-content h2 {
+					font-size: 20px;
+					text-align: left;
+				}
+				.publication-content p {
+					font-size: 15px;
+					text-align: left;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				#header {
+					padding: 0 10px;
+				}
+				.top-nav ul#main-nav-menu.show {
+					left: -10px;
+				}
+				.publication-content h1 {
+					font-size: 24px;
+				}
+				.publication-content h2 {
+					font-size: 18px;
+				}
+				.publication-content p {
+					font-size: 14px;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
+					<header id="header" role="banner">
+						<a href="index.html" class="logo"><strong>Dean Peng-Ting Kuo</strong></a>
+						<nav class="top-nav" role="navigation" aria-label="Main Navigation">
+							<div id="mobile-menu-button" role="button" aria-label="Open Menu" aria-expanded="false" aria-controls="main-nav-menu">
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+							<ul id="main-nav-menu">
+								<li><a href="index.html">Homepage</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="education.html">Education</a></li>
+								<li class="publication-dropdown">
+									<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu" aria-current="page">Publication</span>
+									<ul id="publication-submenu" style="display: none;" aria-hidden="true">
+										<li><a href="publication.html#Journal_Articles">Journal</a></li>
+										<li><a href="publication.html#Conference_Papers">Conference</a></li>
+										<li><a href="publication.html#Thesis">Thesis</a></li>
+									</ul>
+								</li>
+								<li><a href="teaching.html">Teaching</a></li>
+								<li><a href="project.html">Project</a></li>
+								<li><a href="Peng-Ting_Kuo_CV.pdf">CV</a></li>
+							</ul>
+						</nav>
+					</header>
+
+					<section class="publication-content" id="Publication">
+						<header class="main">
+							<h1>Publication</h1>
+						</header>
+						
+						<section id="Peer_Reviewed_Papers">
+							<header class="major">
+								<h2>Peer Reviewed Papers</h2>
+							</header>
+							<p>Yen-Shan Chen, Jing Jin, <u>Peng-Ting Kuo</u>, Chao-Wei Huang, Yun-Nung Chen,
+								<font color="#2E86C1"><a href="https://arxiv.org/abs/2410.20833">"LLMs are Biased Evaluators: But Not Biased for Retrieval Augmented Generation,"</a></font>
+								presented at <i>The 63rd Annual Meeting of the Association for Computational Linguistics (ACL)<i>, Vienna, Austria, Jul 27 - Aug 1, 2025.</p>
+							<p><u>Peng-Ting Kuo</u>, 
+								<font color="#2E86C1">"When Right Makes Might: Rising Power and World Order,"</font> 
+								<i>Political Science Quarterly Book Review,</i> Vol.65, pages 21-24, 2022.</p>
+						</section>
+
+						<section id="Under Review">
+							<header class="major">
+								<h2>Work Under Review</h2>
+							</header>
+							<p>Ronan Tse-min Fu, Yu-Ning Chiu, <u>Peng-Ting Kuo</u>, 
+								<font color="#2E86C1">"Explaining China's Security Policy under Xi Jinping: A Neoclassical Realist Approach"</font></p>
+							<p>Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>, I-Lien Lee, Chia-Hsiang Han, Yu-Ning Chiu, 
+								<font color="#2E86C1">"Democracy or Prosperity? A Cross-National Analysis of East Asian Countries"</font></p>
+						</section>
+
+						<section id="Conference_Papers">
+							<header class="major">
+								<h2>Selected Conference Papers</h2>
+							</header>
+							<p>Naofumi Fujimura,Nick Lin, Akitaka Matsuo, <u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Yutaka Shinada,
+								<font color="#2E86C1">"Divergent Paths from Electoral Institutions to Campaign Strategies: Analyzing Candidate Manifestos in Japan and Taiwan,"</font> 
+								presented at <i>The 2025 IPSA World Congress</i>, Seoul, South Korea, Jul 12-16, 2025.</p>
+							<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Nick Lin,
+								<font color="#2E86C1">"Electoral Reform and Campaign Tactics: A Machine Learning Analysis of Taiwanese Legislative Candidates' Manifestos,"</font> 
+								presented at <i>The 16-th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15-16, 2024.</p>
+							<p>Yu-Hung Sun, <u>Peng-Ting Kuo</u>, Chun-Ming Tsui, Hong-Wung Wang,
+								<font color="#2E86C1">"From Human-Label to Auto- Label: An Automatic Classification Model for Legislators'Oral Questions,"</font> 
+								presented at <i>The 16-th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15-16, 2024.</p>
+							<p>Cheng, Su-Feng, Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>, 
+								<font color="#2E86C1">"Understanding the Impact of Election System Reform on Legislative Campaigning Strategies: A Machine Learning Approach,"</font>
+								presented at the Annual Meeting of Japanese Association of Electoral Studies, Kochi, Japan: Japanese Association of Electoral Studies, May 18-19, 2024.</p>
+							<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, 
+								<font color="#2E86C1">"Decoding Campaigning Strategies: A Machine Learning Approach to Understanding the Impact of Election Systems on Legislative Candidates,"</font> 
+								presented at <i>The 81-th Midwest Political Science Association Conference</i>, Chicago, United States, Apr 4-7, 2024.</p>
+						</section>
+
+						<section id="Thesis">
+							<header class="major">
+								<h2>Thesis Committee</h2>
+							</header>
+							<p>碩士論文：選制改革對立委競選策略之影響：大型語言模型之應用
+							   (The Impact of Electoral Reform on Legislators' Campaign Strategies: An Application of Large Language Models)</p>
+							<div class="table-wrapper">
+								<table>
+									<tbody>
+										<tr>
+											<td>傅澤民（指導教授） <br> Ronan Tse-min Fu</td>
+											<td>Institution of Political Science, Academia Sinica</td>
+										</tr>
+										<tr>
+											<td>蘇翊豪（指導教授） <br> Yi-hao Su</td>
+											<td>Department of Political Science, National Taiwan University</td>
+										</tr>
+										<tr>
+											<td>陳縕儂 <br> Yun-nung Chen</td>
+											<td>Department of Computer Science & Information Engineering, National Taiwan University</td>
+										</tr>
+										<tr>
+											<td>黃瀚萱 <br> Hen-hsen Huang</td>
+											<td>Institution of Information Science, Academia Sinica</td>
+										</tr>
+										<tr>
+											<td>廖達琪 (主席) <br> Da-chi Liao</td>
+											<td>Institution of Political Science, National Sun Yat-sen University</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2">依姓氏筆畫順序</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</section>
+					</section>
+				</div>
+			</div>
+			<footer class="bottom-footer" role="contentinfo">
+				<div class="social-icons">
+					<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn"><span class="icon brands fa-linkedin-in"></span></a>
+					<a href="https://github.com/deankuo" title="GitHub"><span class="icon brands fa-github"></span></a>
+					<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook"><span class="icon brands fa-facebook"></span></a>
+					<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar"><span class="icon solid fa-graduation-cap"></span></a>
+					<a href="https://www.instagram.com/dean_0609_/" title="Instagram"><span class="icon brands fa-instagram"></span></a>
+					<a href="https://medium.com/@deankuo_15628" title="Medium"><span class="icon brands fa-medium-m"></span></a>
+				</div>
+				<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
+			</footer>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			function toggleSubmenu(event) {
+				event.stopPropagation(); 
+				const submenu = document.getElementById('publication-submenu');
+				const opener = event.currentTarget;
+				const isExpanded = opener.getAttribute('aria-expanded') === 'true';
+				if (!isExpanded) {
+					submenu.style.display = 'block';
+					submenu.setAttribute('aria-hidden', 'false');
+					opener.setAttribute('aria-expanded', 'true');
+				} else {
+					submenu.style.display = 'none';
+					submenu.setAttribute('aria-hidden', 'true');
+					opener.setAttribute('aria-expanded', 'false');
+				}
+			}
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Enter' || e.key === ' ') {
+					if (e.target.classList.contains('opener')) {
+						e.preventDefault();
+						toggleSubmenu(e);
+					}
+				}
+			});
+			document.addEventListener('click', function(e) {
+				const publicationDropdown = document.querySelector('.publication-dropdown');
+				if (publicationDropdown && !publicationDropdown.contains(e.target)) {
+					const submenu = document.getElementById('publication-submenu');
+					const opener = document.querySelector('.opener');
+					if(submenu) submenu.style.display = 'none';
+					if(opener) {
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				}
+			});
+			document.addEventListener('DOMContentLoaded', function() {
+				const menuButton = document.getElementById('mobile-menu-button');
+				const navMenu = document.getElementById('main-nav-menu');
+				if (menuButton && navMenu) {
+					menuButton.addEventListener('click', function(event) {
+						event.stopPropagation();
+						navMenu.classList.toggle('show');
+						const isExpanded = navMenu.classList.contains('show');
+						menuButton.setAttribute('aria-expanded', isExpanded);
+					});
+					document.addEventListener('click', function(e) {
+						if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+							if (navMenu.classList.contains('show')) {
+								navMenu.classList.remove('show');
+								menuButton.setAttribute('aria-expanded', 'false');
+							}
+						}
+					});
+				}
+			});
+		</script>
+	</body>
+</html>

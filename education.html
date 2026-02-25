@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+	<head>
+		<title>Education - Dean Kuo's Personal Website</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Education background of Peng-Ting (Dean) Kuo - M.A. and B.A. in Political Science at National Taiwan University.">
+		<meta name="keywords" content="Dean Kuo Education, National Taiwan University, Political Science, M.A., B.A., Academic Background">
+		<meta name="author" content="Peng-Ting Kuo">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="./favicon/favicon-16x16.png" type="image/x-icon">
+		<link rel="manifest" href="./favicon/site.webmanifest">
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4963P2NTCT"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-4963P2NTCT');
+		</script>
+
+		<style>
+			body {
+				font-family: "Roboto Slab", serif;
+				padding-top: 70px;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+			#wrapper {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+			#main {
+				flex: 1;
+			}
+			#header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(10px);
+				z-index: 999;
+				padding: 0 30px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				display: flex;
+				align-items: center;
+				height: 70px;
+			}
+			#header .logo {
+				text-decoration: none;
+				border: none !important;
+			}
+			#header .logo strong {
+				color: #333;
+				font-weight: 600;
+			}
+			.top-nav {
+				position: relative;
+				margin-left: auto;
+			}
+			.top-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				gap: 30px;
+				align-items: center;
+			}
+			.top-nav ul li {
+				margin: 0;
+				position: relative;
+			}
+			.top-nav ul li a {
+				text-decoration: none;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				border: none;
+			}
+			.top-nav ul li a:hover {
+				color: #f56565;
+			}
+            #mobile-menu-button {
+                display: none;
+                cursor: pointer;
+                padding: 10px;
+                z-index: 1001; 
+            }
+            #mobile-menu-button div {
+                width: 25px;
+                height: 3px;
+                background-color: #333;
+                margin: 5px 0;
+                transition: 0.4s;
+            }
+			.publication-dropdown {
+				position: relative;
+			}
+			.publication-dropdown .opener {
+				cursor: pointer;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+			.publication-dropdown .opener:hover {
+				color: #f56565;
+			}
+			.publication-dropdown .opener::after {
+				content: "▼";
+				font-size: 10px;
+				transition: transform 0.3s ease;
+			}
+			.publication-dropdown .opener[aria-expanded="true"]::after {
+				transform: rotate(180deg);
+			}
+			.publication-dropdown ul {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: white;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+				border-radius: 5px;
+				min-width: 120px;
+				padding: 10px 0;
+				margin-top: 5px;
+				flex-direction: column;
+				gap: 0;
+			}
+			.publication-dropdown ul li {
+				margin: 0;
+			}
+			.publication-dropdown ul li a {
+				display: block;
+				padding: 8px 15px;
+				color: #333;
+				transition: background-color 0.3s ease;
+			}
+			.publication-dropdown ul li a:hover {
+				background-color: #f8f9fa;
+				color: #f56565;
+			}
+			.bottom-footer {
+				background: #f8f9fa;
+				padding: 20px;
+				text-align: center;
+				border-top: 1px solid #e9ecef;
+				margin-top: auto;
+			}
+			.bottom-footer .social-icons {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 15px;
+				background: none !important;
+				padding: 0 !important;
+				border: none !important;
+				margin-top: 0 !important;
+			}
+			.bottom-footer .social-icons a {
+				color: #666;
+				font-size: 18px;
+				transition: color 0.3s ease;
+				text-decoration: none !important;
+				border: none !important;
+			}
+			.bottom-footer .social-icons a:hover {
+				color: #f56565;
+				text-decoration: none !important;
+				border: none !important;
+			}
+			.bottom-footer .social-icons .icon {
+				border: none !important;
+			}
+			.bottom-footer p {
+				margin: 0;
+				color: #666;
+				font-size: 14px;
+			}
+			.bottom-footer a {
+				color: #f56565;
+				text-decoration: none;
+			}
+			.bottom-footer a:hover {
+				text-decoration: underline;
+			}
+			.education-content {
+				max-width: 70%;
+				margin: 0 auto;
+				text-align: left;
+				padding: 2em 0;
+			}
+			.education-content h1 {
+				font-size: 32px;
+				margin-bottom: 1.5em;
+				text-align: left;
+			}
+			.education-content h2 {
+				color: #333;
+				margin-bottom: 1.2em;
+				margin-top: 2.5em;
+				font-size: 24px;
+			}
+			.education-content h2:first-of-type {
+				margin-top: 0;
+			}
+			.education {
+				margin-bottom: 20px;
+			}
+			.position {
+				font-weight: bold;
+				font-size: 18px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.date {
+				font-style: italic;
+				color: #666;
+				font-size: 16px;
+			}
+			.education .content {
+				margin-left: 20px;
+				font-size: 16px;
+				line-height: 1.6;
+				margin-top: 15px;
+			}
+			.education .content li {
+				margin-bottom: 12px;
+				text-align: justify;
+			}
+			.education .content li b {
+				color: #333;
+			}
+			.skill {
+				display: block;
+				margin-top: 15px;
+				font-style: italic;
+				color: #666;
+				font-size: 16px;
+			}
+			.education-content hr {
+				margin: 40px 0;
+				border: none;
+				border-top: 1px solid #e9ecef;
+			}
+			@media screen and (max-width: 768px) {
+				#header {
+					padding: 0 15px;
+					height: 60px;
+				}
+				body {
+					padding-top: 60px;
+				}
+				#header .logo {
+					order: 2;
+					flex-grow: 1;
+					text-align: right;
+				}
+				#header .top-nav {
+					order: 1;
+					margin-left: 0;
+				}
+                #mobile-menu-button {
+                    display: block;
+                }
+				.top-nav > ul#main-nav-menu {
+					display: none !important;
+				}
+                .top-nav ul#main-nav-menu.show {
+					display: flex !important;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%; 
+					margin-top: 15px; 
+                    left: -15px; 
+                    width: 200px;
+                    background: white;
+                    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                    border-radius: 5px;
+                    padding: 10px 0;
+                    gap: 0;
+				}
+                .top-nav ul#main-nav-menu li {
+                    width: 100%;
+                    text-align: center;
+                }
+                .top-nav ul#main-nav-menu li a {
+                    padding: 12px 20px;
+                    display: block;
+                    width: 100%;
+                }
+				.publication-dropdown .opener {
+					justify-content: center;
+				}
+                .publication-dropdown ul {
+                    position: static; 
+                    box-shadow: none;
+                    background: #f8f9fa;
+                    border-radius: 0;
+                    width: 100%;
+                }
+				.education-content {
+					max-width: 90%;
+					padding: 1em 0;
+				}
+				.education-content h1, .education-content h2 {
+					text-align: left;
+				}
+				.position {
+					flex-direction: column;
+					align-items: flex-start;
+					font-size: 16px;
+				}
+				.date {
+					margin-top: 5px;
+					font-size: 14px;
+				}
+				.education .content {
+					margin-left: 0;
+					font-size: 15px;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				#header {
+					padding: 0 10px;
+				}
+				.top-nav ul#main-nav-menu.show {
+					left: -10px;
+				}
+				.education .content {
+					font-size: 14px;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
+					<header id="header" role="banner">
+						<a href="index.html" class="logo"><strong>Dean Peng-Ting Kuo</strong></a>
+						<nav class="top-nav" role="navigation" aria-label="Main Navigation">
+							<div id="mobile-menu-button" role="button" aria-label="Open Menu" aria-expanded="false" aria-controls="main-nav-menu">
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+							<ul id="main-nav-menu">
+								<li><a href="index.html">Homepage</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="education.html" aria-current="page">Education</a></li>
+								<li class="publication-dropdown">
+									<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
+									<ul id="publication-submenu" style="display: none;" aria-hidden="true">
+										<li><a href="publication.html#Journal_Articles">Journal</a></li>
+										<li><a href="publication.html#Conference_Papers">Conference</a></li>
+										<li><a href="publication.html#Thesis">Thesis</a></li>
+									</ul>
+								</li>
+								<li><a href="teaching.html">Teaching</a></li>
+								<li><a href="project.html">Project</a></li>
+								<li><a href="Peng-Ting_Kuo_CV.pdf">CV</a></li>
+							</ul>
+						</nav>
+					</header>
+
+					<section class="education-content">
+						<header class="main">
+							<h1>Education</h1>
+						</header>
+
+						<h2>University of Texas at Austin</h2>
+						<div class="education">
+							<div class="position">
+								<span>Ph.D in Government</span>
+								<span class="date">Aug 2025 - May 2030 (Expect)</span>
+							</div>
+							<ul class="content">
+								<li><b>First Year PhD Student</b></li>
+							</ul>
+							<span class="skill">Skill: Python, LLM, Statistics</span>
+						</div>
+
+						<hr />
+						
+						<h2>National Taiwan University</h2>
+						<div class="education">
+							<div class="position">
+								<span>M.A. in Political Science</span>
+								<span class="date">Sep 2021 - Nov 2024</span>
+							</div>
+							<ul class="content">
+								<li><b>GPA 4.06 / 4.3; Received Diplomatic Scholarship; Phi Tau Phi Scholastic Honor Society</b></li>
+								<li><b>Master Thesis</b>: The Impact of Electoral Reform on Legislators' Campaign Strategies: An Application of Large Language Models</li>
+								<li><b>Institute for Political Methodology</b>: Received intensive training in experimental and quantitative methods, including but not limited to causal inference and survey experiment</li>
+								<li><b>Related courses</b>: Probability and Statistics, Linear Algebra and Its Applications, Applied Deep Learning, Programming for Business Computing, Natural Language Processing and Its Applications, Data Science and Social Inquiry, Computational Social Science, Statistical Methods for Social Science</li>
+								<li><b>Teaching courses</b>: Applied Deep Learning, Seminar on Games Theory, Social Network and Group Behavior, Computational Social Science, Basic Mathematics for Social Science</li>
+							</ul>
+							<span class="skill">Skill: Python, R, Deep Learning, LLM, Statistics</span>
+						</div>
+
+						<hr />
+
+						<h2>National Taiwan University</h2>
+						<div class="education">
+							<div class="position">
+								<span>B.A. in Political Science and Minor in Economics</span>
+								<span class="date">Sep 2017 - Jun 2021</span>
+							</div>
+							<ul class="content">
+								<li><b>GPA 3.64 / 4.3; with 1 Dean's List Award (2020 Spring)</b></li>
+								<li><b>Captain of Department Badminton Team</b>: Led and mentored 35+ members of the department badminton team with 6 partners to a second-place finish in a national competition, demonstrating decisive leadership and exceptional cooperation</li>
+								<li><b>Related courses</b>: Calculus, Statistics and Econometrics with Recitation</li>
+							</ul>
+							<span class="skill">Skill: Statistics, Presentation Skill, Time Management</span>
+						</div>
+					</section>
+				</div>
+			</div>
+			<footer class="bottom-footer" role="contentinfo">
+				<div class="social-icons">
+					<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn"><span class="icon brands fa-linkedin-in"></span></a>
+					<a href="https://github.com/deankuo" title="GitHub"><span class="icon brands fa-github"></span></a>
+					<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook"><span class="icon brands fa-facebook"></span></a>
+					<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar"><span class="icon solid fa-graduation-cap"></span></a>
+					<a href="https://www.instagram.com/dean_0609_/" title="Instagram"><span class="icon brands fa-instagram"></span></a>
+					<a href="https://medium.com/@deankuo_15628" title="Medium"><span class="icon brands fa-medium-m"></span></a>
+				</div>
+				<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
+			</footer>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			function toggleSubmenu(event) {
+				event.stopPropagation(); 
+				const submenu = document.getElementById('publication-submenu');
+				const opener = event.currentTarget;
+				const isExpanded = opener.getAttribute('aria-expanded') === 'true';
+				if (!isExpanded) {
+					submenu.style.display = 'block';
+					submenu.setAttribute('aria-hidden', 'false');
+					opener.setAttribute('aria-expanded', 'true');
+				} else {
+					submenu.style.display = 'none';
+					submenu.setAttribute('aria-hidden', 'true');
+					opener.setAttribute('aria-expanded', 'false');
+				}
+			}
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Enter' || e.key === ' ') {
+					if (e.target.classList.contains('opener')) {
+						e.preventDefault();
+						toggleSubmenu(e);
+					}
+				}
+			});
+			document.addEventListener('click', function(e) {
+				const publicationDropdown = document.querySelector('.publication-dropdown');
+				if (publicationDropdown && !publicationDropdown.contains(e.target)) {
+					const submenu = document.getElementById('publication-submenu');
+					const opener = document.querySelector('.opener');
+					if(submenu) submenu.style.display = 'none';
+					if(opener) {
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				}
+			});
+			document.addEventListener('DOMContentLoaded', function() {
+				const menuButton = document.getElementById('mobile-menu-button');
+				const navMenu = document.getElementById('main-nav-menu');
+				if (menuButton && navMenu) {
+					menuButton.addEventListener('click', function(event) {
+						event.stopPropagation();
+						navMenu.classList.toggle('show');
+						const isExpanded = navMenu.classList.contains('show');
+						menuButton.setAttribute('aria-expanded', isExpanded);
+					});
+					document.addEventListener('click', function(e) {
+						if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+							if (navMenu.classList.contains('show')) {
+								navMenu.classList.remove('show');
+								menuButton.setAttribute('aria-expanded', 'false');
+							}
+						}
+					});
+				}
+			});
+		</script>
+	</body>
+</html>

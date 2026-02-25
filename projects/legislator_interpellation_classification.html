@@ -1,0 +1,559 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="zh-TW">
+	<head>
+		<title>Legislator Interpellation Classification - Dean Kuo's Personal Website</title>
+		<meta charset="utf-8" />
+		
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="Legislator Interpellation Classification Project - Chinese Political Text Analysis using Machine Learning by Peng-Ting (Dean) Kuo">
+		<meta name="keywords" content="Text Classification, Political Science, Chinese NLP, Machine Learning, PyTorch, HuggingFace, Dean Kuo">
+		<meta name="author" content="Peng-Ting Kuo">
+		<meta name="robots" content="index, follow">
+		
+		<!-- Responsive Design Meta Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Open Graph Meta Tags for Social Media -->
+		<meta property="og:title" content="Legislator Interpellation Classification - Dean Kuo">
+		<meta property="og:description" content="Chinese Political Text Analysis using Machine Learning and Natural Language Processing">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://deankuo.com/projects/legislator_interpellation_classification.html">
+		<meta property="og:image" content="https://deankuo.com/images/interpellation1_demo.png">
+		
+		<!-- Structured Data for Search Engines -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "CreativeWork",
+			"name": "Legislator Interpellation Classification",
+			"author": {
+				"@type": "Person",
+				"name": "Peng-Ting Kuo"
+			},
+			"description": "Machine learning model for classifying Chinese political texts using PyTorch and HuggingFace",
+			"url": "https://deankuo.com/projects/legislator_interpellation_classification.html"
+		}
+		</script>
+		
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="../favicon/favicon-16x16.png" type="image/x-icon">
+		<link rel="manifest" href="../favicon/site.webmanifest">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4963P2NTCT"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-4963P2NTCT');
+		</script>
+
+		<style>
+			/* Copy the enhanced styles from index.html */
+			body {
+				font-family: "Roboto Slab", serif;
+				padding-top: 70px;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#wrapper {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#main {
+				flex: 1;
+			}
+
+			/* Fixed Top Navigation Bar */
+			.top-nav {
+				position: fixed;
+				top: 15px;
+				right: 30px;
+				z-index: 1000;
+			}
+
+			.top-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				gap: 30px;
+				align-items: center;
+			}
+
+			.top-nav ul li {
+				margin: 0;
+				position: relative;
+			}
+
+			.top-nav ul li a {
+				text-decoration: none;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				border: none;
+			}
+
+			.top-nav ul li a:hover {
+				color: #f56565;
+			}
+
+			/* Publication dropdown styling */
+			.publication-dropdown {
+				position: relative;
+			}
+
+			.publication-dropdown .opener {
+				cursor: pointer;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+
+			.publication-dropdown .opener:hover {
+				color: #f56565;
+			}
+
+			/* Dropdown arrow */
+			.publication-dropdown .opener::after {
+				content: "▼";
+				font-size: 10px;
+				transition: transform 0.3s ease;
+			}
+
+			.publication-dropdown .opener[aria-expanded="true"]::after {
+				transform: rotate(180deg);
+			}
+
+			.publication-dropdown ul {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: white;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+				border-radius: 5px;
+				min-width: 120px;
+				padding: 10px 0;
+				margin-top: 5px;
+				flex-direction: column;
+				gap: 0;
+			}
+
+			.publication-dropdown ul li {
+				margin: 0;
+			}
+
+			.publication-dropdown ul li a {
+				display: block;
+				padding: 8px 15px;
+				color: #333;
+				transition: background-color 0.3s ease;
+			}
+
+			.publication-dropdown ul li a:hover {
+				background-color: #f8f9fa;
+				color: #f56565;
+			}
+
+			/* Header Layout - Align with Navigation */
+			#header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(10px);
+				z-index: 999;
+				padding: 15px 30px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			#header .logo {
+				order: 1;
+				text-decoration: none;
+				border: none !important;
+			}
+
+			#header .logo strong {
+				color: #333;
+				font-weight: 600;
+			}
+
+			/* Project specific styles */
+			.work-experience {
+				margin-bottom: 15px;
+			}
+			.position {
+				font-weight: bold;
+				font-size: large;
+			}
+			.date {
+				float: right;
+				font-style: italic;
+			}
+			.description {
+				margin-left: 20px;
+			}
+			.skill {
+				display: block;
+				margin-top: 10px;
+				font-style: italic;
+			}
+			hr {
+				margin: 30px 0;
+			}
+
+			.project-duration {
+				position: absolute; 
+				right: 0; 
+				top: 50%; 
+				transform: translateY(-50%); 
+				font-size: 1em; 
+				color: #555;
+			}
+
+			/* Better text formatting for long paragraphs */
+			.major article p {
+				text-align: justify;
+				line-height: 1.6;
+				margin-bottom: 1.2em;
+			}
+
+			/* Button Styling */
+			.actions .button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				background: white;
+				color: #333;
+				border: 2px solid #e9ecef;
+				padding: 12px 24px;
+				text-decoration: none;
+				border-radius: 5px;
+				font-size: 18px;
+				font-weight: 500;
+				transition: all 0.3s ease;
+				min-height: 44px;
+			}
+
+			.actions .button:hover {
+				background: #f56565;
+				color: white !important;
+				border-color: #f56565;
+				text-decoration: none;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
+			}
+
+			/* Single Footer with Social Icons */
+			.bottom-footer {
+				background: #f8f9fa;
+				padding: 20px;
+				text-align: center;
+				border-top: 1px solid #e9ecef;
+				margin-top: auto;
+			}
+
+			.bottom-footer .social-icons {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 15px;
+				background: none !important;
+				padding: 0 !important;
+				border: none !important;
+				margin-top: 0 !important;
+			}
+
+			.bottom-footer .social-icons a {
+				color: #666;
+				font-size: 18px;
+				transition: color 0.3s ease;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons a:hover {
+				color: #f56565;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons .icon {
+				border: none !important;
+			}
+
+			.bottom-footer p {
+				margin: 0;
+				color: #666;
+				font-size: 14px;
+			}
+
+			.bottom-footer a {
+				color: #f56565;
+				text-decoration: none;
+			}
+
+			.bottom-footer a:hover {
+				text-decoration: underline;
+			}
+
+			/* Enhanced Responsive Design */
+			@media screen and (max-width: 768px) {
+				#header {
+					padding: 10px 15px;
+				}
+
+				.top-nav {
+					position: fixed;
+					top: 10px;
+					right: 15px;
+				}
+
+				.top-nav ul {
+					gap: 15px;
+					flex-wrap: wrap;
+				}
+
+				.project-duration {
+					position: relative !important;
+					right: auto !important;
+					top: auto !important;
+					transform: none !important;
+					display: block;
+					margin-top: 10px;
+					text-align: left;
+				}
+
+				.major article p {
+					text-align: left;
+				}
+
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
+					gap: 15px;
+				}
+
+				.actions .button {
+					font-size: 14px;
+					padding: 10px 20px;
+					min-height: 40px;
+				}
+			}
+
+			@media screen and (max-width: 480px) {
+				#header {
+					padding: 8px 10px;
+				}
+
+				.top-nav {
+					top: 8px;
+					right: 10px;
+				}
+
+				.top-nav ul {
+					gap: 10px;
+					font-size: 14px;
+				}
+
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
+					gap: 10px;
+					margin-bottom: 10px;
+				}
+
+				.actions .button {
+					font-size: 13px;
+					padding: 8px 16px;
+					min-height: 36px;
+				}
+			}
+
+			/* Image Optimization */
+			img {
+				max-width: 100%;
+				height: auto;
+				loading: lazy;
+			}
+
+			/* Accessibility Improvements */
+			.sr-only {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0,0,0,0);
+				white-space: nowrap;
+				border: 0;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Fixed Top Navigation -->
+				<nav class="top-nav" role="navigation" aria-label="Main Navigation">
+					<ul>
+						<li><a href="../index.html">Homepage</a></li>
+						<li><a href="../about.html">About</a></li>
+						<li><a href="../work_experience.html">Work Experience</a></li>
+						<li><a href="../education.html">Education</a></li>
+						<li class="publication-dropdown">
+							<span class="opener" onclick="toggleSubmenu()" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
+							<ul id="publication-submenu" style="display: none;" aria-hidden="true">
+								<li><a href="../publication.html#Journal_Articles">Journal</a></li>
+								<li><a href="../publication.html#Conference_Papers">Conference</a></li>
+								<li><a href="../publication.html#Thesis">Thesis</a></li>
+							</ul>
+						</li>
+						<li><a href="../teaching.html">Teaching</a></li>
+						<li><a href="../project.html" aria-current="page">Project</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header with Logo aligned with Navigation -->
+								<header id="header" role="banner">
+									<a href="../project.html" class="logo"><strong>Project - Dean Peng-Ting Kuo (郭芃廷)</strong></a>
+								</header>
+
+							<!-- Section -->
+                            <section>
+                                <header class="main" style="position: relative;">
+                                    <h2>Legislator Interpellation Classification (Collaborated with Yu-Hung Sun)</h2>
+                                    <span class="project-duration">Nov 2023 - May 2024</span>
+                                </header>
+                                <span class="image fit"><img src="../images/interpellation1_demo.png" alt="Legislator Interpellation Classification Project Demo" loading="lazy" /></span>
+                                <div class="major">
+                                    <article>
+                                        <h3>Abstract</h3>
+                                        <p>The concept of text-as-data has grown increasingly vital in the field of political science, providing researchers with a robust means to analyze the positions and behaviors of political figures, supported by compelling empirical evidence. One of the primary approaches involves analyzing the content of texts and assigning labels according to the purpose of the research. Nonetheless, this method typically depends on human labeling, which is a process that is expensive and time-consuming.</p>
+                                        
+                                        <p>While numerous studies have delved into the realm of automated labeling, most previous studies have predominantly focused on Germanic languages, such as English and German. In contrast, research dedicated to Chinese language corpora, particularly in the political science domain, remains scant.</p>
+                                        
+                                        <p>To bridge this research gap, we fine-tuned a pre-trained language model using a human-annotated dataset comprising oral questions posed by the councilors of Kaohsiung City. Our dataset contains 9,904 text samples that were systematically labeled into four categories using the method from Maricut-Akbik (2021), which categorizes the content of councilors' questions into four levels of intensity: requesting information, requesting justifications, requesting changes in policy, and sanctioning.</p>
+                                        
+                                        <p>Our model achieves an overall accuracy of 76% on the testing set. In addition, three of the four labels achieved F1 scores above 80%. We believe that our results are helpful for scholars interested in analyzing legislative or political speeches in Chinese.</p>
+                                        
+										<p><strong>Technical Skills:</strong> Python (PyTorch, HuggingFace), LATEX</p>
+                                        <p>Our model is available for exploration and testing via the link provided below.</p>
+                                        <ul class="actions">
+                                            <li><a href="https://huggingface.co/spaces/dean22029/multi-lable_classification?" 
+                                                   class="button"
+                                                   onclick="gtag('event', 'click', {'event_category': 'Project', 'event_label': 'HuggingFace Space'});"
+                                                   aria-label="Try the model on HuggingFace Space">HuggingFace Space</a></li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </section>
+
+						</div>
+					</div>
+
+				<!-- Footer with Social Icons -->
+				<footer class="bottom-footer" role="contentinfo">
+					<!-- Social Media Icons -->
+					<div class="social-icons">
+						<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn">
+							<span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
+						</a>
+						<a href="https://github.com/deankuo" title="GitHub">
+							<span class="icon brands fa-github" aria-hidden="true"></span>
+						</a>
+						<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook">
+							<span class="icon brands fa-facebook" aria-hidden="true"></span>
+						</a>
+						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar">
+							<span class="icon solid fa-graduation-cap" aria-hidden="true"></span>
+						</a>
+						<a href="https://www.instagram.com/dean_0609_/" title="Instagram">
+							<span class="icon brands fa-instagram" aria-hidden="true"></span>
+						</a>
+						<a href="https://medium.com/@deankuo_15628" title="Medium">
+							<span class="icon brands fa-medium-m" aria-hidden="true"></span>
+						</a>
+					</div>
+					<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+			<!-- Enhanced Submenu Toggle Function -->
+			<script>
+				function toggleSubmenu() {
+					const submenu = document.getElementById('publication-submenu');
+					const opener = document.querySelector('.opener');
+					
+					if (submenu.style.display === 'none' || submenu.style.display === '') {
+						submenu.style.display = 'block';
+						submenu.setAttribute('aria-hidden', 'false');
+						opener.setAttribute('aria-expanded', 'true');
+					} else {
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				}
+				
+				// Keyboard accessibility for submenu
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Enter' || e.key === ' ') {
+						if (e.target.classList.contains('opener')) {
+							e.preventDefault();
+							toggleSubmenu();
+						}
+					}
+				});
+
+				// Close submenu when clicking outside
+				document.addEventListener('click', function(e) {
+					const publicationDropdown = document.querySelector('.publication-dropdown');
+					if (!publicationDropdown.contains(e.target)) {
+						const submenu = document.getElementById('publication-submenu');
+						const opener = document.querySelector('.opener');
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				});
+			</script>
+
+	</body>
+</html>

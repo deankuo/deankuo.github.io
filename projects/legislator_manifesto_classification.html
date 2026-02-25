@@ -1,0 +1,561 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="zh-TW">
+	<head>
+		<title>Legislator Manifesto Classification - Dean Kuo's Personal Website</title>
+		<meta charset="utf-8" />
+		
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="Legislator Manifesto Classification Project - Taiwan Electoral System Analysis using Machine Learning by Peng-Ting (Dean) Kuo">
+		<meta name="keywords" content="Electoral System, Political Science, Taiwan Politics, Topic Modeling, BERTopic, Machine Learning, Dean Kuo">
+		<meta name="author" content="Peng-Ting Kuo">
+		<meta name="robots" content="index, follow">
+		
+		<!-- Responsive Design Meta Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Open Graph Meta Tags for Social Media -->
+		<meta property="og:title" content="Legislator Manifesto Classification - Dean Kuo">
+		<meta property="og:description" content="Taiwan Electoral System Analysis using Machine Learning and Topic Modeling">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://deankuo.com/projects/legislator_manifesto_classification.html">
+		<meta property="og:image" content="https://deankuo.com/images/LDA_KMT_Pork_Ratios_Dot_Plot.png">
+		
+		<!-- Structured Data for Search Engines -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "CreativeWork",
+			"name": "Legislator Manifesto Classification",
+			"author": {
+				"@type": "Person",
+				"name": "Peng-Ting Kuo"
+			},
+			"description": "Analysis of Taiwan's electoral system changes using machine learning and topic modeling techniques",
+			"url": "https://deankuo.com/projects/legislator_manifesto_classification.html"
+		}
+		</script>
+		
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="../favicon/favicon-16x16.png" type="image/x-icon">
+		<link rel="manifest" href="../favicon/site.webmanifest">
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4963P2NTCT"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-4963P2NTCT');
+		</script>
+
+		<style>
+			/* Copy the enhanced styles from index.html */
+			body {
+				font-family: "Roboto Slab", serif;
+				padding-top: 70px;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#wrapper {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			#main {
+				flex: 1;
+			}
+
+			/* Fixed Top Navigation Bar */
+			.top-nav {
+				position: fixed;
+				top: 15px;
+				right: 30px;
+				z-index: 1000;
+			}
+
+			.top-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				gap: 30px;
+				align-items: center;
+			}
+
+			.top-nav ul li {
+				margin: 0;
+				position: relative;
+			}
+
+			.top-nav ul li a {
+				text-decoration: none;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				border: none;
+			}
+
+			.top-nav ul li a:hover {
+				color: #f56565;
+			}
+
+			/* Publication dropdown styling */
+			.publication-dropdown {
+				position: relative;
+			}
+
+			.publication-dropdown .opener {
+				cursor: pointer;
+				color: #333;
+				font-weight: 500;
+				padding: 8px 0;
+				transition: color 0.3s ease;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+
+			.publication-dropdown .opener:hover {
+				color: #f56565;
+			}
+
+			/* Dropdown arrow */
+			.publication-dropdown .opener::after {
+				content: "▼";
+				font-size: 10px;
+				transition: transform 0.3s ease;
+			}
+
+			.publication-dropdown .opener[aria-expanded="true"]::after {
+				transform: rotate(180deg);
+			}
+
+			.publication-dropdown ul {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: white;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+				border-radius: 5px;
+				min-width: 120px;
+				padding: 10px 0;
+				margin-top: 5px;
+				flex-direction: column;
+				gap: 0;
+			}
+
+			.publication-dropdown ul li {
+				margin: 0;
+			}
+
+			.publication-dropdown ul li a {
+				display: block;
+				padding: 8px 15px;
+				color: #333;
+				transition: background-color 0.3s ease;
+			}
+
+			.publication-dropdown ul li a:hover {
+				background-color: #f8f9fa;
+				color: #f56565;
+			}
+
+			/* Header Layout - Align with Navigation */
+			#header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(10px);
+				z-index: 999;
+				padding: 15px 30px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			#header .logo {
+				order: 1;
+				text-decoration: none;
+				border: none !important;
+			}
+
+			#header .logo strong {
+				color: #333;
+				font-weight: 600;
+			}
+
+			/* Project specific styles */
+			.work-experience {
+				margin-bottom: 15px;
+			}
+			.position {
+				font-weight: bold;
+				font-size: large;
+			}
+			.date {
+				float: right;
+				font-style: italic;
+			}
+			.description {
+				margin-left: 20px;
+			}
+			.skill {
+				display: block;
+				margin-top: 10px;
+				font-style: italic;
+			}
+			hr {
+				margin: 30px 0;
+			}
+
+			.project-duration {
+				position: absolute; 
+				right: 0; 
+				top: 50%; 
+				transform: translateY(-50%); 
+				font-size: 1em; 
+				color: #555;
+			}
+
+			/* Better text formatting for long paragraphs */
+			.major article p {
+				text-align: justify;
+				line-height: 1.6;
+				margin-bottom: 1.2em;
+			}
+
+			/* Button Styling */
+			.actions .button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				background: white;
+				color: #333;
+				border: 2px solid #e9ecef;
+				padding: 12px 24px;
+				text-decoration: none;
+				border-radius: 5px;
+				font-size: 18px;
+				font-weight: 500;
+				transition: all 0.3s ease;
+				min-height: 44px;
+			}
+
+			.actions .button:hover {
+				background: #f56565;
+				color: white !important;
+				border-color: #f56565;
+				text-decoration: none;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
+			}
+
+			/* Single Footer with Social Icons */
+			.bottom-footer {
+				background: #f8f9fa;
+				padding: 20px;
+				text-align: center;
+				border-top: 1px solid #e9ecef;
+				margin-top: auto;
+			}
+
+			.bottom-footer .social-icons {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 15px;
+				background: none !important;
+				padding: 0 !important;
+				border: none !important;
+				margin-top: 0 !important;
+			}
+
+			.bottom-footer .social-icons a {
+				color: #666;
+				font-size: 18px;
+				transition: color 0.3s ease;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons a:hover {
+				color: #f56565;
+				text-decoration: none !important;
+				border: none !important;
+			}
+
+			.bottom-footer .social-icons .icon {
+				border: none !important;
+			}
+
+			.bottom-footer p {
+				margin: 0;
+				color: #666;
+				font-size: 14px;
+			}
+
+			.bottom-footer a {
+				color: #f56565;
+				text-decoration: none;
+			}
+
+			.bottom-footer a:hover {
+				text-decoration: underline;
+			}
+
+			/* Enhanced Responsive Design */
+			@media screen and (max-width: 768px) {
+				#header {
+					padding: 10px 15px;
+				}
+
+				.top-nav {
+					position: fixed;
+					top: 10px;
+					right: 15px;
+				}
+
+				.top-nav ul {
+					gap: 15px;
+					flex-wrap: wrap;
+				}
+
+				.project-duration {
+					position: relative !important;
+					right: auto !important;
+					top: auto !important;
+					transform: none !important;
+					display: block;
+					margin-top: 10px;
+					text-align: left;
+				}
+
+				.major article p {
+					text-align: left;
+				}
+
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
+					gap: 15px;
+				}
+
+				.actions .button {
+					font-size: 14px;
+					padding: 10px 20px;
+					min-height: 40px;
+				}
+			}
+
+			@media screen and (max-width: 480px) {
+				#header {
+					padding: 8px 10px;
+				}
+
+				.top-nav {
+					top: 8px;
+					right: 10px;
+				}
+
+				.top-nav ul {
+					gap: 10px;
+					font-size: 14px;
+				}
+
+				.bottom-footer .social-icons {
+					flex-wrap: wrap;
+					gap: 10px;
+					margin-bottom: 10px;
+				}
+
+				.actions .button {
+					font-size: 13px;
+					padding: 8px 16px;
+					min-height: 36px;
+				}
+			}
+
+			/* Image Optimization */
+			img {
+				max-width: 100%;
+				height: auto;
+				loading: lazy;
+			}
+
+			/* Accessibility Improvements */
+			.sr-only {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0,0,0,0);
+				white-space: nowrap;
+				border: 0;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Fixed Top Navigation -->
+				<nav class="top-nav" role="navigation" aria-label="Main Navigation">
+					<ul>
+						<li><a href="../index.html">Homepage</a></li>
+						<li><a href="../about.html">About</a></li>
+						<li><a href="../work_experience.html">Work Experience</a></li>
+						<li><a href="../education.html">Education</a></li>
+						<li class="publication-dropdown">
+							<span class="opener" onclick="toggleSubmenu()" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
+							<ul id="publication-submenu" style="display: none;" aria-hidden="true">
+								<li><a href="../publication.html#Journal_Articles">Journal</a></li>
+								<li><a href="../publication.html#Conference_Papers">Conference</a></li>
+								<li><a href="../publication.html#Thesis">Thesis</a></li>
+							</ul>
+						</li>
+						<li><a href="../teaching.html">Teaching</a></li>
+						<li><a href="../project.html" aria-current="page">Project</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header with Logo aligned with Navigation -->
+								<header id="header" role="banner">
+									<a href="../project.html" class="logo"><strong>Project - Dean Peng-Ting Kuo (郭芃廷)</strong></a>
+								</header>
+
+							<!-- Section -->
+                            <section>
+                                <header class="main" style="position: relative;">
+                                    <h2>Legislator Manifesto Classification</h2>
+                                    <span class="project-duration">Feb 2023 - May 2024</span>
+                                </header>
+                                <span class="image fit"><img src="../images/LDA_KMT_Pork_Ratios_Dot_Plot.png" alt="Taiwan Electoral System Analysis - KMT Pork Barrel Legislation Ratios" loading="lazy" /></span>
+                                <div class="major">
+                                    <article>
+                                        <h3>Abstract</h3>
+                                        <p>In the field of political science, the reform of electoral systems has long been an important research issue. Past literature has provided diverse theoretical foundations and causal mechanisms regarding the legislative behavior of legislators or voter behavior. However, there is little research on how changes in the electoral system affect pre-election campaign behavior.</p>
+                                        
+                                        <p>Some researchers have found that when Japan's electoral system shifted from a single non-transferable vote (SNTV) system in multi-member districts (MMD) to a relative majority system in single-member districts (SMD), candidates' campaign strategies tended to focus more on national policies and they proposed more programmatic policy platforms. However, this study argues that due to differences in constitutional systems, institutional designs, and social expectations of legislators across countries, as well as the reduced district magnitude and decreased heterogeneity within districts, Taiwanese regional legislators would tend to propose more policies favorable to district interests, i.e., pork barrel legislation would become more pronounced after the electoral reform.</p>
+                                        
+                                        <p>To test this hypothesis, this study utilized election platforms from the Central Election Commission to compile data from the 2nd to the 11th legislative elections in Taiwan. Topic modeling was used to analyze the similarity between election platforms and policy proposals. Moreover, this research leveraged deep learning, artificial intelligence, and prompting engineering techniques, including Least-to-Most and Chain-of-Thought prompting, to automate the generation of classification judgments, reducing subjectivity issues from manual judgments in prior research.</p>
+                                        
+                                        <p>The findings show that after the 2005 electoral reform, due to smaller district magnitudes and increased homogeneity, the increased voter accountability in the new system without intra-party competition, and greater voter recognition of individual legislators, KMT and DPP candidates had stronger incentives to propose district-oriented policies and cultivate personal votes in single-member districts. In contrast, smaller party candidates were less affected by the electoral change as their competitive environment did not significantly change, still facing pressure from KMT and DPP opponents. These changes were statistically significant.</p>
+                                        
+                                        <p>In summary, this study verified the impact of the electoral system on the campaign strategies of Taiwanese legislative candidates and revealed that the electoral system is not the sole influencing factor. However, due to data limitations, this research could not infer the causal mechanisms of other factors such as the constitutional system, nomination rules, or voter expectations on candidates' strategies. Additionally, this study constructed a database covering election platforms from the 2nd to the 11th legislative terms, providing resources for future research.</p>
+                                        
+											<p><strong>Technical Skills:</strong> Python (BERTopic, Claude, OpenAI, Pandas, Scikit-learn), Git, LATEX</p>
+                                        <p>The source code and results are available for exploration via the link provided below.</p>
+                                        <ul class="actions">
+                                            <li><a href="https://github.com/deankuo/Taiwan-Manifesto-Analysis-A-ML-Approach" 
+                                                   class="button"
+                                                   onclick="gtag('event', 'click', {'event_category': 'Project', 'event_label': 'GitHub Repository'});"
+                                                   aria-label="View project source code on GitHub">GitHub</a></li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </section>
+
+						</div>
+					</div>
+
+				<!-- Footer with Social Icons -->
+				<footer class="bottom-footer" role="contentinfo">
+					<!-- Social Media Icons -->
+					<div class="social-icons">
+						<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn">
+							<span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
+						</a>
+						<a href="https://github.com/deankuo" title="GitHub">
+							<span class="icon brands fa-github" aria-hidden="true"></span>
+						</a>
+						<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook">
+							<span class="icon brands fa-facebook" aria-hidden="true"></span>
+						</a>
+						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar">
+							<span class="icon solid fa-graduation-cap" aria-hidden="true"></span>
+						</a>
+						<a href="https://www.instagram.com/dean_0609_/" title="Instagram">
+							<span class="icon brands fa-instagram" aria-hidden="true"></span>
+						</a>
+						<a href="https://medium.com/@deankuo_15628" title="Medium">
+							<span class="icon brands fa-medium-m" aria-hidden="true"></span>
+						</a>
+					</div>
+					<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+			<!-- Enhanced Submenu Toggle Function -->
+			<script>
+				function toggleSubmenu() {
+					const submenu = document.getElementById('publication-submenu');
+					const opener = document.querySelector('.opener');
+					
+					if (submenu.style.display === 'none' || submenu.style.display === '') {
+						submenu.style.display = 'block';
+						submenu.setAttribute('aria-hidden', 'false');
+						opener.setAttribute('aria-expanded', 'true');
+					} else {
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				}
+				
+				// Keyboard accessibility for submenu
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Enter' || e.key === ' ') {
+						if (e.target.classList.contains('opener')) {
+							e.preventDefault();
+							toggleSubmenu();
+						}
+					}
+				});
+
+				// Close submenu when clicking outside
+				document.addEventListener('click', function(e) {
+					const publicationDropdown = document.querySelector('.publication-dropdown');
+					if (!publicationDropdown.contains(e.target)) {
+						const submenu = document.getElementById('publication-submenu');
+						const opener = document.querySelector('.opener');
+						submenu.style.display = 'none';
+						submenu.setAttribute('aria-hidden', 'true');
+						opener.setAttribute('aria-expanded', 'false');
+					}
+				});
+			</script>
+
+	</body>
+</html>
