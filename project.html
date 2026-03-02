@@ -46,7 +46,7 @@
 				background: rgba(255, 255, 255, 0.95);
 				backdrop-filter: blur(10px);
 				z-index: 999;
-				padding: 0 30px;
+				padding: 0 2em;
 				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 				display: flex;
 				align-items: center;
@@ -69,7 +69,7 @@
 				margin: 0;
 				padding: 0;
 				display: flex;
-				gap: 30px;
+				gap: 8px;
 				align-items: center;
 			}
 			.top-nav ul li {
@@ -80,12 +80,19 @@
 				text-decoration: none;
 				color: #333;
 				font-weight: 500;
-				padding: 8px 0;
-				transition: color 0.3s ease;
+				padding: 6px 12px;
+				border-radius: 5px;
+				transition: color 0.2s ease, background-color 0.2s ease;
 				border: none;
 			}
 			.top-nav ul li a:hover {
 				color: #f56565;
+				background-color: rgba(245, 101, 101, 0.1);
+			}
+
+			.top-nav ul li a[aria-current="page"] {
+				color: #f56565;
+				background-color: rgba(245, 101, 101, 0.1);
 			}
             #mobile-menu-button {
                 display: none;
@@ -107,14 +114,16 @@
 				cursor: pointer;
 				color: #333;
 				font-weight: 500;
-				padding: 8px 0;
-				transition: color 0.3s ease;
+				padding: 6px 12px;
+				border-radius: 5px;
+				transition: color 0.2s ease, background-color 0.2s ease;
 				display: flex;
 				align-items: center;
 				gap: 5px;
 			}
 			.publication-dropdown .opener:hover {
 				color: #f56565;
+				background-color: rgba(245, 101, 101, 0.1);
 			}
 			.publication-dropdown .opener::after {
 				content: "▼";
@@ -206,69 +215,87 @@
 				margin-bottom: 1.5em;
 				text-align: left;
 			}
-			.posts {
+			/* Project Cards Grid */
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2em;
 				margin-top: 2em;
 			}
-			.posts article {
-				margin-bottom: 3em;
+			.project-card {
+				background: #fff;
+				border-radius: 12px;
 				overflow: hidden;
+				border: 1px solid #eef0f3;
+				box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+				transition: transform 0.25s ease, box-shadow 0.25s ease;
+				display: flex;
+				flex-direction: column;
 			}
-			.posts article .image {
-				float: left;
-				margin: 0 2em 1em 0;
-				width: 200px;
+			.project-card:hover {
+				transform: translateY(-6px);
+				box-shadow: 0 16px 36px rgba(0,0,0,0.13);
 			}
-			.posts article .image img {
+			.card-image-link {
+				display: block;
+				overflow: hidden;
+				height: 200px;
+				border: none !important;
+			}
+			.card-image-link img {
 				width: 100%;
-				height: auto;
-				border-radius: 5px;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.4s ease;
 			}
-			.posts article h3 {
-				font-size: 20px;
-				margin-bottom: 0.5em;
-				color: #333;
+			.project-card:hover .card-image-link img {
+				transform: scale(1.06);
+			}
+			.card-body {
+				padding: 1.3em 1.5em 1.5em;
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+			}
+			.card-date {
+				display: inline-block;
+				background: rgba(245, 101, 101, 0.1);
+				color: #f56565;
+				font-size: 12px;
+				font-weight: 600;
+				padding: 3px 11px;
+				border-radius: 20px;
+				margin-bottom: 0.7em;
+				letter-spacing: 0.02em;
+			}
+			.card-body h3 {
+				font-size: 17px;
+				margin: 0 0 auto 0;
+				color: #222;
 				line-height: 1.4;
+				padding-bottom: 1em;
 			}
-			.posts article p {
-				font-size: 16px;
-				line-height: 1.6;
-				margin-bottom: 1em;
-				color: #666;
-				text-align: justify;
+			.card-body h3 a {
+				color: inherit;
+				text-decoration: none;
+				border: none !important;
 			}
-			.posts article .actions {
-				list-style: none;
-				padding: 0;
-				margin: 1em 0 0 0;
-			}
-			.posts article .actions li {
-				margin: 0;
-			}
-			.posts article .actions .button {
+			.card-arrow {
 				display: inline-flex;
 				align-items: center;
-				justify-content: center;
-				background: white;
-				color: #333;
-				border: 2px solid #e9ecef;
-				padding: 10px 20px;
+				gap: 5px;
+				font-size: 13px;
+				font-weight: 600;
+				color: #f56565;
 				text-decoration: none;
-				border-radius: 5px;
-				font-size: 14px;
-				font-weight: 500;
-				transition: all 0.3s ease;
-				min-height: 40px;
+				border: none !important;
+				letter-spacing: 0.03em;
+				transition: gap 0.2s ease, color 0.2s ease;
+				margin-top: auto;
 			}
-			.posts article .actions .button:hover {
-				background: #f56565;
-				color: white !important;
-				border-color: #f56565;
-				text-decoration: none;
-			}
-			.posts article::after {
-				content: "";
-				display: table;
-				clear: both;
+			.card-arrow:hover {
+				gap: 10px;
+				color: #d94f4f;
 			}
 			@media screen and (max-width: 768px) {
 				#header {
@@ -334,11 +361,11 @@
 					font-size: 28px;
 					text-align: left;
 				}
-				.posts article h3 {
-					font-size: 18px;
+				.projects-grid {
+					grid-template-columns: 1fr;
 				}
-				.posts article p {
-					font-size: 15px;
+				.card-image-link {
+					height: 180px;
 				}
 			}
 			@media screen and (max-width: 480px) {
@@ -348,23 +375,49 @@
 				.top-nav ul#main-nav-menu.show {
 					left: -10px;
 				}
-				.posts article .image {
-					float: none;
-					width: 100%;
-					margin: 0 0 1em 0;
-				}
-				.posts article h3 {
-					font-size: 16px;
-				}
-				.posts article p {
-					font-size: 14px;
-				}
-				.posts article .actions .button {
-					font-size: 13px;
-					padding: 8px 16px;
+				.card-image-link {
+					height: 155px;
 				}
 			}
-		</style>
+
+			/* Override main.css flex:1 on header children so nav sits on the right */
+			#header > .top-nav {
+				flex: none;
+			}
+
+		
+			.theme-toggle {
+				background: none;
+				border: none;
+				outline: none;
+				box-shadow: none !important;
+				cursor: pointer;
+				color: #333 !important;
+				font-size: 16px;
+				padding: 6px 10px;
+				border-radius: 5px;
+				transition: color 0.2s ease, background-color 0.2s ease;
+				display: flex;
+				align-items: center;
+				line-height: 1;
+			}
+			.theme-toggle:focus {
+				outline: none;
+				box-shadow: none;
+			}
+			.theme-toggle:hover {
+				background-color: rgba(245, 101, 101, 0.1);
+				color: #f56565;
+			}
+			body.dark-mode .theme-toggle {
+				color: #e2e8f0;
+			}
+			body.dark-mode .theme-toggle:hover {
+				color: #f56565;
+				background-color: rgba(245, 101, 101, 0.15);
+			}
+				</style>
+	<script>if(localStorage.getItem('theme')=='dark')document.body.className+=' dark-mode';</script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -379,11 +432,10 @@
 								<div></div>
 							</div>
 							<ul id="main-nav-menu">
-								<li><a href="index.html">Homepage</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="education.html">Education</a></li>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="bio.html">Bio</a></li>
 								<li class="publication-dropdown">
-									<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
+									<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publications</span>
 									<ul id="publication-submenu" style="display: none;" aria-hidden="true">
 										<li><a href="publication.html#Journal_Articles">Journal</a></li>
 										<li><a href="publication.html#Conference_Papers">Conference</a></li>
@@ -391,8 +443,9 @@
 									</ul>
 								</li>
 								<li><a href="teaching.html">Teaching</a></li>
-								<li><a href="project.html" aria-current="page">Project</a></li>
+								<li><a href="project.html" aria-current="page">Projects</a></li>
 								<li><a href="Peng-Ting_Kuo_CV.pdf">CV</a></li>
+								<li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark mode"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></li>
 							</ul>
 						</nav>
 					</header>
@@ -403,46 +456,52 @@
 						</header>
 
 						
-						<div class="posts">
-							<article>
-								<a href="projects/wto_analysis.html" class="image">
-									<img src="images/wto_analysis.png" alt="WTO Analysis Demo" />
+						<div class="projects-grid">
+
+							<article class="project-card">
+								<a href="projects/wto_analysis.html" class="card-image-link">
+									<img src="images/wto_analysis.png" alt="WTO Network Analysis" />
 								</a>
-								<h3>WTO Network Analysis</h3>
-								<ul class="actions">
-									<li><a href="" class="button">Demo</a></li>
-								</ul>
+								<div class="card-body">
+									<span class="card-date">Apr 2024 – Present</span>
+									<h3><a href="projects/wto_analysis.html">WTO Network Analysis</a></h3>
+									<a href="projects/wto_analysis.html" class="card-arrow">View Project →</a>
+								</div>
 							</article>
 
-							<article>
-								<a href="projects/legislator_manifesto_classification.html" class="image">
-									<img src="images/manifesto_demo.png" alt="Legislator Manifesto Classification Demo" />
+							<article class="project-card">
+								<a href="projects/legislator_manifesto_classification.html" class="card-image-link">
+									<img src="images/manifesto_demo.png" alt="Legislator Manifesto Classification" />
 								</a>
-								<h3>Legislator Manifesto Classification</h3>
-								<ul class="actions">
-									<li><a href="https://github.com/deankuo/Taiwan-Manifesto-Analysis-A-ML-Approach" class="button">Demo</a></li>
-								</ul>
+								<div class="card-body">
+									<span class="card-date">Feb 2023 – May 2024</span>
+									<h3><a href="projects/legislator_manifesto_classification.html">Legislator Manifesto Classification</a></h3>
+									<a href="projects/legislator_manifesto_classification.html" class="card-arrow">View Project →</a>
+								</div>
 							</article>
-							
-							<article>
-								<a href="projects/legislator_interpellation_classification.html" class="image">
-									<img src="images/interpellation_demo.png" alt="Legislator Interpellation Classification Demo" />
+
+							<article class="project-card">
+								<a href="projects/legislator_interpellation_classification.html" class="card-image-link">
+									<img src="images/interpellation_demo.png" alt="Legislator Interpellation Classification" />
 								</a>
-								<h3>Legislator Interpellation Classification</h3>
-								<ul class="actions">
-									<li><a href="https://huggingface.co/spaces/dean22029/multi-lable_classification" class="button">Demo</a></li>
-								</ul>
+								<div class="card-body">
+									<span class="card-date">Nov 2023 – May 2024</span>
+									<h3><a href="projects/legislator_interpellation_classification.html">Legislator Interpellation Classification</a></h3>
+									<a href="projects/legislator_interpellation_classification.html" class="card-arrow">View Project →</a>
+								</div>
 							</article>
-							
-							<article>
-								<a href="projects/automation.html" class="image">
-									<img src="images/automation_demo1.png" alt="Automatic Sports Center Court Reservation Demo"/>
+
+							<article class="project-card">
+								<a href="projects/automation.html" class="card-image-link">
+									<img src="images/automation_demo1.png" alt="Automatic Sports Center Court Reservation" />
 								</a>
-								<h3>Automatic Sports Center Court Reservation</h3>
-								<ul class="actions">
-									<li><a href="https://drive.google.com/file/d/1ttAJtpe2mXWPyoEwV1sXI9lbkvQjNWEG/view?usp=drive_link" class="button">Demo</a></li>
-								</ul>
+								<div class="card-body">
+									<span class="card-date">Feb 2023</span>
+									<h3><a href="projects/automation.html">Automatic Sports Center Court Reservation</a></h3>
+									<a href="projects/automation.html" class="card-arrow">View Project →</a>
+								</div>
 							</article>
+
 						</div>
 					</section>
 				</div>
@@ -520,6 +579,28 @@
 					});
 				}
 			});
+		</script>
+		<script>
+			// Dark/Light mode toggle
+			(function() {
+				function applyTheme(isDark) {
+					document.body.classList.toggle('dark-mode', isDark);
+					var btn = document.getElementById('theme-toggle');
+					if (btn) btn.innerHTML = isDark ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>' : '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+				}
+				// Apply on load
+				applyTheme(localStorage.getItem('theme') === 'dark');
+				document.addEventListener('DOMContentLoaded', function() {
+					var btn = document.getElementById('theme-toggle');
+					if (btn) {
+						btn.addEventListener('click', function() {
+							var isDark = document.body.classList.contains('dark-mode');
+							applyTheme(!isDark);
+							localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+						});
+					}
+				});
+			})();
 		</script>
 	</body>
 </html>

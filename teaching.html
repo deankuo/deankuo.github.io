@@ -46,7 +46,7 @@
 				background: rgba(255, 255, 255, 0.95);
 				backdrop-filter: blur(10px);
 				z-index: 999;
-				padding: 0 30px;
+				padding: 0 2em;
 				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 				display: flex;
 				align-items: center;
@@ -69,7 +69,7 @@
 				margin: 0;
 				padding: 0;
 				display: flex;
-				gap: 30px;
+				gap: 8px;
 				align-items: center;
 			}
 			.top-nav ul li {
@@ -80,12 +80,19 @@
 				text-decoration: none;
 				color: #333;
 				font-weight: 500;
-				padding: 8px 0;
-				transition: color 0.3s ease;
+				padding: 6px 12px;
+				border-radius: 5px;
+				transition: color 0.2s ease, background-color 0.2s ease;
 				border: none;
 			}
 			.top-nav ul li a:hover {
 				color: #f56565;
+				background-color: rgba(245, 101, 101, 0.1);
+			}
+
+			.top-nav ul li a[aria-current="page"] {
+				color: #f56565;
+				background-color: rgba(245, 101, 101, 0.1);
 			}
             #mobile-menu-button {
                 display: none;
@@ -107,14 +114,16 @@
 				cursor: pointer;
 				color: #333;
 				font-weight: 500;
-				padding: 8px 0;
-				transition: color 0.3s ease;
+				padding: 6px 12px;
+				border-radius: 5px;
+				transition: color 0.2s ease, background-color 0.2s ease;
 				display: flex;
 				align-items: center;
 				gap: 5px;
 			}
 			.publication-dropdown .opener:hover {
 				color: #f56565;
+				background-color: rgba(245, 101, 101, 0.1);
 			}
 			.publication-dropdown .opener::after {
 				content: "▼";
@@ -291,17 +300,27 @@
 			}
 
 			.course-container {
-				padding-left: 20px;
-				border-left: 2px solid #f56565;
+				padding-left: 0;
 			}
 
 			.course-entry {
-				margin-bottom: 2em;
+				margin-bottom: 1.5em;
+				background: #ffffff;
+				border: 1px solid #e9ecef;
+				border-left: 4px solid #f56565;
+				border-radius: 6px;
+				padding: 1.4em 1.6em;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+				transition: box-shadow 0.2s ease;
+			}
+
+			.course-entry:hover {
+				box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 			}
 
 			.course-entry h3 {
 				font-size: 20px;
-				color: #555;
+				color: #333;
 				margin-top: 0;
 				margin-bottom: 10px;
 			}
@@ -401,7 +420,44 @@
 					padding: 8px 16px;
 				}
 			}
-		</style>
+
+			/* Override main.css flex:1 on header children so nav sits on the right */
+			#header > .top-nav {
+				flex: none;
+			}
+
+			.theme-toggle {
+				background: none;
+				border: none;
+				outline: none;
+				box-shadow: none !important;
+				cursor: pointer;
+				color: #333 !important;
+				font-size: 16px;
+				padding: 6px 10px;
+				border-radius: 5px;
+				transition: color 0.2s ease, background-color 0.2s ease;
+				display: flex;
+				align-items: center;
+				line-height: 1;
+			}
+			.theme-toggle:focus {
+				outline: none;
+				box-shadow: none;
+			}
+			.theme-toggle:hover {
+				background-color: rgba(245, 101, 101, 0.1);
+				color: #f56565;
+			}
+			body.dark-mode .theme-toggle {
+				color: #e2e8f0;
+			}
+			body.dark-mode .theme-toggle:hover {
+				color: #f56565;
+				background-color: rgba(245, 101, 101, 0.15);
+			}
+				</style>
+	<script>if(localStorage.getItem('theme')=='dark')document.body.className+=' dark-mode';</script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -416,11 +472,10 @@
 								<div></div>
 							</div>
 							<ul id="main-nav-menu">
-								<li><a href="index.html">Homepage</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="education.html">Education</a></li>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="bio.html">Bio</a></li>
 								<li class="publication-dropdown">
-									<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publication</span>
+									<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publications</span>
 									<ul id="publication-submenu" style="display: none;" aria-hidden="true">
 										<li><a href="publication.html#Journal_Articles">Journal</a></li>
 										<li><a href="publication.html#Conference_Papers">Conference</a></li>
@@ -428,8 +483,9 @@
 									</ul>
 								</li>
 								<li><a href="teaching.html" aria-current="page">Teaching</a></li>
-								<li><a href="project.html">Project</a></li>
+								<li><a href="project.html">Projects</a></li>
 								<li><a href="Peng-Ting_Kuo_CV.pdf">CV</a></li>
+								<li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark mode"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></li>
 							</ul>
 						</nav>
 					</header>
@@ -649,6 +705,28 @@
 					});
 				}
 			});
+		</script>
+		<script>
+			// Dark/Light mode toggle
+			(function() {
+				function applyTheme(isDark) {
+					document.body.classList.toggle('dark-mode', isDark);
+					var btn = document.getElementById('theme-toggle');
+					if (btn) btn.innerHTML = isDark ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>' : '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+				}
+				// Apply on load
+				applyTheme(localStorage.getItem('theme') === 'dark');
+				document.addEventListener('DOMContentLoaded', function() {
+					var btn = document.getElementById('theme-toggle');
+					if (btn) {
+						btn.addEventListener('click', function() {
+							var isDark = document.body.classList.contains('dark-mode');
+							applyTheme(!isDark);
+							localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+						});
+					}
+				});
+			})();
 		</script>
 	</body>
 </html>

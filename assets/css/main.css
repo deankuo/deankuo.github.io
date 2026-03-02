@@ -2295,3 +2295,273 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+/* ==============================
+   DARK MODE
+   ============================== */
+
+body.dark-mode {
+  background-color: #1e1e2e !important;
+  color: #cbd5e0 !important;
+}
+
+/* Header */
+body.dark-mode #header {
+  background: rgba(26, 26, 46, 0.97) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5) !important;
+}
+body.dark-mode #header .logo strong {
+  color: #e2e8f0 !important;
+}
+
+/* Nav links */
+body.dark-mode .top-nav ul li a {
+  color: #e2e8f0 !important;
+}
+body.dark-mode .top-nav ul li a:hover,
+body.dark-mode .top-nav ul li a[aria-current="page"] {
+  color: #f56565 !important;
+  background-color: rgba(245, 101, 101, 0.15) !important;
+}
+
+/* Publication dropdown */
+body.dark-mode .publication-dropdown .opener {
+  color: #e2e8f0 !important;
+}
+body.dark-mode .publication-dropdown .opener:hover {
+  color: #f56565 !important;
+  background-color: rgba(245, 101, 101, 0.15) !important;
+}
+body.dark-mode .publication-dropdown ul {
+  background: #252540 !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+}
+body.dark-mode .publication-dropdown ul li a {
+  color: #e2e8f0 !important;
+}
+body.dark-mode .publication-dropdown ul li a:hover {
+  background-color: #2d2d50 !important;
+  color: #f56565 !important;
+}
+
+/* Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: #f0f0f8 !important;
+}
+
+/* Body text */
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span:not(.icon) {
+  color: #cbd5e0 !important;
+}
+
+/* Links */
+body.dark-mode a {
+  color: #f87171 !important;
+}
+body.dark-mode a:hover {
+  color: #f56565 !important;
+}
+
+/* Footer */
+body.dark-mode .bottom-footer {
+  background: #161626 !important;
+  border-top-color: #2d2d4a !important;
+}
+body.dark-mode .bottom-footer p {
+  color: #94a3b8 !important;
+}
+body.dark-mode .bottom-footer .social-icons a {
+  color: #94a3b8 !important;
+}
+body.dark-mode .bottom-footer .social-icons a:hover {
+  color: #f56565 !important;
+}
+
+/* Section borders */
+body.dark-mode #main > .inner > section {
+  border-top-color: #2d2d4a !important;
+}
+body.dark-mode hr {
+  border-top-color: #2d2d4a !important;
+}
+
+/* Teaching course cards */
+body.dark-mode .course-entry {
+  background: #252540 !important;
+  border-color: #3d3d5a !important;
+  border-left-color: #f56565 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+}
+body.dark-mode .university-section h2 {
+  border-bottom-color: #3d3d5a !important;
+}
+body.dark-mode .work-experience .position {
+  color: #f0f0f8 !important;
+}
+body.dark-mode .date {
+  color: #94a3b8 !important;
+}
+
+/* Buttons */
+body.dark-mode .button,
+body.dark-mode .actions .button,
+body.dark-mode .work-experience .actions .button,
+body.dark-mode .posts article .actions .button {
+  background: #252540 !important;
+  color: #e2e8f0 !important;
+  border-color: #3d3d5a !important;
+}
+body.dark-mode .button:hover,
+body.dark-mode .actions .button:hover,
+body.dark-mode .work-experience .actions .button:hover,
+body.dark-mode .posts article .actions .button:hover {
+  background: #f56565 !important;
+  color: #fff !important;
+  border-color: #f56565 !important;
+}
+
+/* CV download button (bio page) */
+body.dark-mode .cv-download-btn {
+  background: #f56565 !important;
+  color: #fff !important;
+}
+
+/* CV section */
+body.dark-mode .cv-section {
+  border-top-color: #2d2d4a !important;
+}
+body.dark-mode .cv-embed {
+  border-color: #3d3d5a !important;
+}
+
+/* Banner / homepage */
+body.dark-mode #banner .content p {
+  color: #cbd5e0 !important;
+}
+
+/* Features grid on homepage */
+body.dark-mode .features article {
+  border-top-color: #2d2d4a !important;
+}
+body.dark-mode .features article .content h3 {
+  color: #f0f0f8 !important;
+}
+
+/* Publication page */
+body.dark-mode .publication-content h1,
+body.dark-mode .publication-content h2 {
+  color: #f0f0f8 !important;
+}
+
+/* Project cards */
+body.dark-mode .posts article h3 {
+  color: #f0f0f8 !important;
+}
+body.dark-mode .posts article p {
+  color: #94a3b8 !important;
+}
+body.dark-mode .project-date {
+  color: #6b7fa3 !important;
+}
+
+/* HuggingFace embed wrapper */
+body.dark-mode .hf-embed-wrapper {
+  border-color: #3d3d5a !important;
+  background: #1a1a2e !important;
+}
+
+/* New project grid cards */
+body.dark-mode .project-card {
+  background: #252540 !important;
+  border-color: #3d3d5a !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4) !important;
+}
+body.dark-mode .project-card:hover {
+  box-shadow: 0 16px 36px rgba(0,0,0,0.55) !important;
+}
+body.dark-mode .card-body h3,
+body.dark-mode .card-body h3 a {
+  color: #f0f0f8 !important;
+}
+body.dark-mode .card-date {
+  background: rgba(245,101,101,0.15) !important;
+  color: #f87171 !important;
+}
+body.dark-mode .card-arrow {
+  color: #f87171 !important;
+}
+body.dark-mode .card-arrow:hover {
+  color: #f56565 !important;
+}
+
+/* Theme toggle icon: override inline !important so icon is visible in dark mode */
+body.dark-mode .theme-toggle {
+  color: #e2e8f0 !important;
+  box-shadow: none !important;
+}
+body.dark-mode .theme-toggle:hover {
+  color: #f56565 !important;
+  background-color: rgba(245, 101, 101, 0.15) !important;
+}
+
+/* strong/b tags */
+body.dark-mode strong,
+body.dark-mode b {
+  color: #e2e8f0 !important;
+}
+
+/* Typing cursor: stop the blink animation entirely so the white cursor disappears */
+body.dark-mode .typing-effect {
+  animation: none !important;
+  border-right-color: transparent !important;
+}
+
+/* Project subpage content dark mode */
+body.dark-mode section,
+body.dark-mode .major,
+body.dark-mode article {
+  background: transparent !important;
+  color: #cbd5e0 !important;
+}
+body.dark-mode .position {
+  color: #f0f0f8 !important;
+}
+body.dark-mode .project-duration {
+  color: #94a3b8 !important;
+}
+body.dark-mode .description {
+  color: #cbd5e0 !important;
+}
+body.dark-mode .skill {
+  color: #94a3b8 !important;
+}
+
+/* Info cards dark mode */
+body.dark-mode .info-card {
+  background: #252540 !important;
+  /* Only override the side/bottom border, NOT border-top (red accent stays) */
+  border-left-color: #3d3d5a !important;
+  border-right-color: #3d3d5a !important;
+  border-bottom-color: #3d3d5a !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35) !important;
+}
+body.dark-mode .info-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.55) !important;
+}
+body.dark-mode .info-card .info-card-icon {
+  color: #f87171 !important;
+}
+body.dark-mode .info-card h3 {
+  color: #f0f0f8 !important;
+}
+body.dark-mode .info-card p {
+  color: #94a3b8 !important;
+}
+body.dark-mode .info-card a:not(.info-card-btn) {
+  color: #f87171 !important;
+}

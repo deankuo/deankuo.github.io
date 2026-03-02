@@ -6,73 +6,26 @@
 -->
 <html lang="zh-TW">
 	<head>
-		<title>Dean Kuo's Personal Website - Political Scientist & AI Researcher</title>
+		<title>Bio | Dean Kuo's Personal Website</title>
 		<meta charset="utf-8" />
-		
+
 		<!-- SEO Meta Tags -->
-		<meta name="description" content="Peng-Ting (Dean) Kuo - Political Scientist specializing in international relations and large language models (LLM) research at National Taiwan University and Academia Sinica.">
-		<meta name="keywords" content="Peng-Ting Kuo, Dean Kuo, Political Science, International Relations, Large Language Models, LLM, AI Research, Taiwan, Academia Sinica, NTU">
+		<meta name="description" content="Bio of Peng-Ting (Dean) Kuo - Political Scientist specializing in international relations and large language models research.">
+		<meta name="keywords" content="About Dean Kuo, Peng-Ting Kuo Biography, Political Science Researcher, Taiwan, CV">
 		<meta name="author" content="Peng-Ting Kuo">
 		<meta name="robots" content="index, follow">
-		
+
 		<!-- Responsive Design Meta Tags -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		
-		<!-- Open Graph Meta Tags for Social Media -->
-		<meta property="og:title" content="Dean Kuo - Political Scientist & AI Researcher">
-		<meta property="og:description" content="Specializing in international relations and large language models research">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://deankuo.com">
-		<meta property="og:image" content="https://deankuo.com/images/郭芃廷.jpg">
-		
-		<!-- Twitter Card Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Dean Kuo - Political Scientist & AI Researcher">
-		<meta name="twitter:description" content="Specializing in international relations and large language models research">
-		
-		<!-- Structured Data for Search Engines -->
-		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "Person",
-			"name": "Peng-Ting Kuo",
-			"alternateName": "Dean Kuo",
-			"jobTitle": "Political Scientist and AI Researcher",
-			"affiliation": [
-				{
-					"@type": "Organization",
-					"name": "Academia Sinica"
-				},
-				{
-					"@type": "Organization",
-					"name": "National Taiwan University"
-				},
-				{
-					"@type": "Organization",
-					"name": "University of Texas at Austin"
-				}
-			],
-			"url": "https://deankuo.com",
-			"sameAs": [
-				"https://www.linkedin.com/in/deankuo/",
-				"https://github.com/deankuo",
-				"https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl"
-			]
-		}
-		</script>
-		
+
 		<link rel="stylesheet" href="assets/css/main.css" />
-		
+
 		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
 		<link rel="shortcut icon" href="./favicon/favicon-16x16.png" type="image/x-icon">
 		<link rel="manifest" href="./favicon/site.webmanifest">
-
-		<!-- Preload Critical Resources for Performance -->
-		<link rel="preload" href="assets/css/main.css" as="style">
-		<link rel="preload" href="images/郭芃廷.jpg" as="image">
 
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4963P2NTCT"></script>
@@ -84,10 +37,9 @@
 		</script>
 
 		<style>
-			
 			body {
 				font-family: "Roboto Slab", serif;
-				padding-top: 70px; 
+				padding-top: 70px;
 				min-height: 100vh;
 				display: flex;
 				flex-direction: column;
@@ -103,7 +55,6 @@
 				flex: 1;
 			}
 
-			
 			#header {
 				position: fixed;
 				top: 0;
@@ -129,10 +80,9 @@
 				font-weight: 600;
 			}
 
-			
 			.top-nav {
 				position: relative;
-				margin-left: auto; 
+				margin-left: auto;
 			}
 
 			.top-nav ul {
@@ -168,12 +118,12 @@
 				color: #f56565;
 				background-color: rgba(245, 101, 101, 0.1);
 			}
-            
+
             #mobile-menu-button {
                 display: none;
                 cursor: pointer;
                 padding: 10px;
-                z-index: 1001; 
+                z-index: 1001;
             }
 
             #mobile-menu-button div {
@@ -184,7 +134,6 @@
                 transition: 0.4s;
             }
 
-			
 			.publication-dropdown {
 				position: relative;
 			}
@@ -246,99 +195,6 @@
 				color: #f56565;
 			}
 
-			/* --- Banner --- */
-			@keyframes typing {
-				from { width: 0; }
-				to { width: 100%; }
-			}
-	
-			@keyframes blink {
-				from { border-right-color: rgba(255,255,255,.75); }
-				to { border-right-color: transparent; }
-			}
-	
-			.typing-effect {
-				font-family: "Fira Code", monospace;
-				font-size: clamp(20px, 4vw, 36px);
-				display: inline-block;
-				overflow: hidden;
-				border-right: .15em solid rgba(255,255,255,.75);
-				white-space: nowrap;
-				margin: 0 auto;
-				letter-spacing: .08em;
-				min-height: 1.2em;
-				animation: blink .75s step-end infinite;
-				width: auto;
-				max-width: 90%;
-			}
-
-			#banner {
-				max-width: 70%;
-				margin: 0 auto;
-			}
-
-			#banner .content {
-				text-align: left;
-			}
-
-			#banner .content header {
-				text-align: left;
-			}
-
-			#banner .image.object {
-				margin: 2em auto 0;
-				max-width: 300px;
-			}
-
-			/* Circular profile photo */
-			#banner .image.object.profile-photo-wrap {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 1em 0 1em 2em;
-				background: none !important;
-				height: auto !important;
-			}
-			/* Override main.css object-fit img rule for the ring image */
-			#banner .image.object.profile-photo-wrap > .profile-photo-ring > img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover !important;
-			}
-			.profile-photo-ring {
-				width: 230px;
-				height: 310px;
-				border-radius: 50%;
-				overflow: hidden;
-				box-shadow: 0 6px 24px rgba(0,0,0,0.18);
-				flex-shrink: 0;
-			}
-			.profile-photo-ring img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				object-position: top center;
-				display: block;
-			}
-			body.dark-mode .profile-photo-ring {
-				box-shadow: 0 6px 24px rgba(0,0,0,0.45);
-			}
-			@media screen and (max-width: 768px) {
-				.profile-photo-wrap {
-					padding: 0 0 1.5em 0;
-					justify-content: center;
-				}
-				.profile-photo-ring {
-					width: 150px;
-					height: 200px;
-				}
-			}
-			
-			img {
-				max-width: 100%;
-				height: auto;
-			}
-
 			/* --- Footer --- */
 			.bottom-footer {
 				background: #f8f9fa;
@@ -393,7 +249,55 @@
 				text-decoration: underline;
 			}
 
-			/* --- 響應式設計 --- */
+			/* --- Bio Content --- */
+			.bio-content {
+				max-width: 70%;
+				margin: 0 auto;
+				padding: 2em 0;
+			}
+
+			/* --- CV Section --- */
+			.cv-section {
+				margin-top: 3em;
+				padding-top: 2em;
+				border-top: 2px solid #e9ecef;
+			}
+
+			.cv-section h2 {
+				font-size: 26px;
+				margin-bottom: 1em;
+				color: #333;
+			}
+
+			.cv-download-btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				background: #f56565;
+				color: white !important;
+				padding: 10px 22px;
+				border-radius: 5px;
+				text-decoration: none !important;
+				font-weight: 500;
+				font-size: 15px;
+				border: none !important;
+				transition: background 0.3s ease;
+				margin-bottom: 1.5em;
+			}
+
+			.cv-download-btn:hover {
+				background: #e05555;
+				text-decoration: none !important;
+			}
+
+			.cv-embed {
+				width: 100%;
+				height: 850px;
+				border: 1px solid #e9ecef;
+				border-radius: 6px;
+			}
+
+			/* --- Responsive --- */
 			@media screen and (max-width: 768px) {
 				#header {
 					padding: 0 15px;
@@ -403,7 +307,6 @@
 					padding-top: 60px;
 				}
 
-				
 				#header .logo {
 					order: 2;
 					flex-grow: 1;
@@ -417,20 +320,18 @@
                 #mobile-menu-button {
                     display: block;
                 }
-				
-				
+
 				.top-nav > ul#main-nav-menu {
 					display: none !important;
 				}
 
-				
                 .top-nav ul#main-nav-menu.show {
 					display: flex !important;
                     flex-direction: column;
                     position: absolute;
-                    top: 100%; 
-					margin-top: 15px; 
-                    left: -15px; 
+                    top: 100%;
+					margin-top: 15px;
+                    left: -15px;
                     width: 200px;
                     background: white;
                     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -443,7 +344,7 @@
                     width: 100%;
                     text-align: center;
                 }
-                
+
                 .top-nav ul#main-nav-menu li a {
                     padding: 12px 20px;
                     display: block;
@@ -455,25 +356,20 @@
 				}
 
                 .publication-dropdown ul {
-                    position: static; 
+                    position: static;
                     box-shadow: none;
                     background: #f8f9fa;
                     border-radius: 0;
                     width: 100%;
                 }
 
-				
-				#banner {
+				.bio-content {
 					max-width: 90%;
+					padding: 1em 0;
 				}
-				#banner .content, #banner .content header {
-					text-align: left;
-				}
-				#banner .image.object {
-					display: none;
-				}
-				.typing-effect {
-					margin: 0;
+
+				.cv-embed {
+					height: 500px;
 				}
 			}
 
@@ -522,77 +418,6 @@
 				color: #f56565;
 				background-color: rgba(245, 101, 101, 0.15);
 			}
-
-			/* Info cards – 2×2 vertical card grid */
-			.info-cards {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: 1.2em;
-				max-width: 70%;
-				margin: 0 auto;
-			}
-			.info-card {
-				background: #fff;
-				border-radius: 12px;
-				padding: 1.3em 1.2em 1.2em;
-				border: 1px solid #eef0f3;
-				border-top: 3px solid #f56565;
-				box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-				transition: transform 0.2s ease, box-shadow 0.2s ease;
-				display: flex;
-				flex-direction: column;
-				gap: 0.5em;
-			}
-			.info-card:hover {
-				transform: translateY(-4px);
-				box-shadow: 0 8px 24px rgba(0,0,0,0.11);
-			}
-			.info-card-icon {
-				font-size: 22px;
-				color: #f56565;
-				margin-bottom: 0.1em;
-			}
-			.info-card h3 {
-				font-size: 17px;
-				font-weight: 700;
-				margin: 0;
-				color: #222;
-			}
-			.info-card p {
-				font-size: 13px;
-				color: #666;
-				line-height: 1.65;
-				margin: 0;
-			}
-			.info-card a:not(.info-card-btn) {
-				font-size: 13px;
-				color: #f56565;
-				border: none !important;
-			}
-			.info-card-btn {
-				display: inline-flex;
-				align-items: center;
-				gap: 5px;
-				background: #f56565;
-				color: #fff !important;
-				padding: 7px 16px;
-				border-radius: 6px;
-				font-size: 13px;
-				font-weight: 600;
-				text-decoration: none;
-				border: none !important;
-				box-shadow: none !important;
-				transition: background 0.2s;
-				align-self: flex-start;
-				margin-top: 0.2em;
-			}
-			.info-card-btn:hover {
-				background: #d94f4f !important;
-				color: #fff !important;
-			}
-			@media screen and (max-width: 640px) {
-				.info-cards { grid-template-columns: 1fr; }
-			}
 				</style>
 	<script>if(localStorage.getItem('theme')=='dark')document.body.className+=' dark-mode';</script>
 	</head>
@@ -615,8 +440,8 @@
 											<div></div>
 										</div>
 										<ul id="main-nav-menu">
-											<li><a href="index.html" aria-current="page">Home</a></li>
-											<li><a href="bio.html">Bio</a></li>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="bio.html" aria-current="page">Bio</a></li>
 											<li class="publication-dropdown">
 												<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu">Publications</span>
 												<ul id="publication-submenu" style="display: none;" aria-hidden="true">
@@ -633,167 +458,45 @@
 									</nav>
 								</header>
 
-							<!-- Banner -->
-								<section id="banner" role="main">
-									<div class="content">
-										<header>
-											<h1 id="dynamicText" class="typing-effect" aria-live="polite"></h1>
-										</header>
-										<p>Peng-Ting's name in Chinese is "郭芃廷." He is a Ph.D student in Dept. of Government, University of Texas at Austin, specializing in international relations and the applications of large language models (LLM). 
-											He currently serves as a research assistant at the Strategic and International Relations Laboratory (SIR), Academia Sinica; Machine Intelligence & Understanding Laboratory (Miulab) at Department of CSIE, NTU; and Institute of Sociology, Academia Sinica.
-											His research interests uniquely blend international relations with cutting-edge technology, focusing on deep learning and large language models in political analysis.
-											Peng-Ting holds a M.A. (2024) and B.A. in Political Science with a minor in Economics (2021) from National Taiwan University. His professional experience includes internships at the National Audit Office R.O.C. and First Bank, bridging academic knowledge with practical insights.</p>
-										<ul class="actions">
-											<li><a href="bio.html" class="button big" aria-label="Learn more about Dean Kuo">Learn More</a></li>
-										</ul>
+							<!-- Bio Content -->
+								<section class="bio-content">
+									<header class="major">
+										<h1>About Me</h1>
+									</header>
+
+									<span class="image left"><img src="images/Me.jpeg" alt="Peng-Ting (Dean) Kuo" /></span>
+
+									<p>Kuo's Chinese name is 郭芃廷. He graduated from the Department of Political Science at National Taiwan University with M.A. & B.A.. He also serves as a research assistant to Professor Ronan Tse-min Fu at the Institute of Political Science at Academia Sinica; Professor Vivian Yun-Nung Chen at the Department of Computer Science & Information Engineering at NTU; and also Professor Wayne Hsuan-Wei Lee at the Department of Community and Population Health at Lehigh University. Kuo's research interests encompass deep learning, large language model applications, electoral systems, power transition and threat perception theory. As a research assistant, he constructed a database of significant events in Britain and Germany from 1860 to 1914, providing case study data for Anglo-German power transition explanations. Beyond qualitative research, Kuo is responsible for processing cross-national survey data for the Asian Barometer Survey (ABS), utilizing R for statistical analysis and testing. Their research output, "Democracy or Prosperity? A Cross-National Analysis of East Asian Countries," was presented at the 2023 Asian Barometer Conference, demonstrating Kuo's profound understanding of cross-national data analysis.</p>
+
+									<p>During his graduate studies, Kuo developed an interest in deep learning and natural language processing, leading him to extensively study courses in deep learning, data science, natural language processing, linear algebra, and probability. He maintained a strong academic focus, achieving a GPA above 4.0 each semester, ranking fourth in his class with a 4.17 GPA in his first year, and receiving a scholarship from the Ministry of Foreign Affairs. Kuo's master's thesis, "Exploring the Impact of Electoral Reform on Legislative Candidates' Campaign Strategies Using Machine Learning," was presented at the 2023 Taiwan Political Science Association Conference. He also presented "Decoding Campaigning Strategies: A Machine Learning Approach to Understanding the Impact of Election Systems on Legislative Candidates" at the 2024 Midwest Political Science Association Annual Conference. Currently, Kuo is collaborating with Professor Hong-wung Wang's team to develop a classification model for legislative interpellations, aiming to demonstrate the application of artificial intelligence in political science and the interaction between these disciplines. This work was presented at the 16th International Conference on Parliamentary Studies in June 2024.</p>
+
+									<p>Kuo is currently co-authoring a paper on the effects of electoral reforms in Taiwan and Japan with Ronan Tse-min Fu, Nick Lin, and Akitaka Matsuo. He is also developing classification models with Yu-Hung Sun and Hong-wung Wang, and collaborating with Wayne Hsuan-wei Lee to construct a social network model using WTO data, combining law, political science, and computational social science applications. Additionally, Kuo is working with Yun-nung Chen to study the problems of self-preference of LLMs in retrieval augmentation generation (RAG) framework. Furthermore, he is collaborating a computational study with Ronan Tse-min Fu on simulating foreign policy decision making process via multi-agent models utilizing LLMs and historical documents.</p>
+
+									<p>In the future, Kuo plans to pursue a doctoral degree in Political Science especially focus on methodology field in the United States, aiming to enhance his professional knowledge and skills in leveraging computational skills to answer political questions.</p>
+
+									<p>In addition, Kuo enjoys playing badminton, he was the leader of the department team during 2019-2020.</p>
+
+									<!-- CV Section -->
+									<div class="cv-section">
+										<h2>Curriculum Vitae</h2>
+										<a href="Peng-Ting_Kuo_CV.pdf"
+										   onclick="gtag('event', 'download', {'event_category': 'CV', 'event_label': 'CV Download'});"
+										   class="cv-download-btn"
+										   aria-label="Download CV PDF"
+										   download>
+											<span class="icon solid fa-download" aria-hidden="true"></span>
+											Download CV (PDF)
+										</a>
+										<iframe
+											src="Peng-Ting_Kuo_CV.pdf"
+											class="cv-embed"
+											title="Peng-Ting Kuo Curriculum Vitae"
+											aria-label="Embedded CV PDF viewer">
+											<p>Your browser does not support embedded PDFs.
+											<a href="Peng-Ting_Kuo_CV.pdf">Download the CV here</a>.</p>
+										</iframe>
 									</div>
-									<div class="image object profile-photo-wrap">
-										<div class="profile-photo-ring">
-											<img src="images/郭芃廷.jpg" alt="Peng-Ting (Dean) Kuo - Political Scientist and AI Researcher" loading="lazy" />
-										</div>
-									</div>
-								</section>
 
-								<!-- Enhanced JavaScript for Consistent Animation -->
-								<script>
-									// Enhanced typing animation with consistent display
-									const textArray = [
-										"Dean Kuo",
-										// "Peng-Ting Kuo",
-										"Political Scientist",
-										"LLM & AI Researcher",
-									];
-									
-									let currentIndex = 0;
-									const typingElement = document.getElementById('dynamicText');
-									let isAnimating = false;
-									
-									function calculateOptimalWidth() {
-										const tempElement = document.createElement('span');
-										tempElement.style.visibility = 'hidden';
-										tempElement.style.position = 'absolute';
-										tempElement.style.fontSize = window.getComputedStyle(typingElement).fontSize;
-										tempElement.style.fontFamily = window.getComputedStyle(typingElement).fontFamily;
-										tempElement.style.letterSpacing = window.getComputedStyle(typingElement).letterSpacing;
-										tempElement.style.fontWeight = window.getComputedStyle(typingElement).fontWeight;
-										document.body.appendChild(tempElement);
-										
-										let maxWidth = 0;
-										textArray.forEach(text => {
-											tempElement.textContent = text;
-											maxWidth = Math.max(maxWidth, tempElement.offsetWidth);
-										});
-										
-										document.body.removeChild(tempElement);
-										
-										const containerWidth = typingElement.parentElement.offsetWidth;
-										const calculatedWidth = Math.min(maxWidth + 30, containerWidth * 0.95);
-										
-										return calculatedWidth;
-									}
-									
-									function setOptimalWidth() {
-										const optimalWidth = calculateOptimalWidth();
-										typingElement.style.width = optimalWidth + 'px';
-										typingElement.style.maxWidth = '95%';
-									}
-									
-									function typeWriter(text, i, fnCallback) {
-										if (isAnimating && i < text.length) {
-											typingElement.innerHTML = text.substring(0, i + 1);
-											setTimeout(() => {
-												typeWriter(text, i + 1, fnCallback);
-											}, 100);
-										} else if (typeof fnCallback === 'function' && isAnimating) {
-											setTimeout(fnCallback, 1500);
-										}
-									}
-									
-									function eraseText(fnCallback) {
-										const currentText = typingElement.innerHTML;
-										let i = currentText.length;
-										
-										function eraseStep() {
-											if (isAnimating && i >= 0) {
-												typingElement.innerHTML = currentText.substring(0, i);
-												i--;
-												setTimeout(eraseStep, 50);
-											} else if (typeof fnCallback === 'function' && isAnimating) {
-												setTimeout(fnCallback, 500);
-											}
-										}
-										eraseStep();
-									}
-									
-									function startTextAnimation() {
-										if (!isAnimating) return;
-										
-										typeWriter(textArray[currentIndex], 0, function() {
-											setTimeout(() => {
-												eraseText(() => {
-													currentIndex = (currentIndex + 1) % textArray.length;
-													startTextAnimation();
-												});
-											}, 2000);
-										});
-									}
-									
-									document.addEventListener('DOMContentLoaded', function() {
-										isAnimating = true;
-										setOptimalWidth();
-										startTextAnimation();
-										
-										window.addEventListener('resize', function() {
-											setOptimalWidth();
-										});
-									});
-									
-									document.addEventListener('visibilitychange', function() {
-										isAnimating = !document.hidden;
-										if (isAnimating && typingElement.innerHTML === '') {
-											startTextAnimation();
-										}
-									});
-								</script>
-							<!-- Info Cards -->
-								<section role="complementary">
-									<div class="info-cards">
-
-										<div class="info-card">
-											<div class="info-card-icon"><span class="icon solid fa-graduation-cap" aria-hidden="true"></span></div>
-											<div class="info-card-body">
-												<h3>Education</h3>
-												<p>Ph.D. student, Government, UT Austin<br>M.A./B.A. in Political Science, NTU</p>
-											</div>
-										</div>
-
-										<div class="info-card">
-											<div class="info-card-icon"><span class="icon solid fa-award" aria-hidden="true"></span></div>
-											<div class="info-card-body">
-												<h3>Awards</h3>
-												<p>Phi Tau Phi Honor Society, 2025<br>Diplomatic Scholarship, MOFA, 2022<br>Dean's List (2nd Place), NTU, 2020</p>
-											</div>
-										</div>
-
-										<div class="info-card">
-											<div class="info-card-icon"><span class="icon solid fa-file-alt" aria-hidden="true"></span></div>
-											<div class="info-card-body">
-												<h3>Curriculum Vitae</h3>
-												<a href="Peng-Ting_Kuo_CV.pdf" class="info-card-btn"
-												   onclick="gtag('event','download',{'event_category':'CV','event_label':'CV Download'});"
-												   aria-label="Download CV PDF">&#8595;&nbsp;Download CV</a>
-											</div>
-										</div>
-
-										<div class="info-card">
-											<div class="info-card-icon"><span class="icon solid fa-envelope" aria-hidden="true"></span></div>
-											<div class="info-card-body">
-												<h3>Contact</h3>
-												<a href="mailto:dean.kuo@utexas.edu" aria-label="Email Dean Kuo">dean.kuo@utexas.edu</a>
-											</div>
-										</div>
-
-									</div>
 								</section>
 
 						</div>
@@ -822,7 +525,7 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				function toggleSubmenu(event) {
-					event.stopPropagation(); 
+					event.stopPropagation();
 					const submenu = document.getElementById('publication-submenu');
 					const opener = event.currentTarget;
 					const isExpanded = opener.getAttribute('aria-expanded') === 'true';
@@ -836,7 +539,7 @@
 						opener.setAttribute('aria-expanded', 'false');
 					}
 				}
-				
+
 				document.addEventListener('keydown', function(e) {
 					if (e.key === 'Enter' || e.key === ' ') {
 						if (e.target.classList.contains('opener')) {
