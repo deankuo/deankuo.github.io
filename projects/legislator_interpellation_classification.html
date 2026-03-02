@@ -561,9 +561,6 @@
 						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar">
 							<span class="icon solid fa-graduation-cap" aria-hidden="true"></span>
 						</a>
-						<a href="https://www.instagram.com/dean_0609_/" title="Instagram">
-							<span class="icon brands fa-instagram" aria-hidden="true"></span>
-						</a>
 						<a href="https://medium.com/@deankuo_15628" title="Medium">
 							<span class="icon brands fa-medium-m" aria-hidden="true"></span>
 						</a>
@@ -621,6 +618,29 @@
 				});
 			</script>
 
+		<script>
+			// Mobile menu button handler
+			document.addEventListener('DOMContentLoaded', function() {
+				const menuButton = document.getElementById('mobile-menu-button');
+				const navMenu = document.getElementById('main-nav-menu');
+				if (menuButton && navMenu) {
+					menuButton.addEventListener('click', function(event) {
+						event.stopPropagation();
+						navMenu.classList.toggle('show');
+						const isExpanded = navMenu.classList.contains('show');
+						menuButton.setAttribute('aria-expanded', isExpanded);
+					});
+					document.addEventListener('click', function(e) {
+						if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+							if (navMenu.classList.contains('show')) {
+								navMenu.classList.remove('show');
+								menuButton.setAttribute('aria-expanded', 'false');
+							}
+						}
+					});
+				}
+			});
+		</script>
 	<script>
 		// Dark/Light mode toggle
 		(function() {

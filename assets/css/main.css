@@ -2565,3 +2565,36 @@ body.dark-mode .info-card p {
 body.dark-mode .info-card a:not(.info-card-btn) {
   color: #f87171 !important;
 }
+
+/* Mobile hamburger bars – visible in dark mode */
+body.dark-mode #mobile-menu-button div {
+  background-color: #e2e8f0 !important;
+}
+
+/* Mobile nav dropdown – dark background in dark mode */
+body.dark-mode .top-nav ul#main-nav-menu.show {
+  background: #252540 !important;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5) !important;
+}
+/* Ensure all mobile nav items text is readable in dark mode */
+body.dark-mode .top-nav ul#main-nav-menu.show li a,
+body.dark-mode .top-nav ul#main-nav-menu.show .opener {
+  color: #e2e8f0 !important;
+}
+body.dark-mode .top-nav ul#main-nav-menu.show li a:hover,
+body.dark-mode .top-nav ul#main-nav-menu.show .opener:hover {
+  color: #f56565 !important;
+  background-color: rgba(245, 101, 101, 0.15) !important;
+}
+/* Publication dropdown sub-menu background in mobile dark mode */
+body.dark-mode .top-nav ul#main-nav-menu.show .publication-dropdown ul {
+  background: #1e1e35 !important;
+}
+
+/* Center the moon/sun icon inside the mobile nav list item */
+@media screen and (max-width: 768px) {
+  .top-nav ul#main-nav-menu li .theme-toggle {
+    display: inline-flex !important;
+    margin: 0 auto;
+  }
+}
