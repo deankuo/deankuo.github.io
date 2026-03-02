@@ -73,7 +73,8 @@ body {
     min-width: 320px; } }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -2366,6 +2367,13 @@ body.dark-mode a {
 body.dark-mode a:hover {
   color: #f56565 !important;
 }
+/* Publication paper links should stay blue in dark mode */
+body.dark-mode .publication-content p a {
+  color: #60a5fa !important;
+}
+body.dark-mode .publication-content p a:hover {
+  color: #93c5fd !important;
+}
 
 /* Footer */
 body.dark-mode .bottom-footer {
@@ -2597,4 +2605,161 @@ body.dark-mode .top-nav ul#main-nav-menu.show .publication-dropdown ul {
     display: inline-flex !important;
     margin: 0 auto;
   }
+}
+
+/* ── Active nav: underline indicator (overrides inline styles) ─────────── */
+.top-nav ul li a[aria-current="page"] {
+  background-color: transparent !important;
+  font-weight: 700 !important;
+  position: relative !important;
+}
+.top-nav ul li a[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background: #f56565;
+  border-radius: 2px;
+}
+body.dark-mode .top-nav ul li a[aria-current="page"] {
+  background-color: transparent !important;
+}
+body.dark-mode .top-nav ul li a[aria-current="page"]::after {
+  background: #f87171;
+}
+
+/* ── Project card description ──────────────────────────────────────────── */
+.card-desc {
+  font-size: 13.5px;
+  color: #666;
+  line-height: 1.55;
+  margin: 0.4em 0 0.9em;
+}
+body.dark-mode .card-desc {
+  color: #a0a0b8 !important;
+}
+
+/* ── Publication filter bar ────────────────────────────────────────────── */
+.pub-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2em;
+}
+.filter-btn {
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  height: auto !important;
+  line-height: 1.5 !important;
+  border: 1.5px solid #ddd;
+  border-radius: 20px;
+  background: transparent !important;
+  color: #888 !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  letter-spacing: 0.01em;
+  font-family: inherit;
+}
+.filter-btn:hover {
+  border-color: #f56565 !important;
+  color: #f56565 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.filter-btn.active {
+  background: #f56565 !important;
+  color: #fff !important;
+  border-color: #f56565 !important;
+  box-shadow: none !important;
+}
+body.dark-mode .filter-btn {
+  border-color: #444 !important;
+  color: #888 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+body.dark-mode .filter-btn:hover {
+  border-color: #f87171 !important;
+  color: #f87171 !important;
+}
+body.dark-mode .filter-btn.active {
+  background: #f56565 !important;
+  color: #fff !important;
+  border-color: #f56565 !important;
+}
+
+/* ── Publication entry wrapper ─────────────────────────────────────────── */
+.pub-entry {
+  margin-bottom: 1.4em;
+  padding-bottom: 1.2em;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: opacity 0.25s ease;
+}
+.pub-entry:last-child {
+  border-bottom: none;
+}
+body.dark-mode .pub-entry {
+  border-bottom-color: rgba(255,255,255,0.05) !important;
+}
+
+/* ── Pub tags ───────────────────────────────────────────────────────────── */
+.pub-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 7px;
+}
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+/* Shared pill style for both tags and the copy button */
+.pub-tag,
+.copy-bibtex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  height: auto !important;
+  line-height: 1.5 !important;
+  padding: 2px 9px !important;
+  border-radius: 20px;
+  background: rgba(245,101,101,0.1) !important;
+  color: #f56565 !important;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  border: none !important;
+  box-shadow: none !important;
+}
+/* BibTeX pill extra: pointer + hover */
+.copy-bibtex {
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.18s ease;
+}
+.copy-bibtex:hover {
+  background: rgba(245,101,101,0.18) !important;
+}
+.copy-bibtex.copied {
+  background: rgba(34,197,94,0.12) !important;
+  color: #16a34a !important;
+}
+body.dark-mode .pub-tag,
+body.dark-mode .copy-bibtex {
+  background: rgba(248,113,113,0.15) !important;
+  color: #f87171 !important;
+}
+body.dark-mode .copy-bibtex:hover {
+  background: rgba(248,113,113,0.25) !important;
+}
+body.dark-mode .copy-bibtex.copied {
+  background: rgba(74,222,128,0.12) !important;
+  color: #4ade80 !important;
 }

@@ -467,7 +467,6 @@
 								</li>
 								<li><a href="teaching.html">Teaching</a></li>
 								<li><a href="project.html">Projects</a></li>
-								<li><a href="Peng-Ting_Kuo_CV.pdf" onclick="gtag('event','download',{'event_category':'CV','event_label':'CV Download'});">CV</a></li>
 								<li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark mode"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></li>
 							</ul>
 						</nav>
@@ -477,48 +476,142 @@
 						<header class="main">
 							<h1>Publication</h1>
 						</header>
-						
-						<section id="Peer_Reviewed_Papers">
+
+
+						<!-- Filter Bar -->
+						<div class="pub-filter-bar" role="group" aria-label="Filter publications by topic">
+							<button class="filter-btn active" data-filter="all">All</button>
+							<button class="filter-btn" data-filter="llm">LLM</button>
+							<button class="filter-btn" data-filter="ir">IR</button>
+							<button class="filter-btn" data-filter="electoral-studies">Electoral Studies</button>
+							<button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+						</div>
+
+						<section id="Peer_Reviewed_Papers" class="pub-section">
 							<header class="major">
 								<h2>Peer Reviewed Papers</h2>
 							</header>
-							<p>Yen-Shan Chen, Jing Jin, <u>Peng-Ting Kuo</u>, Chao-Wei Huang, Yun-Nung Chen,
+
+							<div class="pub-entry" data-tags="llm">
+								<p>Yen-Shan Chen, Jing Jin, <u>Peng-Ting Kuo</u>, Chao-Wei Huang, Yun-Nung Chen,
 								<font color="#2E86C1"><a href="https://arxiv.org/abs/2410.20833">"LLMs are Biased Evaluators: But Not Biased for Retrieval Augmented Generation,"</a></font>
-								presented at <i>The 63rd Annual Meeting of the Association for Computational Linguistics (ACL)<i>, Vienna, Austria, Jul 27 - Aug 1, 2025.</p>
-							<p><u>Peng-Ting Kuo</u>, 
-								<font color="#2E86C1">"When Right Makes Might: Rising Power and World Order,"</font> 
-								<i>Political Science Quarterly Book Review,</i> Vol.65, pages 21-24, 2022.</p>
+								presented at <i>The 63rd Annual Meeting of the Association for Computational Linguistics (ACL)</i>, Vienna, Austria, Jul 27 – Aug 1, 2025.</p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">LLM</span>
+									</div>
+									<button class="copy-bibtex" data-bibtex="@inproceedings{chen2025llms,&#10;  author    = {Yen-Shan Chen and Jing Jin and Peng-Ting Kuo and Chao-Wei Huang and Yun-Nung Chen},&#10;  title     = {{LLMs} are Biased Evaluators: But Not Biased for Retrieval Augmented Generation},&#10;  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025)},&#10;  year      = {2025},&#10;  address   = {Vienna, Austria}&#10;}">&#128203; Copy BibTeX</button>
+								</div>
+							</div>
+
+							<div class="pub-entry" data-tags="ir">
+								<p><u>Peng-Ting Kuo</u>,
+								<font color="#2E86C1">"When Right Makes Might: Rising Power and World Order,"</font>
+								<i>Political Science Quarterly Book Review,</i> Vol.65, pages 21–24, 2022.</p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">IR</span>
+									</div>
+									<button class="copy-bibtex" data-bibtex="@article{kuo2022right,&#10;  author  = {Peng-Ting Kuo},&#10;  title   = {When Right Makes Might: Rising Power and World Order},&#10;  journal = {Political Science Quarterly Book Review},&#10;  volume  = {65},&#10;  pages   = {21--24},&#10;  year    = {2022}&#10;}">&#128203; Copy BibTeX</button>
+								</div>
+							</div>
 						</section>
 
-						<section id="Under Review">
+						<section id="Under_Review" class="pub-section">
 							<header class="major">
 								<h2>Work Under Review</h2>
 							</header>
-							<p>Ronan Tse-min Fu, Yu-Ning Chiu, <u>Peng-Ting Kuo</u>, 
+
+							<div class="pub-entry" data-tags="ir">
+								<p>Ronan Tse-min Fu, Yu-Ning Chiu, <u>Peng-Ting Kuo</u>,
 								<font color="#2E86C1">"Explaining China's Security Policy under Xi Jinping: A Neoclassical Realist Approach"</font></p>
-							<p>Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>, I-Lien Lee, Chia-Hsiang Han, Yu-Ning Chiu, 
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">IR</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="pub-entry" data-tags="ir">
+								<p>Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>, I-Lien Lee, Chia-Hsiang Han, Yu-Ning Chiu,
 								<font color="#2E86C1">"Democracy or Prosperity? A Cross-National Analysis of East Asian Countries"</font></p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">IR</span>
+									</div>
+								</div>
+							</div>
 						</section>
 
-						<section id="Conference_Papers">
+						<section id="Conference_Papers" class="pub-section">
 							<header class="major">
 								<h2>Selected Conference Papers</h2>
 							</header>
-							<p>Naofumi Fujimura,Nick Lin, Akitaka Matsuo, <u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Yutaka Shinada,
-								<font color="#2E86C1">"Divergent Paths from Electoral Institutions to Campaign Strategies: Analyzing Candidate Manifestos in Japan and Taiwan,"</font> 
-								presented at <i>The 2025 IPSA World Congress</i>, Seoul, South Korea, Jul 12-16, 2025.</p>
-							<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Nick Lin,
-								<font color="#2E86C1">"Electoral Reform and Campaign Tactics: A Machine Learning Analysis of Taiwanese Legislative Candidates' Manifestos,"</font> 
-								presented at <i>The 16-th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15-16, 2024.</p>
-							<p>Yu-Hung Sun, <u>Peng-Ting Kuo</u>, Chun-Ming Tsui, Hong-Wung Wang,
-								<font color="#2E86C1">"From Human-Label to Auto- Label: An Automatic Classification Model for Legislators'Oral Questions,"</font> 
-								presented at <i>The 16-th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15-16, 2024.</p>
-							<p>Cheng, Su-Feng, Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>, 
+
+							<div class="pub-entry" data-tags="electoral-studies,machine-learning">
+								<p>Naofumi Fujimura, Nick Lin, Akitaka Matsuo, <u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Yutaka Shinada,
+								<font color="#2E86C1">"Divergent Paths from Electoral Institutions to Campaign Strategies: Analyzing Candidate Manifestos in Japan and Taiwan,"</font>
+								presented at <i>The 2025 IPSA World Congress</i>, Seoul, South Korea, Jul 12–16, 2025.</p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">Electoral Studies</span>
+										<span class="pub-tag">Machine Learning</span>
+									</div>
+									<button class="copy-bibtex" data-bibtex="@inproceedings{fujimura2025divergent,&#10;  author    = {Naofumi Fujimura and Nick Lin and Akitaka Matsuo and Peng-Ting Kuo and Ronan Tse-min Fu and Yutaka Shinada},&#10;  title     = {Divergent Paths from Electoral Institutions to Campaign Strategies: Analyzing Candidate Manifestos in Japan and Taiwan},&#10;  booktitle = {The 2025 IPSA World Congress},&#10;  year      = {2025},&#10;  address   = {Seoul, South Korea}&#10;}">&#128203; Copy BibTeX</button>
+								</div>
+							</div>
+
+							<div class="pub-entry" data-tags="electoral-studies,machine-learning">
+								<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Nick Lin,
+								<font color="#2E86C1">"Electoral Reform and Campaign Tactics: A Machine Learning Analysis of Taiwanese Legislative Candidates' Manifestos,"</font>
+								presented at <i>The 16th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15–16, 2024.</p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">Electoral Studies</span>
+										<span class="pub-tag">Machine Learning</span>
+									</div>
+									<button class="copy-bibtex" data-bibtex="@inproceedings{kuo2024electoral,&#10;  author    = {Peng-Ting Kuo and Ronan Tse-min Fu and Nick Lin},&#10;  title     = {Electoral Reform and Campaign Tactics: A Machine Learning Analysis of Taiwanese Legislative Candidates' Manifestos},&#10;  booktitle = {The 16th International Conference on Parliamentary Studies},&#10;  year      = {2024},&#10;  address   = {Taipei, Taiwan}&#10;}">&#128203; Copy BibTeX</button>
+								</div>
+							</div>
+
+							<div class="pub-entry" data-tags="machine-learning">
+								<p>Yu-Hung Sun, <u>Peng-Ting Kuo</u>, Chun-Ming Tsui, Hong-Wung Wang,
+								<font color="#2E86C1">"From Human-Label to Auto-Label: An Automatic Classification Model for Legislators' Oral Questions,"</font>
+								presented at <i>The 16th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15–16, 2024.</p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">Machine Learning</span>
+									</div>
+									<button class="copy-bibtex" data-bibtex="@inproceedings{sun2024autolabel,&#10;  author    = {Yu-Hung Sun and Peng-Ting Kuo and Chun-Ming Tsui and Hong-Wung Wang},&#10;  title     = {From Human-Label to Auto-Label: An Automatic Classification Model for Legislators' Oral Questions},&#10;  booktitle = {The 16th International Conference on Parliamentary Studies},&#10;  year      = {2024},&#10;  address   = {Taipei, Taiwan}&#10;}">&#128203; Copy BibTeX</button>
+								</div>
+							</div>
+
+							<div class="pub-entry" data-tags="electoral-studies,machine-learning">
+								<p>Su-Feng Cheng, Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>,
 								<font color="#2E86C1">"Understanding the Impact of Election System Reform on Legislative Campaigning Strategies: A Machine Learning Approach,"</font>
-								presented at the Annual Meeting of Japanese Association of Electoral Studies, Kochi, Japan: Japanese Association of Electoral Studies, May 18-19, 2024.</p>
-							<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, 
-								<font color="#2E86C1">"Decoding Campaigning Strategies: A Machine Learning Approach to Understanding the Impact of Election Systems on Legislative Candidates,"</font> 
-								presented at <i>The 81-th Midwest Political Science Association Conference</i>, Chicago, United States, Apr 4-7, 2024.</p>
+								presented at the Annual Meeting of Japanese Association of Electoral Studies, Kochi, Japan, May 18–19, 2024.</p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">Electoral Studies</span>
+										<span class="pub-tag">Machine Learning</span>
+									</div>
+									<button class="copy-bibtex" data-bibtex="@inproceedings{cheng2024understanding,&#10;  author    = {Su-Feng Cheng and Ronan Tse-min Fu and Peng-Ting Kuo},&#10;  title     = {Understanding the Impact of Election System Reform on Legislative Campaigning Strategies: A Machine Learning Approach},&#10;  booktitle = {Annual Meeting of Japanese Association of Electoral Studies},&#10;  year      = {2024},&#10;  address   = {Kochi, Japan}&#10;}">&#128203; Copy BibTeX</button>
+								</div>
+							</div>
+
+							<div class="pub-entry" data-tags="electoral-studies,machine-learning,ir">
+								<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu,
+								<font color="#2E86C1">"Decoding Campaigning Strategies: A Machine Learning Approach to Understanding the Impact of Election Systems on Legislative Candidates,"</font>
+								presented at <i>The 81st Midwest Political Science Association Conference</i>, Chicago, United States, Apr 4–7, 2024.</p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">Electoral Studies</span>
+										<span class="pub-tag">Machine Learning</span>
+										<span class="pub-tag">IR</span>
+									</div>
+									<button class="copy-bibtex" data-bibtex="@inproceedings{kuo2024decoding,&#10;  author    = {Peng-Ting Kuo and Ronan Tse-min Fu},&#10;  title     = {Decoding Campaigning Strategies: A Machine Learning Approach to Understanding the Impact of Election Systems on Legislative Candidates},&#10;  booktitle = {The 81st Midwest Political Science Association Annual Conference},&#10;  year      = {2024},&#10;  address   = {Chicago, United States}&#10;}">&#128203; Copy BibTeX</button>
+								</div>
+							</div>
 						</section>
 
 						<section id="Thesis">
@@ -633,6 +726,70 @@
 						}
 					});
 				}
+			});
+
+			// ── Publication filter ────────────────────────────────────────────────
+			document.addEventListener('DOMContentLoaded', function () {
+				document.querySelectorAll('.filter-btn').forEach(function (btn) {
+					btn.addEventListener('click', function () {
+						document.querySelectorAll('.filter-btn').forEach(function (b) {
+							b.classList.remove('active');
+						});
+						this.classList.add('active');
+						var filter = this.dataset.filter;
+						document.querySelectorAll('.pub-entry').forEach(function (entry) {
+							if (filter === 'all') {
+								entry.style.display = '';
+							} else {
+								var tags = (entry.dataset.tags || '').split(',');
+								entry.style.display = tags.indexOf(filter) !== -1 ? '' : 'none';
+							}
+						});
+						// Hide section headers when all their entries are hidden
+						document.querySelectorAll('.pub-section').forEach(function (sec) {
+							var hasVisible = Array.from(sec.querySelectorAll('.pub-entry')).some(function (e) {
+								return e.style.display !== 'none';
+							});
+							sec.style.display = hasVisible ? '' : 'none';
+						});
+					});
+				});
+
+				// ── Copy BibTeX ───────────────────────────────────────────────────
+				document.querySelectorAll('.copy-bibtex').forEach(function (btn) {
+					btn.addEventListener('click', function () {
+						var bibtex = this.dataset.bibtex
+							.replace(/&#10;/g, '\n')
+							.replace(/&#39;/g, "'");
+						var self = this;
+						navigator.clipboard.writeText(bibtex).then(function () {
+							var orig = self.innerHTML;
+							self.innerHTML = '✓ Copied!';
+							self.classList.add('copied');
+							setTimeout(function () {
+								self.innerHTML = orig;
+								self.classList.remove('copied');
+							}, 2000);
+						}).catch(function () {
+							// Fallback for older browsers
+							var ta = document.createElement('textarea');
+							ta.value = bibtex;
+							ta.style.position = 'fixed';
+							ta.style.opacity = '0';
+							document.body.appendChild(ta);
+							ta.select();
+							document.execCommand('copy');
+							document.body.removeChild(ta);
+							var orig = self.innerHTML;
+							self.innerHTML = '✓ Copied!';
+							self.classList.add('copied');
+							setTimeout(function () {
+								self.innerHTML = orig;
+								self.classList.remove('copied');
+							}, 2000);
+						});
+					});
+				});
 			});
 		</script>
 		<script>

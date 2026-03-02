@@ -261,15 +261,11 @@
 				font-family: "Fira Code", monospace;
 				font-size: clamp(20px, 4vw, 36px);
 				display: inline-block;
-				overflow: hidden;
 				border-right: .15em solid rgba(255,255,255,.75);
 				white-space: nowrap;
-				margin: 0 auto;
 				letter-spacing: .08em;
 				min-height: 1.2em;
 				animation: blink .75s step-end infinite;
-				width: auto;
-				max-width: 90%;
 			}
 
 			#banner {
@@ -677,7 +673,6 @@
 											</li>
 											<li><a href="teaching.html">Teaching</a></li>
 											<li><a href="project.html">Projects</a></li>
-											<li><a href="Peng-Ting_Kuo_CV.pdf" onclick="gtag('event','download',{'event_category':'CV','event_label':'CV Download'});">CV</a></li>
 											<li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark mode"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></li>
 										</ul>
 									</nav>
@@ -704,105 +699,24 @@
 									</div>
 								</section>
 
-								<!-- Enhanced JavaScript for Consistent Animation -->
+								<!-- Typed.js animation -->
+								<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
 								<script>
-									// Enhanced typing animation with consistent display
-									const textArray = [
-										"Dean Kuo",
-										// "Peng-Ting Kuo",
-										"Political Scientist",
-										"LLM & AI Researcher",
-									];
-									
-									let currentIndex = 0;
-									const typingElement = document.getElementById('dynamicText');
-									let isAnimating = false;
-									
-									function calculateOptimalWidth() {
-										const tempElement = document.createElement('span');
-										tempElement.style.visibility = 'hidden';
-										tempElement.style.position = 'absolute';
-										tempElement.style.fontSize = window.getComputedStyle(typingElement).fontSize;
-										tempElement.style.fontFamily = window.getComputedStyle(typingElement).fontFamily;
-										tempElement.style.letterSpacing = window.getComputedStyle(typingElement).letterSpacing;
-										tempElement.style.fontWeight = window.getComputedStyle(typingElement).fontWeight;
-										document.body.appendChild(tempElement);
-										
-										let maxWidth = 0;
-										textArray.forEach(text => {
-											tempElement.textContent = text;
-											maxWidth = Math.max(maxWidth, tempElement.offsetWidth);
+									document.addEventListener('DOMContentLoaded', function () {
+										new Typed('#dynamicText', {
+											strings: [
+												'Dean Kuo',
+												'a Political Scientist',
+												'an LLM &amp; AI Researcher',
+												'a Ph.D. Student @ UT Austin',
+											],
+											typeSpeed: 55,
+											backSpeed: 30,
+											backDelay: 2200,
+											startDelay: 400,
+											loop: true,
+											showCursor: false,
 										});
-										
-										document.body.removeChild(tempElement);
-										
-										const containerWidth = typingElement.parentElement.offsetWidth;
-										const calculatedWidth = Math.min(maxWidth + 30, containerWidth * 0.95);
-										
-										return calculatedWidth;
-									}
-									
-									function setOptimalWidth() {
-										const optimalWidth = calculateOptimalWidth();
-										typingElement.style.width = optimalWidth + 'px';
-										typingElement.style.maxWidth = '95%';
-									}
-									
-									function typeWriter(text, i, fnCallback) {
-										if (isAnimating && i < text.length) {
-											typingElement.innerHTML = text.substring(0, i + 1);
-											setTimeout(() => {
-												typeWriter(text, i + 1, fnCallback);
-											}, 100);
-										} else if (typeof fnCallback === 'function' && isAnimating) {
-											setTimeout(fnCallback, 1500);
-										}
-									}
-									
-									function eraseText(fnCallback) {
-										const currentText = typingElement.innerHTML;
-										let i = currentText.length;
-										
-										function eraseStep() {
-											if (isAnimating && i >= 0) {
-												typingElement.innerHTML = currentText.substring(0, i);
-												i--;
-												setTimeout(eraseStep, 50);
-											} else if (typeof fnCallback === 'function' && isAnimating) {
-												setTimeout(fnCallback, 500);
-											}
-										}
-										eraseStep();
-									}
-									
-									function startTextAnimation() {
-										if (!isAnimating) return;
-										
-										typeWriter(textArray[currentIndex], 0, function() {
-											setTimeout(() => {
-												eraseText(() => {
-													currentIndex = (currentIndex + 1) % textArray.length;
-													startTextAnimation();
-												});
-											}, 2000);
-										});
-									}
-									
-									document.addEventListener('DOMContentLoaded', function() {
-										isAnimating = true;
-										setOptimalWidth();
-										startTextAnimation();
-										
-										window.addEventListener('resize', function() {
-											setOptimalWidth();
-										});
-									});
-									
-									document.addEventListener('visibilitychange', function() {
-										isAnimating = !document.hidden;
-										if (isAnimating && typingElement.innerHTML === '') {
-											startTextAnimation();
-										}
 									});
 								</script>
 							<!-- Info Cards -->
