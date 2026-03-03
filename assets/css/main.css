@@ -2756,23 +2756,34 @@ body.dark-mode .pub-entry {
   color: #16a34a !important;
 }
 /* Paper link pill extra: pointer + hover + no underline */
+/* Safari needs explicit longhand overrides for <a> element inherited styles */
 .paper-link {
   text-decoration: none !important;
-  transition: background 0.18s ease;
+  border-bottom: 0 solid transparent !important; /* override a{border-bottom:dotted 1px} */
+  background-color: rgba(245,101,101,0.1) !important; /* explicit longhand for Safari */
+  transition: background 0.18s ease !important; /* override a{} transition which includes border-bottom-color */
+  -webkit-tap-highlight-color: transparent; /* remove iOS tap flash */
+  color: #f56565 !important; /* explicit restate so a:hover !important can't win */
 }
 .paper-link:hover {
   background: rgba(245,101,101,0.18) !important;
+  background-color: rgba(245,101,101,0.18) !important;
+  color: #f56565 !important; /* prevent global a:hover{color:!important} from overriding */
   text-decoration: none !important;
+  border-bottom: 0 solid transparent !important;
 }
 body.dark-mode .pub-tag,
 body.dark-mode .copy-bibtex,
 body.dark-mode .paper-link {
   background: rgba(248,113,113,0.15) !important;
+  background-color: rgba(248,113,113,0.15) !important;
   color: #f87171 !important;
 }
 body.dark-mode .copy-bibtex:hover,
 body.dark-mode .paper-link:hover {
   background: rgba(248,113,113,0.25) !important;
+  background-color: rgba(248,113,113,0.25) !important;
+  color: #f87171 !important;
 }
 body.dark-mode .copy-bibtex.copied {
   background: rgba(74,222,128,0.12) !important;
