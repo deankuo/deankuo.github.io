@@ -2726,7 +2726,10 @@ body.dark-mode .pub-entry {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  -webkit-appearance: none;
+  appearance: none;
   font-size: 11px;
+  font-family: inherit;
   font-weight: 600;
   height: auto !important;
   line-height: 1.5 !important;
