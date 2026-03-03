@@ -2719,9 +2719,10 @@ body.dark-mode .pub-entry {
   flex-wrap: wrap;
   gap: 5px;
 }
-/* Shared pill style for both tags and the copy button */
+/* Shared pill style for tags, copy button, and paper link */
 .pub-tag,
-.copy-bibtex {
+.copy-bibtex,
+.paper-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2751,12 +2752,23 @@ body.dark-mode .pub-entry {
   background: rgba(34,197,94,0.12) !important;
   color: #16a34a !important;
 }
+/* Paper link pill extra: pointer + hover + no underline */
+.paper-link {
+  text-decoration: none !important;
+  transition: background 0.18s ease;
+}
+.paper-link:hover {
+  background: rgba(245,101,101,0.18) !important;
+  text-decoration: none !important;
+}
 body.dark-mode .pub-tag,
-body.dark-mode .copy-bibtex {
+body.dark-mode .copy-bibtex,
+body.dark-mode .paper-link {
   background: rgba(248,113,113,0.15) !important;
   color: #f87171 !important;
 }
-body.dark-mode .copy-bibtex:hover {
+body.dark-mode .copy-bibtex:hover,
+body.dark-mode .paper-link:hover {
   background: rgba(248,113,113,0.25) !important;
 }
 body.dark-mode .copy-bibtex.copied {
