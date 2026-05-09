@@ -260,6 +260,38 @@
 				color: #555;
 			}
 
+			/* Better text formatting for long paragraphs */
+			.major article p {
+				text-align: justify;
+				line-height: 1.6;
+				margin-bottom: 1.2em;
+			}
+
+			/* HuggingFace Space Embed */
+			.hf-embed-wrapper {
+				width: 100%;
+				border: 1px solid #e9ecef;
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+				background: #f8f9fa;
+			}
+
+			.hf-embed {
+				width: 100%;
+				height: 750px;
+				display: block;
+				border: none;
+			}
+
+			@media screen and (max-width: 768px) {
+				.hf-embed { height: 600px; }
+			}
+
+			@media screen and (max-width: 480px) {
+				.hf-embed { height: 500px; }
+			}
+
 			/* Button Styling */
 			.actions .button {
 				display: inline-flex;
@@ -518,20 +550,32 @@
                                     <h2>WTO Network Analysis (Collaborated with Hsuan-Wei Wayne Lee)</h2>
                                     <span class="project-duration">Apr 2024 - Now</span>
                                 </header>
-                                <span class="image fit"><img src="../images/wto_demo.png" alt="WTO Network Analysis Screenshot" loading="lazy" /></span>
                                 <div class="major">
                                     <article>
                                         <h3>Abstract</h3>
-                                        <p>Conducted a comprehensive analysis of the World Trade Organization (WTO) Dispute Settlement System (DSS) using Python, focusing on case outcomes and member interactions.
-											Applied Retrieval-Augmented Generation (RAG) and Large language model-based methods to score the case severity and its relevance.
-										</p>
-										<p><strong>Technical Skills:</strong> Python (NetworkX, Pandas, Langchain), RAG, LLM</p>
-                                        <p>The source code is not available.</p>
-                                        <ul class="actions">
-                                            <li><a href="" 
-                                                   class="button" 
-                                                   onclick="gtag('event', 'click', {'event_category': 'Project', 'event_label': 'WTO Network Analysis Demo'});"
-                                                   aria-label="View WTO Network Analysis Demo">Demo</a></li>
+                                        <p>Why do politically aligned states initiate as many or more WTO trade disputes as their adversaries? Existing explanations attribute this pattern to selection bias that disputes reaching the WTO represent cases too intractable for private diplomacy, yet most ally disputes terminate during the initial consultation phase, before any legal ruling is issued. We argue that allies use WTO procedures not only primarily for economic redress, but also to signal enforcement resolve to international audiences. Unlike bilateral negotiations, the WTO's public and institutionally credentialed filing procedure generates a verifiable, irrevocable record of grievance, one that no private diplomatic channel can replicate. This international signaling mechanism yields three empirical predictions: allied dyads initiate disputes at higher rates than non-allied dyads, ally disputes do not escalate to later procedural stages, and allies file even when bilateral trade stakes are low. Using a directed dyad-year panel of over 510,000 observations spanning 1995–2024, supplemented by case-level data on 626 WTO disputes with novel severity measures extracted via Retrieval-Augmented Generation (RAG), we find consistent support for the initiation and economic-stakes hypotheses. The null finding on procedural escalation is itself theoretically informative: once a dispute enters the formal WTO process, institutional logic governs its trajectory. These results illuminate how international institutions enable reputation-building among allies in contexts where bilateral diplomacy lacks the verification mechanisms that credible signaling requires.</p>
+
+                                        <p><strong>Technical Skills:</strong> Python (NetworkX, Pandas, Langchain), RAG, LLM</p>
+
+                                        <!-- Live Demo -->
+                                        <h3>Live Demo</h3>
+                                        <p>Explore the WTO DSB RAG system directly below.</p>
+                                        <div class="hf-embed-wrapper">
+                                            <iframe
+                                                src="https://dean22029-wto-dsb-rag.hf.space"
+                                                class="hf-embed"
+                                                title="WTO DSB RAG Demo"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                aria-label="Interactive HuggingFace Space demo">
+                                            </iframe>
+                                        </div>
+                                        <ul class="actions" style="margin-top: 1em;">
+                                            <li><a href="https://huggingface.co/spaces/dean22029/WTO_DSB_RAG"
+                                                   class="button"
+                                                   onclick="gtag('event', 'click', {'event_category': 'Project', 'event_label': 'WTO DSB RAG HuggingFace Space'});"
+                                                   aria-label="Open on HuggingFace Space"
+                                                   target="_blank" rel="noopener">Open on HuggingFace ↗</a></li>
                                         </ul>
                                     </article>
                                 </div>
