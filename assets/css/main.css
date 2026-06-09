@@ -2433,10 +2433,42 @@ body.dark-mode .posts article .actions .button:hover {
   border-color: #f56565 !important;
 }
 
-/* CV download button (bio page) */
+/* CV download button (bio page) — matches .actions .button dark style */
 body.dark-mode .cv-download-btn {
+  background: #252540 !important;
+  color: #e2e8f0 !important;
+  border-color: #3d3d5a !important;
+}
+body.dark-mode .cv-download-btn:hover {
   background: #f56565 !important;
   color: #fff !important;
+  border-color: #f56565 !important;
+}
+/* Info-card CV button (index page) — matches .actions .button dark style */
+body.dark-mode .info-card-btn {
+  background: #252540 !important;
+  color: #e2e8f0 !important;
+  border-color: #3d3d5a !important;
+}
+body.dark-mode .info-card-btn:hover {
+  background: #f56565 !important;
+  color: #fff !important;
+  border-color: #f56565 !important;
+}
+/* Publication paper/code buttons — matches .actions .button dark style */
+body.dark-mode .paper-link {
+  background: #252540 !important;
+  background-color: #252540 !important;
+  color: #e2e8f0 !important;
+  border-color: #3d3d5a !important;
+  border-bottom-color: #3d3d5a !important;
+}
+body.dark-mode .paper-link:hover {
+  background: #f56565 !important;
+  background-color: #f56565 !important;
+  color: #fff !important;
+  border-color: #f56565 !important;
+  border-bottom-color: #f56565 !important;
 }
 
 /* CV section */
@@ -2694,9 +2726,9 @@ body.dark-mode .filter-btn.active {
 
 /* ── Publication entry wrapper ─────────────────────────────────────────── */
 .pub-entry {
-  margin-bottom: 1.4em;
-  padding-bottom: 1.2em;
-  border-bottom: 1px solid rgba(0,0,0,0.04);
+  margin-bottom: 0.7em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
   transition: opacity 0.25s ease;
 }
 .pub-entry:last-child {
@@ -2715,19 +2747,13 @@ body.dark-mode .pub-entry {
   margin-top: 7px;
 }
 .pub-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  display: none;
 }
-/* Shared pill style for tags, copy button, and paper link */
-.pub-tag,
-.copy-bibtex,
-.paper-link {
+/* Category tag pill */
+.pub-tag {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  -webkit-appearance: none;
-  appearance: none;
   font-size: 11px;
   font-family: inherit;
   font-weight: 600;
@@ -2742,50 +2768,45 @@ body.dark-mode .pub-entry {
   border: none !important;
   box-shadow: none !important;
 }
-/* BibTeX pill extra: pointer + hover */
-.copy-bibtex {
-  cursor: pointer;
-  font-family: inherit;
-  transition: background 0.18s ease;
-}
-.copy-bibtex:hover {
-  background: rgba(245,101,101,0.18) !important;
-}
-.copy-bibtex.copied {
-  background: rgba(34,197,94,0.12) !important;
-  color: #16a34a !important;
-}
-/* Paper link pill extra: pointer + hover + no underline */
-/* Safari needs explicit longhand overrides for <a> element inherited styles */
-.paper-link {
-  text-decoration: none !important;
-  border-bottom: 0 solid transparent !important; /* override a{border-bottom:dotted 1px} */
-  background-color: rgba(245,101,101,0.1) !important; /* explicit longhand for Safari */
-  transition: background 0.18s ease !important; /* override a{} transition which includes border-bottom-color */
-  -webkit-tap-highlight-color: transparent; /* remove iOS tap flash */
-  color: #f56565 !important; /* explicit restate so a:hover !important can't win */
-}
-.paper-link:hover {
-  background: rgba(245,101,101,0.18) !important;
-  background-color: rgba(245,101,101,0.18) !important;
-  color: #f56565 !important; /* prevent global a:hover{color:!important} from overriding */
-  text-decoration: none !important;
-  border-bottom: 0 solid transparent !important;
-}
-body.dark-mode .pub-tag,
-body.dark-mode .copy-bibtex,
-body.dark-mode .paper-link {
+body.dark-mode .pub-tag {
   background: rgba(248,113,113,0.15) !important;
   background-color: rgba(248,113,113,0.15) !important;
   color: #f87171 !important;
 }
-body.dark-mode .copy-bibtex:hover,
-body.dark-mode .paper-link:hover {
-  background: rgba(248,113,113,0.25) !important;
-  background-color: rgba(248,113,113,0.25) !important;
-  color: #f87171 !important;
+/* Publication page action button — matches project-page .actions .button style */
+.paper-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  height: auto !important;
+  line-height: 1.5 !important;
+  padding: 5px 14px !important;
+  border-radius: 5px;
+  background: white !important;
+  background-color: white !important;
+  color: #f56a6a !important;
+  border: 2px solid #e9ecef !important;
+  box-shadow: none !important;
+  white-space: nowrap;
+  text-decoration: none !important;
+  border-bottom: 2px solid #e9ecef !important;
+  transition: all 0.3s ease !important;
+  min-height: 24px;
+  -webkit-tap-highlight-color: transparent;
 }
-body.dark-mode .copy-bibtex.copied {
-  background: rgba(74,222,128,0.12) !important;
-  color: #4ade80 !important;
+.paper-link:hover {
+  background: #f56565 !important;
+  background-color: #f56565 !important;
+  color: white !important;
+  border-color: #f56565 !important;
+  border-bottom: 2px solid #f56565 !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3) !important;
 }

@@ -273,15 +273,19 @@
 				align-items: center;
 				justify-content: center;
 				background: white;
-				color: #333;
-				border: 2px solid #e9ecef;
-				padding: 12px 24px;
+				color: #f56a6a !important;
+				border: 2px solid #e9ecef !important;
+				box-shadow: none !important;
+				padding: 5px 14px;
 				text-decoration: none;
 				border-radius: 5px;
-				font-size: 18px;
+				font-size: 13px;
 				font-weight: 500;
+				text-transform: none !important;
+				letter-spacing: normal !important;
+				height: auto !important;
+				line-height: 1.5 !important;
 				transition: all 0.3s ease;
-				min-height: 44px;
 			}
 
 			.actions .button:hover {
@@ -506,7 +510,7 @@
 			}
 		}
 		</style>
-		<script>if(localStorage.getItem('theme')==='dark')document.body.className+=' dark-mode';</script>
+		<script>(function(){var t=localStorage.getItem('theme');if(t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches)document.body.className+=' dark-mode';})();</script>
 </head>
 	<body class="is-preload">
 
@@ -582,7 +586,7 @@
                                                    class="button"
                                                    onclick="gtag('event', 'click', {'event_category': 'Project', 'event_label': 'HuggingFace Space'});"
                                                    aria-label="Open on HuggingFace Space"
-                                                   target="_blank" rel="noopener">Open on HuggingFace ↗</a></li>
+                                                   target="_blank" rel="noopener">HuggingFace</a></li>
                                         </ul>
                                     </article>
                                 </div>
@@ -697,7 +701,12 @@
 				var btn = document.getElementById('theme-toggle');
 				if (btn) btn.innerHTML = isDark ? SUN : MOON;
 			}
-			applyTheme(localStorage.getItem('theme') === 'dark');
+			// Apply on load — localStorage first, fall back to system preference
+			var _t = localStorage.getItem('theme');
+			applyTheme(_t ? _t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+				if (!localStorage.getItem('theme')) applyTheme(e.matches);
+			});
 			document.addEventListener('DOMContentLoaded', function() {
 				var btn = document.getElementById('theme-toggle');
 				if (btn) {

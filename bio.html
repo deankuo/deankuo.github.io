@@ -272,22 +272,36 @@
 			.cv-download-btn {
 				display: inline-flex;
 				align-items: center;
-				gap: 8px;
-				background: #f56565;
-				color: white !important;
-				padding: 10px 22px;
+				gap: 6px;
+				background: white;
+				color: #f56a6a !important;
+				padding: 5px 14px;
 				border-radius: 5px;
 				text-decoration: none !important;
 				font-weight: 500;
-				font-size: 15px;
-				border: none !important;
-				transition: background 0.3s ease;
+				font-size: 13px;
+				border: 2px solid #e9ecef !important;
+				transition: all 0.3s ease;
 				margin-bottom: 1.5em;
 			}
 
 			.cv-download-btn:hover {
-				background: #e05555;
+				background: #f56565 !important;
+				color: white !important;
+				border-color: #f56565 !important;
 				text-decoration: none !important;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3) !important;
+			}
+			body.dark-mode .cv-download-btn {
+				background: #252540 !important;
+				color: #e2e8f0 !important;
+				border-color: #3d3d5a !important;
+			}
+			body.dark-mode .cv-download-btn:hover {
+				background: #f56565 !important;
+				color: #fff !important;
+				border-color: #f56565 !important;
 			}
 
 			.cv-embed {
@@ -451,7 +465,7 @@
 			color: #e2e8f0 !important;
 		}
 		</style>
-	<script>if(localStorage.getItem('theme')=='dark')document.body.className+=' dark-mode';</script>
+	<script>(function(){var t=localStorage.getItem('theme');if(t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches)document.body.className+=' dark-mode';})();</script>
 	</head>
 	<body class="is-preload">
 
@@ -491,17 +505,15 @@
 
 							<!-- Bio Content -->
 								<section class="bio-content">
-									<header class="major">
-										<h1>About Me</h1>
-									</header>
+									<h1>About Me</h1>
 
-									<span class="image left"><img src="images/Me.jpeg" alt="Peng-Ting (Dean) Kuo" /></span>
+									<span class="image left" style="max-width: 25%;"><img src="images/Me.jpeg" alt="Peng-Ting (Dean) Kuo" /></span>
 
 									<p>Peng-Ting (Dean) Kuo (郭芃廷) is a first-year Ph.D. student in the Department of Government at the University of Texas at Austin, specializing in international relations and the application of large language models (LLMs) in political science. He received his M.A. in Political Science (International Relations) and B.A. in Political Science with a minor in Economics from National Taiwan University. His research interests span LLM evaluation and applications, RAG, electoral systems, power transition theory, and computational social science.</p>
 
 							<p>Prior to joining UT Austin, Kuo held multiple research assistantships in Taiwan. Under Prof. Ronan Tse-min Fu at the Institute of Political Science, Academia Sinica, he worked on cross-national survey data analysis for the Asian Barometer Survey and developed a database on Anglo-German relations from 1860 to 1914 to support a book project on power transition theory. Under Prof. Yun-Nung Chen at the Machine Intelligence and Understanding Lab (MiuLab), NTU, he investigated evaluation biases in LLMs using the Retrieval-Augmented Generation (RAG) framework, contributing to a paper accepted at ACL 2025. Under Prof. Wayne Hsuan-Wei Lee at the Institute of Sociology, Academia Sinica, he applied social network analysis to WTO Dispute Settlement Body cases, examining patterns of international trade conflict.</p>
 
-							<p>At UT Austin, Kuo serves as a research assistant under Prof. John Gerring, building end-to-end data pipelines to extract and structure institutional data from historical texts using state-of-the-art LLMs. He is actively collaborating on several ongoing projects: a comparative study of electoral reform and campaign strategies in Japan and Taiwan, an analysis of China's security policy under Xi Jinping, a quantitative study on alliance effects in WTO disputes, and a project with Prof. Connor Jerzak developing a verifiable AI agent methodology for tracking global leadership continuity.</p>
+							<p>At UT Austin, Kuo serves as a research assistant under Prof. John Gerring, building end-to-end data pipelines to extract and structure institutional data from historical texts using state-of-the-art LLMs. He is actively collaborating on several ongoing projects: a comparative study of electoral reform and campaign strategies in Japan and Taiwan, a quantitative study on alliance effects in WTO disputes, and a project with Prof. Connor Jerzak developing a verifiable AI agent methodology for tracking global leadership continuity.</p>
 
 							<p>In addition, Kuo is an enthusiastic badminton player and captained the departmental team at NTU during 2019–2020.</p>
 
@@ -513,8 +525,7 @@
 										   class="cv-download-btn"
 										   aria-label="Download CV PDF"
 										   download>
-											<span class="icon solid fa-download" aria-hidden="true"></span>
-											Download CV (PDF)
+											Download CV
 										</a>
 										<iframe
 											src="Peng-Ting_Kuo_CV.pdf"
@@ -621,8 +632,12 @@
 					var btn = document.getElementById('theme-toggle');
 					if (btn) btn.innerHTML = isDark ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>' : '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 				}
-				// Apply on load
-				applyTheme(localStorage.getItem('theme') === 'dark');
+				// Apply on load — localStorage first, fall back to system preference
+				var _t = localStorage.getItem('theme');
+				applyTheme(_t ? _t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+					if (!localStorage.getItem('theme')) applyTheme(e.matches);
+				});
 				document.addEventListener('DOMContentLoaded', function() {
 					var btn = document.getElementById('theme-toggle');
 					if (btn) {

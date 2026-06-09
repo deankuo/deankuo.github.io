@@ -302,15 +302,19 @@
 				align-items: center;
 				justify-content: center;
 				background: white;
-				color: #333;
-				border: 2px solid #e9ecef;
-				padding: 4px 12px;
+				color: #f56a6a !important;
+				border: 2px solid #e9ecef !important;
+				box-shadow: none !important;
+				padding: 5px 14px;
 				text-decoration: none;
 				border-radius: 5px;
-				font-size: 12px;
+				font-size: 13px;
 				font-weight: 500;
+				text-transform: none !important;
+				letter-spacing: normal !important;
+				height: auto !important;
+				line-height: 1.5 !important;
 				transition: all 0.3s ease;
-				min-height: 28px;
 			}
 			.actions .button:hover {
 				background: #f56565;
@@ -526,7 +530,7 @@
 				}
 			}
 		</style>
-		<script>if(localStorage.getItem('theme')==='dark')document.body.className+=' dark-mode';</script>
+		<script>(function(){var t=localStorage.getItem('theme');if(t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches)document.body.className+=' dark-mode';})();</script>
 	</head>
 	<body class="is-preload">
 
@@ -583,20 +587,11 @@
 									<sup>2</sup>Department of Computer Science, University of Rochester
 								</p>
 
-								<!-- Tags -->
-								<div class="meta-tags">
-									<span class="meta-tag">LLM</span>
-									<span class="meta-tag">Factor Analysis</span>
-									<span class="meta-tag">Computational Social Science</span>
-									<span class="meta-tag">Social Identity Theory</span>
-									<span class="meta-tag">Narrative Persuasion</span>
-								</div>
-
 								<!-- Abstract -->
 								<h3>Abstract</h3>
 								<p>This study examines how identity-based rhetoric employed by fictional characters shapes audience emotional responses in naturalistic online discourse. Using <em>Attack on Titan</em> as a case study, we construct an original dataset combining episode-level character dialogue with Reddit discussion threads and code rhetorical features — including threat framing, boundary marking, and solidarity appeals, using Gemini 2.5-pro. Employing a two-way fixed effects model with character and season fixed effects, we find that identity-based rhetorical intensity amplifies audience sentiment polarization and that solidarity appeals generate positive audience responses only when delivered by protagonist characters, consistent with parasocial identity reinforcement. Character-level fixed characteristics, however, account for the majority of variance in emotional responses, suggesting that narrative positioning conditions audience reception more strongly than episodic rhetorical content. Our findings contribute to the literature on narrative persuasion and Social Identity Theory, with implications for how fictional storytelling shapes audience moral alignment with political violence.</p>
 
-								<p><strong>Technical Skills:</strong> Python, Gemini 2.5-pro (LLM), Two-Way Fixed Effects (TWFE), Reddit API, Factor Analysis</p>
+								<p><strong>Technical Skills:</strong> Python, LLM, Two-Way Fixed Effects, Factor Analysis</p>
 
 								<!-- Links -->
 								<ul class="actions" style="margin-top: 1.5em; flex-wrap: wrap; gap: 0.5em;">
@@ -606,16 +601,16 @@
 										   onclick="gtag('event', 'click', {'event_category': 'Project', 'event_label': 'AoT GitHub'});"
 										   aria-label="View source code on GitHub"
 										   target="_blank" rel="noopener">
-											<i class="icon brands fa-github" style="margin-right: 8px;"></i> GitHub ↗
+											<span class="icon brands fa-github" aria-hidden="true" style="margin-right: 6px;"></span>Code
 										</a>
 									</li>
 									<li>
 										<a href="../docs/SICSS_Paper.pdf"
 										   class="button"
 										   onclick="gtag('event', 'click', {'event_category': 'Project', 'event_label': 'AoT PDF Download'});"
-										   aria-label="Download paper PDF"
-										   download>
-											<i class="icon solid fa-file-pdf" style="margin-right: 8px;"></i> Download PDF
+										   aria-label="View paper PDF"
+										   target="_blank" rel="noopener">
+											<span class="icon solid fa-file-alt" aria-hidden="true" style="margin-right: 6px;"></span>Paper
 										</a>
 									</li>
 								</ul>
@@ -745,7 +740,12 @@
 					var btn = document.getElementById('theme-toggle');
 					if (btn) btn.innerHTML = isDark ? SUN : MOON;
 				}
-				applyTheme(localStorage.getItem('theme') === 'dark');
+				// Apply on load — localStorage first, fall back to system preference
+				var _t = localStorage.getItem('theme');
+				applyTheme(_t ? _t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+					if (!localStorage.getItem('theme')) applyTheme(e.matches);
+				});
 				document.addEventListener('DOMContentLoaded', function() {
 					var btn = document.getElementById('theme-toggle');
 					if (btn) {

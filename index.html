@@ -281,6 +281,10 @@
 				text-align: left;
 			}
 
+			#banner .content p {
+				margin-bottom: 0.5em;
+			}
+
 			#banner .image.object {
 				margin: 2em auto 0;
 				max-width: 300px;
@@ -579,30 +583,35 @@
 				display: inline-flex;
 				align-items: center;
 				gap: 5px;
-				background: #f56565;
-				color: #fff !important;
-				padding: 7px 16px;
-				border-radius: 6px;
+				background: white;
+				color: #f56a6a !important;
+				padding: 5px 14px;
+				border-radius: 5px;
 				font-size: 13px;
-				font-weight: 600;
+				font-weight: 500;
 				text-decoration: none;
-				border: none !important;
+				border: 2px solid #e9ecef !important;
 				box-shadow: none !important;
-				transition: background 0.2s;
+				transition: all 0.3s ease;
 				align-self: flex-start;
 				margin-top: 0.2em;
 			}
 			.info-card-btn:hover {
-				background: #d94f4f !important;
+				background: #f56565 !important;
 				color: #fff !important;
+				border-color: #f56565 !important;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3) !important;
 			}
 			body.dark-mode .info-card-btn {
-				color: #fff !important;
-				background: #f56565 !important;
+				background: #252540 !important;
+				color: #e2e8f0 !important;
+				border-color: #3d3d5a !important;
 			}
 			body.dark-mode .info-card-btn:hover {
-				background: #d94f4f !important;
+				background: #f56565 !important;
 				color: #fff !important;
+				border-color: #f56565 !important;
 			}
 			@media screen and (max-width: 640px) {
 				.info-cards { grid-template-columns: 1fr; }
@@ -640,7 +649,7 @@
 			color: #e2e8f0 !important;
 		}
 		</style>
-	<script>if(localStorage.getItem('theme')=='dark')document.body.className+=' dark-mode';</script>
+	<script>(function(){var t=localStorage.getItem('theme');if(t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches)document.body.className+=' dark-mode';})();</script>
 	</head>
 	<body class="is-preload">
 
@@ -686,7 +695,7 @@
 										</header>
 										<p>Peng-Ting (Dean) Kuo (郭芃廷) is a Ph.D. student in the Department of Government at the University of Texas at Austin, where he studies international relations with a focus on computational methods and large language model applications in political science. Peng-Ting holds a M.A. (2024) and B.A. in Political Science with a minor in Economics (2021) from National Taiwan University. His research spans LLM evaluation, retrieval augmented generation, electoral systems, power transition theory, and computational analysis of international conflict, bridging political science with cutting-edge AI methods.</p>
 										<ul class="actions">
-											<li><a href="bio.html" class="button big" aria-label="Learn more about Dean Kuo">Learn More</a></li>
+											<li><a href="bio.html" class="info-card-btn" aria-label="Learn more about Dean Kuo">Learn More</a></li>
 										</ul>
 									</div>
 									<div class="image object profile-photo-wrap">
@@ -742,7 +751,7 @@
 												<h3>Curriculum Vitae</h3>
 												<a href="Peng-Ting_Kuo_CV.pdf" class="info-card-btn"
 												   onclick="gtag('event','download',{'event_category':'CV','event_label':'CV Download'});"
-												   aria-label="Download CV PDF">&#8595;&nbsp;Download CV</a>
+												   aria-label="Download CV PDF">Download CV</a>
 											</div>
 										</div>
 
@@ -849,8 +858,12 @@
 					var btn = document.getElementById('theme-toggle');
 					if (btn) btn.innerHTML = isDark ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>' : '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 				}
-				// Apply on load
-				applyTheme(localStorage.getItem('theme') === 'dark');
+				// Apply on load — localStorage first, fall back to system preference
+				var _t = localStorage.getItem('theme');
+				applyTheme(_t ? _t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+					if (!localStorage.getItem('theme')) applyTheme(e.matches);
+				});
 				document.addEventListener('DOMContentLoaded', function() {
 					var btn = document.getElementById('theme-toggle');
 					if (btn) {

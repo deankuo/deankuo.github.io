@@ -94,6 +94,9 @@
 				color: #f56565;
 				background-color: rgba(245, 101, 101, 0.1);
 			}
+			.icon-spacing {
+				margin-right: 6px;
+			}
             #mobile-menu-button {
                 display: none;
                 cursor: pointer;
@@ -241,17 +244,19 @@
 			}
 			.work-experience .description {
 				margin-left: 20px;
-				font-size: 16px;
-				line-height: 1.6;
-				margin-top: 15px;
+				font-size: 15px;
+				line-height: 1.4;
+				margin-top: 8px;
+				margin-bottom: 0;
 			}
 			.work-experience .description li {
-				margin-bottom: 12px;
+				margin-bottom: 5px;
 				text-align: justify;
 			}
 			.work-experience .actions {
-				margin-left: 20px;
-				margin-top: 15px;
+				margin-left: 0;
+				margin-top: 8px;
+				margin-bottom: 0;
 				list-style: none;
 				padding: 0;
 			}
@@ -262,22 +267,28 @@
 				display: inline-flex;
 				align-items: center;
 				justify-content: center;
-				background: white;
-				color: #333;
-				border: 2px solid #e9ecef;
-				padding: 10px 20px;
+				background: white !important;
+				color: #f56a6a !important;
+				border: 2px solid #e9ecef !important;
+				box-shadow: none !important;
+				padding: 5px 14px;
 				text-decoration: none;
 				border-radius: 5px;
-				font-size: 14px;
+				font-size: 13px;
 				font-weight: 500;
+				text-transform: none !important;
+				letter-spacing: normal !important;
+				height: auto !important;
+				line-height: 1.5 !important;
 				transition: all 0.3s ease;
-				min-height: 40px;
 			}
 			.work-experience .actions .button:hover {
-				background: #f56565;
+				background: #f56565 !important;
 				color: white !important;
-				border-color: #f56565;
+				border-color: #f56565 !important;
+				box-shadow: 0 4px 12px rgba(245,101,101,0.3) !important;
 				text-decoration: none;
+				transform: translateY(-2px);
 			}
 			.teaching-content hr {
 				margin: 40px 0;
@@ -287,7 +298,7 @@
 
 			/* New CSS for improved structure */
 			.university-section {
-				margin-bottom: 3em;
+				margin-bottom: 1.5em;
 			}
 
 			.university-section h2 {
@@ -295,7 +306,7 @@
 				font-size: 28px;
 				border-bottom: 2px solid #e9ecef;
 				padding-bottom: 0.5em;
-				margin-bottom: 1.5em;
+				margin-bottom: 0.8em;
 				text-align: left;
 			}
 
@@ -304,12 +315,12 @@
 			}
 
 			.course-entry {
-				margin-bottom: 1.5em;
+				margin-bottom: 0.6em;
 				background: #ffffff;
 				border: 1px solid #e9ecef;
 				border-left: 4px solid #f56565;
 				border-radius: 6px;
-				padding: 1.4em 1.6em;
+				padding: 0.8em 1.2em;
 				box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 				transition: box-shadow 0.2s ease;
 			}
@@ -417,7 +428,7 @@
 				}
 				.work-experience .actions .button {
 					font-size: 13px;
-					padding: 8px 16px;
+					padding: 5px 14px;
 				}
 			}
 
@@ -489,7 +500,7 @@
 			color: #e2e8f0 !important;
 		}
 		</style>
-	<script>if(localStorage.getItem('theme')=='dark')document.body.className+=' dark-mode';</script>
+	<script>(function(){var t=localStorage.getItem('theme');if(t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches)document.body.className+=' dark-mode';})();</script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -610,7 +621,7 @@
 											<li>Instructed students in fundamental Netlogo programming syntax and library utilization, you can access the code from my TA sessions through the link below</li>
 										</ul>
 										<ul class="actions">
-											<li><a href="https://drive.google.com/file/d/1LsCA5yQiOu3XqbypxrJTw_si-MFNk-Oo/view?usp=sharing" class="button">Netlogo</a></li>
+											<li><a href="https://drive.google.com/file/d/1LsCA5yQiOu3XqbypxrJTw_si-MFNk-Oo/view?usp=sharing" class="button"><span class="icon brands fa-github icon-spacing" aria-hidden="true"></span>Code</a></li>
 										</ul>
 									</div>
 								</div>
@@ -654,7 +665,7 @@
 											<li>Instructed students in fundamental R programming syntax and package utilization, you can access the R code from my TA sessions through the link below</li>
 										</ul>
 										<ul class="actions">
-											<li><a href="https://rpubs.com/Dean_0609/1034067" class="button">Rpubs</a></li>
+											<li><a href="https://rpubs.com/Dean_0609/1034067" class="button"><span class="icon brands fa-github icon-spacing" aria-hidden="true"></span>Code</a></li>
 										</ul>
 									</div>
 								</div>
@@ -757,8 +768,12 @@
 					var btn = document.getElementById('theme-toggle');
 					if (btn) btn.innerHTML = isDark ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>' : '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 				}
-				// Apply on load
-				applyTheme(localStorage.getItem('theme') === 'dark');
+				// Apply on load — localStorage first, fall back to system preference
+				var _t = localStorage.getItem('theme');
+				applyTheme(_t ? _t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+					if (!localStorage.getItem('theme')) applyTheme(e.matches);
+				});
 				document.addEventListener('DOMContentLoaded', function() {
 					var btn = document.getElementById('theme-toggle');
 					if (btn) {
