@@ -1,0 +1,383 @@
+/* ─── Shared layout ─────────────────────────────────────────────────────── */
+body {
+    font-family: "Roboto Slab", serif;
+    padding-top: 70px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#main {
+    flex: 1;
+}
+
+/* ─── Fixed header ───────────────────────────────────────────────────────── */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+
+/* Beats main.css #header > * { flex:1 } — specificity (1,1,0) > (1,0,1) */
+#header > .header-content {
+    display: flex;
+    align-items: center;
+    flex: none;
+    width: min(calc(70vw - 8.4em), 68.6em);
+    margin: 0 auto;
+    height: 100%;
+    container-type: inline-size;
+    container-name: header-inner;
+}
+
+@media screen and (max-width: 1680px) {
+    #header > .header-content { width: min(calc(70vw - 7em), 70em); }
+}
+@media screen and (max-width: 1280px) {
+    #header > .header-content { width: min(calc(70vw - 5.6em), 71.4em); }
+}
+
+#header .logo {
+    text-decoration: none;
+    border: none !important;
+}
+
+#header .logo strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* ─── Top nav ────────────────────────────────────────────────────────────── */
+.top-nav {
+    position: relative;
+    margin-left: auto;
+}
+
+.top-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.top-nav ul li {
+    margin: 0;
+    position: relative;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border: none;
+}
+
+.top-nav ul li a:hover {
+    color: #f56565;
+    background-color: rgba(245, 101, 101, 0.1);
+}
+
+.top-nav ul li a[aria-current="page"] {
+    color: #f56565;
+    background-color: rgba(245, 101, 101, 0.1);
+}
+
+/* ─── Hamburger button ───────────────────────────────────────────────────── */
+#mobile-menu-button {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+#mobile-menu-button div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* ─── Publications dropdown ──────────────────────────────────────────────── */
+.publication-dropdown {
+    position: relative;
+}
+
+.publication-dropdown .opener {
+    cursor: pointer;
+    color: #333;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.publication-dropdown .opener:hover {
+    color: #f56565;
+    background-color: rgba(245, 101, 101, 0.1);
+}
+
+.publication-dropdown .opener::after {
+    content: "▼";
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.publication-dropdown .opener[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.publication-dropdown ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    min-width: 120px;
+    padding: 10px 0;
+    margin-top: 5px;
+    flex-direction: column;
+    gap: 0;
+}
+
+.publication-dropdown ul li {
+    margin: 0;
+}
+
+.publication-dropdown ul li a {
+    display: block;
+    padding: 8px 15px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.publication-dropdown ul li a:hover {
+    background-color: #f8f9fa;
+    color: #f56565;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+.bottom-footer {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+    margin-top: auto;
+}
+
+.bottom-footer .social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+    margin-top: 0 !important;
+}
+
+.bottom-footer .social-icons a {
+    color: #666;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    text-decoration: none !important;
+    border: none !important;
+}
+
+.bottom-footer .social-icons a:hover {
+    color: #f56565;
+    text-decoration: none !important;
+    border: none !important;
+}
+
+.bottom-footer .social-icons .icon {
+    border: none !important;
+}
+
+.bottom-footer p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.bottom-footer a {
+    color: #f56565;
+    text-decoration: none;
+}
+
+.bottom-footer a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ─── Responsive header ──────────────────────────────────────────────────── */
+@media screen and (max-width: 768px) {
+    #header {
+        padding: 0;
+        height: 60px;
+    }
+    #header > .header-content {
+        width: calc(90vw - 7.2em);
+        max-width: none;
+    }
+    body {
+        padding-top: 60px;
+    }
+}
+
+/* Hamburger nav: triggers when header content box ≤ 620px (≈ viewport < 970px) */
+@container header-inner (max-width: 620px) {
+    #mobile-menu-button {
+        display: block;
+    }
+    ul#main-nav-menu {
+        display: none !important;
+    }
+    ul#main-nav-menu.show {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        margin-top: 15px;
+        right: 0;
+        left: auto;
+        width: 200px;
+        background: white;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        padding: 10px 0;
+        gap: 0;
+    }
+    ul#main-nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+    ul#main-nav-menu li a {
+        padding: 12px 20px;
+        display: block;
+        width: 100%;
+    }
+    .publication-dropdown .opener {
+        justify-content: center;
+    }
+    .publication-dropdown ul {
+        position: static;
+        box-shadow: none;
+        background: #f8f9fa;
+        border-radius: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #header > .header-content { width: calc(90vw - 3.6em); }
+}
+
+@media screen and (max-width: 480px) {
+    #header > .header-content { width: calc(90vw - 3.6em); }
+}
+
+/* Override main.css flex:1 on header children */
+.header-content > .top-nav {
+    flex: none;
+}
+
+/* ─── Theme toggle ───────────────────────────────────────────────────────── */
+.theme-toggle {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+    cursor: pointer;
+    color: #333 !important;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+.theme-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+.theme-toggle:hover {
+    background-color: rgba(245, 101, 101, 0.1);
+    color: #f56565;
+}
+
+/* Mobile: center moon/sun toggle icon */
+@media screen and (max-width: 768px) {
+    .top-nav ul#main-nav-menu li:last-child {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 4px 0 !important;
+    }
+}
+
+/* ─── Dark mode ──────────────────────────────────────────────────────────── */
+body.dark-mode #header {
+    background: rgba(26, 26, 46, 0.97) !important;
+}
+body.dark-mode #header .logo strong {
+    color: #e2e8f0 !important;
+}
+body.dark-mode #mobile-menu-button div {
+    background-color: #e2e8f0 !important;
+}
+body.dark-mode .top-nav ul li a,
+body.dark-mode .top-nav .opener {
+    color: #e2e8f0 !important;
+}
+body.dark-mode .top-nav ul#main-nav-menu.show {
+    background: #1e1e2e !important;
+}
+body.dark-mode .top-nav ul#main-nav-menu.show li a,
+body.dark-mode .top-nav ul#main-nav-menu.show .opener {
+    color: #e2e8f0 !important;
+}
+body.dark-mode .theme-toggle {
+    color: #e2e8f0;
+}
+body.dark-mode .theme-toggle:hover {
+    color: #f56565;
+    background-color: rgba(245, 101, 101, 0.15);
+}
+body.dark-mode .actions .button,
+body.dark-mode .work-experience .actions .button,
+body.dark-mode .cv-download-btn {
+    background: #252540 !important;
+    color: #f56565 !important;
+    border-color: #3d3d5a !important;
+}

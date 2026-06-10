@@ -1,5 +1,6 @@
 # personal env
 .env
-.vscode
+.vscode/
 .DS_Store
 archive/
+.claude/
