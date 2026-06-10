@@ -87,6 +87,14 @@
 				text-decoration: none; transform: translateY(-2px);
 				box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
 			}
+			/* HuggingFace Space Embed */
+			.hf-embed-wrapper {
+				width: 100%; border: 1px solid #e9ecef; border-radius: 8px;
+				overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); background: #f8f9fa;
+			}
+			.hf-embed { width: 100%; height: 750px; display: block; border: none; }
+			@media screen and (max-width: 768px) { .hf-embed { height: 600px; } }
+			@media screen and (max-width: 480px) { .hf-embed { height: 500px; } }
 			/* Mobile: project date flows below title */
 			@media screen and (max-width: 768px) {
 				header.main { position: static !important; }
@@ -160,6 +168,14 @@
                                         
 										<p><strong>Technical Skills:</strong> Python (PyTorch, HuggingFace), LATEX</p>
 
+                                        <ul class="actions" style="margin-top: 1em;">
+                                            <li><a href="https://huggingface.co/spaces/dean22029/multi-lable_classification"
+                                                   class="button"
+                                                   onclick="gtag('event', 'click', {'event_category': 'Project', 'event_label': 'HuggingFace Space'});"
+                                                   aria-label="Open on HuggingFace Space"
+                                                   target="_blank" rel="noopener">HuggingFace</a></li>
+                                        </ul>
+
                                         <!-- Live Demo -->
                                         <h3>Live Demo</h3>
                                         <p>Try the model directly below — paste a Chinese interpellation text and the classifier will predict its category.</p>
@@ -173,13 +189,6 @@
                                                 aria-label="Interactive HuggingFace Space demo">
                                             </iframe>
                                         </div>
-                                        <ul class="actions" style="margin-top: 1em;">
-                                            <li><a href="https://huggingface.co/spaces/dean22029/multi-lable_classification"
-                                                   class="button"
-                                                   onclick="gtag('event', 'click', {'event_category': 'Project', 'event_label': 'HuggingFace Space'});"
-                                                   aria-label="Open on HuggingFace Space"
-                                                   target="_blank" rel="noopener">HuggingFace</a></li>
-                                        </ul>
                                     </article>
                                 </div>
                             </section>
