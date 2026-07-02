@@ -192,7 +192,7 @@
 									<span class="opener" onclick="toggleSubmenu(event)" tabindex="0" role="button" aria-expanded="false" aria-controls="publication-submenu" aria-current="page">Publications</span>
 									<ul id="publication-submenu" style="display: none;" aria-hidden="true">
 										<li><a href="publication.html#Journal_Articles">Journal</a></li>
-										<li><a href="publication.html#Conference_Papers">Conference</a></li>
+										<li><a href="publication.html#Working_Papers">Working Papers</a></li>
 										<li><a href="publication.html#Thesis">Thesis</a></li>
 									</ul>
 								</li>
@@ -215,19 +215,20 @@
 							<button class="filter-btn active" data-filter="all">All</button>
 							<button class="filter-btn" data-filter="llm">LLM</button>
 							<button class="filter-btn" data-filter="ir">IR</button>
+							<button class="filter-btn" data-filter="cp">CP</button>
 							<button class="filter-btn" data-filter="electoral-studies">Electoral Studies</button>
-							<button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+							<button class="filter-btn" data-filter="ml">ML</button>
 						</div>
 
-						<section id="Peer_Reviewed_Papers" class="pub-section">
+						<section id="Journal_Articles" class="pub-section">
 							<header class="major">
 								<h2>Peer Reviewed Papers</h2>
 							</header>
 
 							<div class="pub-entry" data-tags="llm">
 								<p>Yen-Shan Chen, Jing Jin, <u>Peng-Ting Kuo</u>, Chao-Wei Huang, Yun-Nung Chen,
-								<font color="#2E86C1">"LLMs are Biased Evaluators: But Not Biased for Retrieval Augmented Generation,"</a></font>
-								presented at <i>The 63rd Annual Meeting of the Association for Computational Linguistics (ACL)</i>, Vienna, Austria, Jul 27 – Aug 1, 2025.</p>
+								<font color="#2E86C1">"LLMs are Biased Evaluators: But Not Biased for Retrieval Augmented Generation."</a></font>
+								<i>Findings of the Association for Computational Linguistics: ACL 2025 (Findings of ACL)</i>, pages 26669-26684, Vienna, Austria, Jul 27 - Aug 1, 2025.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">LLM</span>
@@ -238,8 +239,8 @@
 
 							<div class="pub-entry" data-tags="ir">
 								<p><u>Peng-Ting Kuo</u>,
-								<font color="#2E86C1">"When Right Makes Might: Rising Power and World Order,"</font>
-								<i>Political Science Quarterly Book Review,</i> Vol.65, pages 21–24, 2022.</p>
+								<font color="#2E86C1">"When Right Makes Might: Rising Power and World Order."</font>
+								<i>Political Science Quarterly Book Review,</i> Vol.65, pages 21-24, 2022.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">IR</span>
@@ -249,14 +250,14 @@
 							</div>
 						</section>
 
-						<section id="Under_Review" class="pub-section">
+						<section id="Working_Papers" class="pub-section">
 							<header class="major">
-								<h2>Work Under Review</h2>
+								<h2>Working Papers</h2>
 							</header>
 
 							<div class="pub-entry" data-tags="ir">
-								<p>Ronan Tse-min Fu, Yu-Ning Chiu, <u>Peng-Ting Kuo</u>,
-								<font color="#2E86C1">"Explaining China's Security Policy under Xi Jinping: A Neoclassical Realist Approach"</font></p>
+								<p>Ronan Tse-min Fu, Yu-Ning Chiu, <u>Peng-Ting Kuo</u>.
+								<font color="#2E86C1">"Explaining China's Security Policy under Xi Jinping: A Neoclassical Realist Approach."</font></p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">IR</span>
@@ -265,17 +266,41 @@
 							</div>
 
 							<div class="pub-entry" data-tags="ir">
-								<p>Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>, I-Lien Lee, Chia-Hsiang Han, Yu-Ning Chiu,
-								<font color="#2E86C1">"Democracy or Prosperity? A Cross-National Analysis of East Asian Countries"</font></p>
+								<p>Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>, I-Lien Lee, Chia-Hsiang Han, Yu-Ning Chiu.
+								<font color="#2E86C1">"Democracy or Prosperity? A Cross-National Analysis of East Asian Countries."</font></p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">IR</span>
 									</div>
 								</div>
 							</div>
+
+							<div class="pub-entry" data-tags="cp,llm">
+								<p>Andrés Cruz, Cem Mert Dalli, John Gerring, Carl Henrik Knutsen, <u>Peng-Ting Kuo</u>, and Daniel Steven Smith. 
+									<font color="#2E86C1">"The Growth of Executive Constraints: A Global, Historical Account."</font></p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">CP</span>
+										<span class="pub-tag">LLM</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="pub-entry" data-tags="llm,ir">
+								<p><u>Peng-Ting Kuo</u>, Hsuan-Wei Lee.
+								<font color="#2E86C1">"More Trade, More Disputes? Measuring Alliance Effects on WTO Conflict."</font></p>
+								<div class="pub-footer">
+									<div class="pub-tags">
+										<span class="pub-tag">IR</span>
+										<span class="pub-tag">LLM</span>
+									</div>
+								</div>
+							</div>
+
+
 						</section>
 
-						<section id="Conference_Papers" class="pub-section">
+						<!-- <section id="Conference_Papers" class="pub-section">
 							<header class="major">
 								<h2>Selected Conference Papers</h2>
 							</header>
@@ -303,54 +328,54 @@
 								</div>
 							</div>
 
-							<div class="pub-entry" data-tags="electoral-studies,machine-learning">
+							<div class="pub-entry" data-tags="electoral-studies,ml">
 								<p>Naofumi Fujimura, Nick Lin, Akitaka Matsuo, <u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Yutaka Shinada,
 								<font color="#2E86C1">"Divergent Paths from Electoral Institutions to Campaign Strategies: Analyzing Candidate Manifestos in Japan and Taiwan,"</font>
 								presented at <i>2025 IPSA World Congress</i>, Seoul, South Korea, Jul 12–16, 2025.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">Electoral Studies</span>
-										<span class="pub-tag">Machine Learning</span>
+										<span class="pub-tag">ML</span>
 									</div>
 								</div>
 							</div>
 
-							<div class="pub-entry" data-tags="electoral-studies,machine-learning">
+							<div class="pub-entry" data-tags="electoral-studies,ml">
 								<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Nick Lin,
 								<font color="#2E86C1">"Electoral Reform and Campaign Tactics: A Machine Learning Analysis of Taiwanese Legislative Candidates' Manifestos,"</font>
 								presented at <i>16th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15–16, 2024.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">Electoral Studies</span>
-										<span class="pub-tag">Machine Learning</span>
+										<span class="pub-tag">ML</span>
 									</div>
 								</div>
 							</div>
 
-							<div class="pub-entry" data-tags="machine-learning">
+							<div class="pub-entry" data-tags="ml">
 								<p>Yu-Hung Sun, <u>Peng-Ting Kuo</u>, Chun-Ming Tsui, Hong-Wung Wang,
 								<font color="#2E86C1">"From Human-Label to Auto-Label: An Automatic Classification Model for Legislators' Oral Questions,"</font>
 								presented at <i>16th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15–16, 2024.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
-										<span class="pub-tag">Machine Learning</span>
+										<span class="pub-tag">ML</span>
 									</div>
 								</div>
 							</div>
 
-							<div class="pub-entry" data-tags="electoral-studies,machine-learning">
+							<div class="pub-entry" data-tags="electoral-studies,ml">
 								<p>Su-Feng Cheng, Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>,
 								<font color="#2E86C1">"Understanding the Impact of Election System Reform on Legislative Campaigning Strategies: A Machine Learning Approach,"</font>
-								presented at the Annual Meeting of Japanese Association of Electoral Studies, Kochi, Japan, May 18–19, 2024.</p>
+								presented at <i>16th Annual Meeting of Japanese Association of Electoral Studies</i>, Kochi, Japan, May 18–19, 2024.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">Electoral Studies</span>
-										<span class="pub-tag">Machine Learning</span>
+										<span class="pub-tag">ML</span>
 									</div>
 								</div>
 							</div>
 
-							<div class="pub-entry" data-tags="electoral-studies,machine-learning,ir">
+							<div class="pub-entry" data-tags="electoral-studies,ml,ir">
 								<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu,
 								<font color="#2E86C1">"Decoding Campaigning Strategies: A Machine Learning Approach to Understanding the Impact of Election Systems on Legislative Candidates,"</font>
 								presented at <i>81st Midwest Political Science Association Conference</i>, Chicago, United States, Apr 4–7, 2024.</p>
@@ -361,7 +386,7 @@
 									</div>
 								</div>
 							</div>
-						</section>
+						</section> -->
 
 						<section id="Thesis">
 							<header class="major">
@@ -401,7 +426,11 @@
 								</table>
 							</div>
 							<div class="pub-footer" style="margin-top: 1em;">
-								<div class="pub-tags"></div>
+								<div class="pub-tags">
+									<span class="pub-tag">Electoral Studies</span>
+									<span class="pub-tag">LLM</span>
+									<span class="pub-tag">ML</span>
+								</div>
 								<a class="paper-link" href="https://www.airitilibrary.com/Article/Detail/U0001-0922240728352029" target="_blank" rel="noopener" onclick="gtag('event', 'click', {'event_category': 'Publication', 'event_label': 'Thesis Paper'});"><span class="icon solid fa-file-alt" aria-hidden="true"></span> Paper</a>
 								<a class="paper-link" href="https://github.com/deankuo/Taiwan-Manifesto-Analysis-A-ML-Approach" target="_blank" rel="noopener" onclick="gtag('event', 'click', {'event_category': 'Publication', 'event_label': 'Thesis Code'});" style="margin-left: 0.5em;"><span class="icon brands fa-github" aria-hidden="true"></span> Code</a>
 							</div>

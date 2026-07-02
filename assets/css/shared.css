@@ -157,7 +157,7 @@ body {
     background: white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     border-radius: 5px;
-    min-width: 120px;
+    min-width: 160px;
     padding: 10px 0;
     margin-top: 5px;
     flex-direction: column;
