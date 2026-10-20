@@ -18,6 +18,9 @@
 		<!-- Responsive Design Meta Tags -->
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/shared.css" />
 
@@ -93,6 +96,8 @@
 				border-color: #f56565 !important;
 			}
 
+			.cv-mobile-note { display: none; font-size: 14px; color: #666; margin: 0 0 1em; }
+			body.dark-mode .cv-mobile-note { color: #a0aec0; }
 			.cv-embed {
 				width: 100%;
 				height: 850px;
@@ -106,14 +111,15 @@
 					padding: 1em 0;
 				}
 
-				.cv-embed {
-					height: 500px;
-				}
+				/* Mobile browsers (notably iOS Safari) render only the first page of an embedded PDF */
+				.cv-embed { display: none; }
+				.cv-mobile-note { display: block; }
 			}
 		</style>
 	</head>
-	<body class="is-preload">
+	<body>
 		<script>(function(){var t=localStorage.getItem('theme');if(t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches)document.body.classList.add('dark-mode');})();</script>
+		<a class="skip-link" href="#main-content">Skip to main content</a>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -152,7 +158,7 @@
 								</header>
 
 							<!-- Bio Content -->
-								<section class="bio-content">
+								<section class="bio-content" id="main-content" role="main" tabindex="-1">
 									<h1>About Me</h1>
 
 									<span class="image left" style="max-width: 25%;"><img src="images/me.jpg" alt="Peng-Ting (Dean) Kuo" width="600" height="1141" /></span>
@@ -175,7 +181,8 @@
 										   download>
 											Download CV
 										</a>
-										<iframe
+										<p class="cv-mobile-note">The embedded preview is hidden on small screens. Use the button above to open the full CV.</p>
+										<iframe loading="lazy"
 											src="Peng-Ting_Kuo_CV.pdf"
 											class="cv-embed"
 											title="Peng-Ting Kuo Curriculum Vitae"
@@ -193,11 +200,11 @@
 				<!-- Footer -->
 				<footer class="bottom-footer" role="contentinfo">
 					<div class="social-icons">
-						<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn"><span class="icon brands fa-linkedin-in" aria-hidden="true"></span></a>
-						<a href="https://github.com/deankuo" title="GitHub"><span class="icon brands fa-github" aria-hidden="true"></span></a>
-						<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook"><span class="icon brands fa-facebook" aria-hidden="true"></span></a>
-						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar"><span class="icon solid fa-graduation-cap" aria-hidden="true"></span></a>
-						<a href="https://medium.com/@deankuo_15628" title="Medium"><span class="icon brands fa-medium-m" aria-hidden="true"></span></a>
+						<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn" aria-label="LinkedIn"><span class="icon brands fa-linkedin-in" aria-hidden="true"></span></a>
+						<a href="https://github.com/deankuo" title="GitHub" aria-label="GitHub"><span class="icon brands fa-github" aria-hidden="true"></span></a>
+						<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook" aria-label="Facebook"><span class="icon brands fa-facebook" aria-hidden="true"></span></a>
+						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar" aria-label="Google Scholar"><span class="icon solid fa-graduation-cap" aria-hidden="true"></span></a>
+						<a href="https://medium.com/@deankuo_15628" title="Medium" aria-label="Medium"><span class="icon brands fa-medium-m" aria-hidden="true"></span></a>
 					</div>
 					<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
 				</footer>
@@ -205,11 +212,6 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 			<script src="assets/js/header.js"></script>
 
 	</body>

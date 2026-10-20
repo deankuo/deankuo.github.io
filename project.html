@@ -1,13 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>Project - Dean Kuo's Personal Website</title>
+		<title>Projects - Dean Kuo's Personal Website</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Projects by Peng-Ting (Dean) Kuo - Machine Learning projects including manifesto classification, interpellation analysis, and automation tools.">
 		<meta name="keywords" content="Dean Kuo Projects, Machine Learning, Political Science, Manifesto Classification, Automation, Taiwan">
 		<meta name="author" content="Peng-Ting Kuo">
 		<meta name="robots" content="index, follow">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/shared.css" />
 		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
@@ -88,14 +91,14 @@
 				margin-bottom: 0.7em;
 				letter-spacing: 0.02em;
 			}
-			.card-body h3 {
+			.card-body h2 {
 				font-size: 17px;
 				margin: 0 0 auto 0;
 				color: #222;
 				line-height: 1.4;
 				padding-bottom: 1em;
 			}
-			.card-body h3 a {
+			.card-body h2 a {
 				color: inherit;
 				text-decoration: none;
 				border: none !important;
@@ -140,8 +143,9 @@
 			}
 		</style>
 	</head>
-	<body class="is-preload">
+	<body>
 		<script>(function(){var t=localStorage.getItem('theme');if(t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches)document.body.classList.add('dark-mode');})();</script>
+		<a class="skip-link" href="#main-content">Skip to main content</a>
 		<div id="wrapper">
 			<div id="main">
 				<div class="inner">
@@ -173,9 +177,9 @@
 						</div>
 					</header>
 
-					<section class="project-content">
+					<section class="project-content" id="main-content" role="main" tabindex="-1">
 						<header class="main">
-							<h1>Project Demo</h1>
+							<h1>Projects</h1>
 						</header>
 
 						
@@ -187,7 +191,7 @@
 								</a>
 								<div class="card-body">
 									<span class="card-date">May 2026</span>
-									<h3><a href="projects/aot_analysis.html">You In or Out? Character Rhetoric and Audience Response in Attack on Titan</a></h3>
+									<h2><a href="projects/aot_analysis.html">You In or Out? Character Rhetoric and Audience Response in Attack on Titan</a></h2>
 									<p class="card-desc">Using LLMs to analyze how fictional character rhetoric shapes audience emotional responses, with insights into narrative persuasion and political violence.</p>
 									<a href="projects/aot_analysis.html" class="card-arrow">View Project →</a>
 								</div>
@@ -199,7 +203,7 @@
 								</a>
 								<div class="card-body">
 									<span class="card-date">Apr 2024 – Present</span>
-									<h3><a href="projects/wto_analysis.html">WTO Network Analysis</a></h3>
+									<h2><a href="projects/wto_analysis.html">WTO Network Analysis</a></h2>
 									<p class="card-desc">Mapping WTO dispute settlement networks with graph theory to reveal shifting power dynamics in international trade governance.</p>
 									<a href="projects/wto_analysis.html" class="card-arrow">View Project →</a>
 								</div>
@@ -211,7 +215,7 @@
 								</a>
 								<div class="card-body">
 									<span class="card-date">Feb 2023 – May 2024</span>
-									<h3><a href="projects/legislator_manifesto_classification.html">Legislator Manifesto Classification</a></h3>
+									<h2><a href="projects/legislator_manifesto_classification.html">Legislator Manifesto Classification</a></h2>
 									<p class="card-desc">Applying large language models to classify Taiwanese legislative candidates' manifestos and uncover how electoral reform shapes campaign strategy.</p>
 									<a href="projects/legislator_manifesto_classification.html" class="card-arrow">View Project →</a>
 								</div>
@@ -223,7 +227,7 @@
 								</a>
 								<div class="card-body">
 									<span class="card-date">Nov 2023 – May 2024</span>
-									<h3><a href="projects/legislator_interpellation_classification.html">Legislator Interpellation Classification</a></h3>
+									<h2><a href="projects/legislator_interpellation_classification.html">Legislator Interpellation Classification</a></h2>
 									<p class="card-desc">Building an automatic NLP classifier for legislators' oral questions to enable large-scale analysis of parliamentary behavior.</p>
 									<a href="projects/legislator_interpellation_classification.html" class="card-arrow">View Project →</a>
 								</div>
@@ -235,20 +239,15 @@
 			</div>
 			<footer class="bottom-footer" role="contentinfo">
 				<div class="social-icons">
-					<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn"><span class="icon brands fa-linkedin-in"></span></a>
-					<a href="https://github.com/deankuo" title="GitHub"><span class="icon brands fa-github"></span></a>
-					<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook"><span class="icon brands fa-facebook"></span></a>
-					<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar"><span class="icon solid fa-graduation-cap"></span></a>
-					<a href="https://medium.com/@deankuo_15628" title="Medium"><span class="icon brands fa-medium-m"></span></a>
+					<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn" aria-label="LinkedIn"><span class="icon brands fa-linkedin-in"></span></a>
+					<a href="https://github.com/deankuo" title="GitHub" aria-label="GitHub"><span class="icon brands fa-github"></span></a>
+					<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook" aria-label="Facebook"><span class="icon brands fa-facebook"></span></a>
+					<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar" aria-label="Google Scholar"><span class="icon solid fa-graduation-cap"></span></a>
+					<a href="https://medium.com/@deankuo_15628" title="Medium" aria-label="Medium"><span class="icon brands fa-medium-m"></span></a>
 				</div>
 				<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
 			</footer>
 		</div>
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
 		<script src="assets/js/header.js"></script>
 	</body>
 </html>

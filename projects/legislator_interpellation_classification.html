@@ -40,6 +40,9 @@
 		}
 		</script>
 		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap">
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="../assets/css/shared.css" />
 		
@@ -71,7 +74,7 @@
 				position: absolute; right: 0; top: 50%;
 				transform: translateY(-50%); font-size: 1em; color: #555;
 			}
-			.major article p { text-align: justify; line-height: 1.6; margin-bottom: 1.2em; }
+			.major article p { text-align: left; line-height: 1.6; margin-bottom: 1.2em; }
 			/* Button Styling */
 			.actions .button {
 				display: inline-flex; align-items: center; justify-content: center;
@@ -109,8 +112,9 @@
 			@media screen and (max-width: 768px) { #main > .inner > section { max-width: 90%; } }
 		</style>
 </head>
-	<body class="is-preload">
+	<body>
 		<script>(function(){var t=localStorage.getItem('theme');if(t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches)document.body.classList.add('dark-mode');})();</script>
+		<a class="skip-link" href="#main-content">Skip to main content</a>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -149,10 +153,10 @@
 					</header>
 
 							<!-- Section -->
-                            <section>
+                            <section id="main-content" role="main" tabindex="-1">
                                 <header class="main" style="position: relative;">
                                     <h2>Legislator Interpellation Classification</h2>
-                                    <span class="project-duration">Nov 2023 - May 2024</span>
+                                    <span class="project-duration">Nov 2023 – May 2024</span>
                                 </header>
                                 <!-- <span class="image fit"><img src="../images/interpellation1_demo.png" alt="Legislator Interpellation Classification Project Demo" loading="lazy" /></span> -->
                                 <div class="major">
@@ -186,7 +190,7 @@
                                         <h3>Live Demo</h3>
                                         <p>Try the model directly below — paste a Chinese interpellation text and the classifier will predict its category.</p>
                                         <div class="hf-embed-wrapper">
-                                            <iframe
+                                            <iframe loading="lazy"
                                                 src="https://dean22029-multi-lable-classification.hf.space"
                                                 class="hf-embed"
                                                 title="Legislator Interpellation Classification Demo"
@@ -206,19 +210,19 @@
 				<footer class="bottom-footer" role="contentinfo">
 					<!-- Social Media Icons -->
 					<div class="social-icons">
-						<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn">
+						<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn" aria-label="LinkedIn">
 							<span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
 						</a>
-						<a href="https://github.com/deankuo" title="GitHub">
+						<a href="https://github.com/deankuo" title="GitHub" aria-label="GitHub">
 							<span class="icon brands fa-github" aria-hidden="true"></span>
 						</a>
-						<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook">
+						<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook" aria-label="Facebook">
 							<span class="icon brands fa-facebook" aria-hidden="true"></span>
 						</a>
-						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar">
+						<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar" aria-label="Google Scholar">
 							<span class="icon solid fa-graduation-cap" aria-hidden="true"></span>
 						</a>
-						<a href="https://medium.com/@deankuo_15628" title="Medium">
+						<a href="https://medium.com/@deankuo_15628" title="Medium" aria-label="Medium">
 							<span class="icon brands fa-medium-m" aria-hidden="true"></span>
 						</a>
 					</div>
@@ -228,11 +232,6 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
 		<script src="../assets/js/header.js"></script>
 	</body>
 </html>

@@ -55,6 +55,7 @@ body {
 #header .logo {
     text-decoration: none;
     border: none !important;
+    white-space: nowrap;
 }
 
 #header .logo strong {
@@ -239,6 +240,46 @@ img {
     height: auto;
 }
 
+/* ─── Accessibility helpers ──────────────────────────────────────────────── */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    z-index: 2000;
+    background: #f56565;
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 0 0 6px 0;
+    font-weight: 600;
+    text-decoration: none;
+    border: none !important;
+}
+.skip-link:focus {
+    left: 0;
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+}
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+/* Keyboard focus ring: visible for keyboard users, hidden for mouse clicks */
+:focus:not(:focus-visible) { outline: none; }
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid #f56565;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
 /* ─── Responsive header ──────────────────────────────────────────────────── */
 @media screen and (max-width: 768px) {
     #header {
@@ -254,8 +295,9 @@ img {
     }
 }
 
-/* Hamburger nav: triggers when header content box ≤ 620px (≈ viewport < 970px) */
-@container header-inner (max-width: 620px) {
+/* Hamburger nav: triggers when header content box ≤ 680px (≈ viewport < 1100px),
+   wide enough that the logo and the full nav never collide on tablets */
+@container header-inner (max-width: 680px) {
     #mobile-menu-button {
         display: block;
     }
@@ -315,7 +357,6 @@ img {
 .theme-toggle {
     background: none;
     border: none;
-    outline: none;
     box-shadow: none !important;
     cursor: pointer;
     color: #333 !important;
@@ -327,10 +368,7 @@ img {
     align-items: center;
     line-height: 1;
 }
-.theme-toggle:focus {
-    outline: none;
-    box-shadow: none;
-}
+.theme-toggle:focus { box-shadow: none; }
 .theme-toggle:hover {
     background-color: rgba(245, 101, 101, 0.1);
     color: #f56565;

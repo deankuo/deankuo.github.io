@@ -1,13 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>Publication - Dean Kuo's Personal Website</title>
+		<title>Publications - Dean Kuo's Personal Website</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Publications by Peng-Ting (Dean) Kuo - Peer reviewed papers, conference presentations, and academic work in political science and AI.">
 		<meta name="keywords" content="Dean Kuo Publications, Political Science Research, Machine Learning, Conference Papers, Academic Papers">
 		<meta name="author" content="Peng-Ting Kuo">
 		<meta name="robots" content="index, follow">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/shared.css" />
 		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
@@ -48,13 +51,13 @@
 				font-size: 16px;
 				line-height: 1.6;
 				margin-bottom: 0.4em;
-				text-align: justify;
+				text-align: left;
 			}
 			.publication-content u {
 				text-decoration: underline;
 				font-weight: 500;
 			}
-			.publication-content font[color="#2E86C1"] {
+			.publication-content .pub-title {
 				color: #2E86C1 !important;
 				font-weight: 500;
 			}
@@ -140,6 +143,22 @@
 			.publication-content section {
 				margin-bottom: 3em;
 			}
+			/* Dark mode: thesis committee table on a grey panel with light text */
+			body.dark-mode .publication-content table td {
+				background-color: #2f3347;
+				color: #e2e8f0;
+				border-color: #454b66;
+			}
+			body.dark-mode .publication-content table tr:nth-child(even) td {
+				background-color: #3a3f57;
+			}
+			body.dark-mode .publication-content table tr:hover td {
+				background-color: #454b66;
+			}
+			body.dark-mode .publication-content tfoot td {
+				color: #cbd5e0;
+				border-top-color: #cbd5e0;
+			}
 			@media screen and (max-width: 768px) {
 				.publication-content {
 					max-width: 90%;
@@ -171,8 +190,9 @@
 			}
 		</style>
 	</head>
-	<body class="is-preload">
+	<body>
 		<script>(function(){var t=localStorage.getItem('theme');if(t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches)document.body.classList.add('dark-mode');})();</script>
+		<a class="skip-link" href="#Publication">Skip to main content</a>
 		<div id="wrapper">
 			<div id="main">
 				<div class="inner">
@@ -204,9 +224,9 @@
 						</div>
 					</header>
 
-					<section class="publication-content" id="Publication">
+					<section class="publication-content" id="Publication" role="main" tabindex="-1">
 						<header class="main">
-							<h1>Publication</h1>
+							<h1>Publications</h1>
 						</header>
 
 
@@ -227,7 +247,7 @@
 
 							<div class="pub-entry" data-tags="llm">
 								<p>Yen-Shan Chen, Jing Jin, <u>Peng-Ting Kuo</u>, Chao-Wei Huang, Yun-Nung Chen,
-								<font color="#2E86C1">"LLMs are Biased Evaluators: But Not Biased for Retrieval Augmented Generation."</font>
+								<span class="pub-title">"LLMs are Biased Evaluators: But Not Biased for Retrieval Augmented Generation."</span>
 								<i>Findings of the Association for Computational Linguistics: ACL 2025 (Findings of ACL)</i>, pages 26669-26684, Vienna, Austria, Jul 27 - Aug 1, 2025.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
@@ -239,7 +259,7 @@
 
 							<div class="pub-entry" data-tags="ir">
 								<p><u>Peng-Ting Kuo</u>,
-								<font color="#2E86C1">"When Right Makes Might: Rising Power and World Order."</font>
+								<span class="pub-title">"When Right Makes Might: Rising Power and World Order."</span>
 								<i>Political Science Quarterly Book Review,</i> Vol.65, pages 21-24, 2022.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
@@ -257,7 +277,7 @@
 
 							<div class="pub-entry" data-tags="ir">
 								<p>Ronan Tse-min Fu, Yu-Ning Chiu, <u>Peng-Ting Kuo</u>.
-								<font color="#2E86C1">"Explaining China's Security Policy under Xi Jinping: A Neoclassical Realist Approach."</font></p>
+								<span class="pub-title">"Explaining China's Security Policy under Xi Jinping: A Neoclassical Realist Approach."</span></p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">IR</span>
@@ -267,7 +287,7 @@
 
 							<div class="pub-entry" data-tags="ir">
 								<p>Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>, I-Lien Lee, Chia-Hsiang Han, Yu-Ning Chiu.
-								<font color="#2E86C1">"Democracy or Prosperity? A Cross-National Analysis of East Asian Countries."</font></p>
+								<span class="pub-title">"Democracy or Prosperity? A Cross-National Analysis of East Asian Countries."</span></p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">IR</span>
@@ -277,7 +297,7 @@
 
 							<div class="pub-entry" data-tags="cp,llm">
 								<p>Andrés Cruz, Cem Mert Dalli, John Gerring, Carl Henrik Knutsen, <u>Peng-Ting Kuo</u>, and Daniel Steven Smith. 
-									<font color="#2E86C1">"The Growth of Executive Constraints: A Global, Historical Account."</font></p>
+									<span class="pub-title">"The Growth of Executive Constraints: A Global, Historical Account."</span></p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">CP</span>
@@ -288,7 +308,7 @@
 
 							<div class="pub-entry" data-tags="llm,ir">
 								<p><u>Peng-Ting Kuo</u>, Hsuan-Wei Lee.
-								<font color="#2E86C1">"More Trade, More Disputes? Measuring Alliance Effects on WTO Conflict."</font></p>
+								<span class="pub-title">"More Trade, More Disputes? Measuring Alliance Effects on WTO Conflict."</span></p>
 								<div class="pub-footer">
 									<div class="pub-tags">
 										<span class="pub-tag">IR</span>
@@ -307,7 +327,7 @@
 
 							<div class="pub-entry" data-tags="llm,ir">
 								<p><u>Peng-Ting Kuo</u>, Hsuan-Wei Lee,
-								<font color="#2E86C1">"More Trade, More Disputes? Measuring Alliance Effects on WTO Conflict,"</font>
+								<span class="pub-title">"More Trade, More Disputes? Measuring Alliance Effects on WTO Conflict,"</span>
 								presented at <i>83rd Annual Midwest Political Science Association Conference</i>, Chicago, United States, Apr 23-26, 2026.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
@@ -319,7 +339,7 @@
 
 							<div class="pub-entry" data-tags="llm">
 								<p>Connor Jerzak, <u>Peng-Ting Kuo</u>,
-								<font color="#2E86C1">"The Continuous Global Leadership Project: A Verifiable AI Search Agent Methodology,"</font>
+								<span class="pub-title">"The Continuous Global Leadership Project: A Verifiable AI Search Agent Methodology,"</span>
 								presented at <i>2026 Texas Methods Conference</i>, Texas, 2026.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
@@ -330,7 +350,7 @@
 
 							<div class="pub-entry" data-tags="electoral-studies,ml">
 								<p>Naofumi Fujimura, Nick Lin, Akitaka Matsuo, <u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Yutaka Shinada,
-								<font color="#2E86C1">"Divergent Paths from Electoral Institutions to Campaign Strategies: Analyzing Candidate Manifestos in Japan and Taiwan,"</font>
+								<span class="pub-title">"Divergent Paths from Electoral Institutions to Campaign Strategies: Analyzing Candidate Manifestos in Japan and Taiwan,"</span>
 								presented at <i>2025 IPSA World Congress</i>, Seoul, South Korea, Jul 12–16, 2025.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
@@ -342,7 +362,7 @@
 
 							<div class="pub-entry" data-tags="electoral-studies,ml">
 								<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu, Nick Lin,
-								<font color="#2E86C1">"Electoral Reform and Campaign Tactics: A Machine Learning Analysis of Taiwanese Legislative Candidates' Manifestos,"</font>
+								<span class="pub-title">"Electoral Reform and Campaign Tactics: A Machine Learning Analysis of Taiwanese Legislative Candidates' Manifestos,"</span>
 								presented at <i>16th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15–16, 2024.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
@@ -354,7 +374,7 @@
 
 							<div class="pub-entry" data-tags="ml">
 								<p>Yu-Hung Sun, <u>Peng-Ting Kuo</u>, Chun-Ming Tsui, Hong-Wung Wang,
-								<font color="#2E86C1">"From Human-Label to Auto-Label: An Automatic Classification Model for Legislators' Oral Questions,"</font>
+								<span class="pub-title">"From Human-Label to Auto-Label: An Automatic Classification Model for Legislators' Oral Questions,"</span>
 								presented at <i>16th International Conference on Parliamentary Studies</i>, Taipei, Taiwan, Jun 15–16, 2024.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
@@ -365,7 +385,7 @@
 
 							<div class="pub-entry" data-tags="electoral-studies,ml">
 								<p>Su-Feng Cheng, Ronan Tse-min Fu, <u>Peng-Ting Kuo</u>,
-								<font color="#2E86C1">"Understanding the Impact of Election System Reform on Legislative Campaigning Strategies: A Machine Learning Approach,"</font>
+								<span class="pub-title">"Understanding the Impact of Election System Reform on Legislative Campaigning Strategies: A Machine Learning Approach,"</span>
 								presented at <i>16th Annual Meeting of Japanese Association of Electoral Studies</i>, Kochi, Japan, May 18–19, 2024.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
@@ -377,7 +397,7 @@
 
 							<div class="pub-entry" data-tags="electoral-studies,ml,ir">
 								<p><u>Peng-Ting Kuo</u>, Ronan Tse-min Fu,
-								<font color="#2E86C1">"Decoding Campaigning Strategies: A Machine Learning Approach to Understanding the Impact of Election Systems on Legislative Candidates,"</font>
+								<span class="pub-title">"Decoding Campaigning Strategies: A Machine Learning Approach to Understanding the Impact of Election Systems on Legislative Candidates,"</span>
 								presented at <i>81st Midwest Political Science Association Conference</i>, Chicago, United States, Apr 4–7, 2024.</p>
 								<div class="pub-footer">
 									<div class="pub-tags">
@@ -440,20 +460,15 @@
 			</div>
 			<footer class="bottom-footer" role="contentinfo">
 				<div class="social-icons">
-					<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn"><span class="icon brands fa-linkedin-in"></span></a>
-					<a href="https://github.com/deankuo" title="GitHub"><span class="icon brands fa-github"></span></a>
-					<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook"><span class="icon brands fa-facebook"></span></a>
-					<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar"><span class="icon solid fa-graduation-cap"></span></a>
-					<a href="https://medium.com/@deankuo_15628" title="Medium"><span class="icon brands fa-medium-m"></span></a>
+					<a href="https://www.linkedin.com/in/deankuo/" title="LinkedIn" aria-label="LinkedIn"><span class="icon brands fa-linkedin-in"></span></a>
+					<a href="https://github.com/deankuo" title="GitHub" aria-label="GitHub"><span class="icon brands fa-github"></span></a>
+					<a href="https://www.facebook.com/peng.ting.kuo.0609" title="Facebook" aria-label="Facebook"><span class="icon brands fa-facebook"></span></a>
+					<a href="https://scholar.google.com/citations?user=Xkdc62AAAAAJ&hl" title="Google Scholar" aria-label="Google Scholar"><span class="icon solid fa-graduation-cap"></span></a>
+					<a href="https://medium.com/@deankuo_15628" title="Medium" aria-label="Medium"><span class="icon brands fa-medium-m"></span></a>
 				</div>
 				<p>&copy; Dean Kuo. All rights reserved. | Design: <a href="https://html5up.net">HTML5 UP</a></p>
 			</footer>
 		</div>
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
 		<script src="assets/js/header.js"></script>
 		<script>
 			// ── Publication filter ────────────────────────────────────────────────

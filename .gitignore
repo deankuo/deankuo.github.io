@@ -1,7 +1,7 @@
 # personal env
 .env
 .vscode/
-.DS_Store
+*.DS_Store
 archive/
 .claude/
 CLAUDE.md
